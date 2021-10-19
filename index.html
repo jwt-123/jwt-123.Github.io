@@ -108,6 +108,149 @@
     
     
     <article
+  id="post-hadoop安装从0到1二"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-date">
+  <time datetime="2021-10-19T18:44:05.478Z" itemprop="datePublished">2021-10-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="hadoop安装从0到1【2-hadoop安装篇】"><a href="#hadoop安装从0到1【2-hadoop安装篇】" class="headerlink" title="hadoop安装从0到1【2.hadoop安装篇】"></a>hadoop安装从0到1【2.hadoop安装篇】</h1><h1 id="前言准备"><a href="#前言准备" class="headerlink" title="前言准备"></a>前言准备</h1><p>首先是hadoop 官网</p>
+<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">https://hadoop.apache.org/releases.html</a></p>
+<p>Hadoop 以带有相应二进制的源代码形式发布</p>
+<p>从这个网站可以下载最新版本的hadoop</p>
+<p><strong>此处示例我用的是老版本的hadoop    版本是 3.2.0 其实也不老hhh</strong>  </p>
+<p>我把它放在网盘里了，下面是链接</p>
+<p><strong>百度网盘</strong></p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A">https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A</a><br>提取码：jw5t</p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>首先右键复制，再到虚拟机粘贴  不能直接cv，一定要手动</p>
+<p>然后关闭原来</p>
+<p>在桌面打开新终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzf hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压压缩包</p>
+<p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>可以看到出现了一个新东西</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl49yl2a5j60t30jtdme02.jpg" alt="123.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv hadoop-3.2.0 /usr/local/hadoop</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop;ls -al</span><br></pre></td></tr></table></figure>
+
+<p>可以看见如下图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4d3felej60k007mgrr02.jpg" alt="a.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>接下来会这样出现</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4isncs3j60t30r6dvy02.jpg" alt="asdf.png"></p>
+<p><strong>记得保存</strong></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p><strong>此处需要配置java_home 的原因</strong></p>
+<p>hadoop是守护线程 读取不到 /etc/profile 里面配置的JAVA_HOME路径<br>所以在</p>
+<p> hadoop-env.sh </p>
+<p>yarn-env.sh</p>
+<p> mapreduce-env.sh </p>
+<p>配置 JAVA_HOME, 这样才能读取到JAVA_HOME</p>
+<p>这里需要你找你的java路径  </p>
+<p>如果你是通过包管理apt安装的话 </p>
+<p>可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/jvm</span><br></pre></td></tr></table></figure>
+
+<p>然后找到java的文件，把文件名黏贴上去就好了</p>
+<p>这就是javahome</p>
+<p>我的是这样，仅供参考</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hadoop-env.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>加入之前两段，就是</p>
+<p>这个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 <configuration>,</configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;dfs.default.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;hdfs://localhost:8888&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后是这样的</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5632bqdj612s0r6h0i02.jpg" alt="51sdafa.png"></p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/namenode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/datanode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;0.0.0.0:50070&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后的效果图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5c7ng06j60yr0r6wvc02.jpg" alt="333AASDDFASFSDFAD.png"></p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/yarn-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;mapreduce_shuffle&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;mapreduce.framework.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;yarn&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd  /usr/local/hadoop/bin</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs --daemon start namenode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br><span class="line"></span><br><span class="line">sudo ./hdfs --daemon start datanode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后打开火狐浏览器</p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:50070</span><br></pre></td></tr></table></figure>
+
+<p>成功</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl71jjv10j60sg0uw7i002.jpg" alt="hhhhh.png"></p>
+<p>Yarn在这里就不提了    &gt;.&lt; </p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-hadoop安装从0到1一"
   class="article article-type-post"
   itemscope

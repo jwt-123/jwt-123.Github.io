@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hadoop安装从0到1一"
+  id="post-hadoop安装从0到1二"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -63,15 +63,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-date">
-  <time datetime="2021-10-19T16:40:52.840Z" itemprop="datePublished">2021-10-20</time>
+      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-date">
+  <time datetime="2021-10-19T18:44:05.478Z" itemprop="datePublished">2021-10-20</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">560</span>
+            <span class="post-count">725</span>
         </span>
     </span>
 
@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -95,62 +95,113 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Hadoop安装从0到1【1-操作系统篇】"><a href="#Hadoop安装从0到1【1-操作系统篇】" class="headerlink" title="Hadoop安装从0到1【1.操作系统篇】"></a>Hadoop安装从0到1【1.操作系统篇】</h1><h2 id="虚拟机配置环节"><a href="#虚拟机配置环节" class="headerlink" title="虚拟机配置环节"></a>虚拟机配置环节</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>首先下载ubuntu 的镜像iso文件，然后安装</p>
-<p>系统镜像下载地址</p>
-<p><a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">https://cn.ubuntu.com/download/desktop</a></p>
-<p>此处安装太简单略过</p>
-<p>虚拟机安装完成后进入,是这个界面</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl269vhoij60lo0s3k8j02.jpg" alt="a.png"></p>
-<p>很多同学会遇到下载速度很慢的情况</p>
-<p>这个原因是因为你们的ubuntu是在访问国外的服务器 ，所以速度很慢</p>
-<p>这里需要换源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+  <h1 id="hadoop安装从0到1【2-hadoop安装篇】"><a href="#hadoop安装从0到1【2-hadoop安装篇】" class="headerlink" title="hadoop安装从0到1【2.hadoop安装篇】"></a>hadoop安装从0到1【2.hadoop安装篇】</h1><h1 id="前言准备"><a href="#前言准备" class="headerlink" title="前言准备"></a>前言准备</h1><p>首先是hadoop 官网</p>
+<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">https://hadoop.apache.org/releases.html</a></p>
+<p>Hadoop 以带有相应二进制的源代码形式发布</p>
+<p>从这个网站可以下载最新版本的hadoop</p>
+<p><strong>此处示例我用的是老版本的hadoop    版本是 3.2.0 其实也不老hhh</strong>  </p>
+<p>我把它放在网盘里了，下面是链接</p>
+<p><strong>百度网盘</strong></p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A">https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A</a><br>提取码：jw5t</p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>首先右键复制，再到虚拟机粘贴  不能直接cv，一定要手动</p>
+<p>然后关闭原来</p>
+<p>在桌面打开新终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzf hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
 
-<p>将下列数据复制，黏贴到第一行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p>解压压缩包</p>
+<p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
 
-<p><strong>然后保存！！！！</strong></p>
-<p>再退出来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<p>看看上面的源是否黏贴进去了，没有就再试一次</p>
-<p><strong>接下来很重要</strong></p>
-<p>点左下角的菜单</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2d5kflbj60sg0uwtpy02.jpg" alt="GPH2987DC)RGVS_I$PJDT)Y.png"></p>
-<p>然后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">softwae</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2eh99yoj60sg0uwaqx02.jpg" alt="asdsaa.png"></p>
-<p>会出现这个，点击圈出来的这个</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2gdxsofj60sg0uwqmm02.jpg" alt="a.png"></p>
-<p>然后会有这个</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2hp0e25j60sg0uw1b502.jpg" alt="ddddddddd.png"></p>
-<p>然后将他改成中国的中科大源，或者其他源也可以，只要是国内就慢不到哪里去</p>
-<p>根据我多年经验</p>
-<p>清华源东西全，但是用的人太多，速度有时候会抽风</p>
-<p>豆瓣偶尔抽风</p>
-<p>阿里腾讯云还好 偶尔用</p>
-<p>中科大源东西全，用的人少，速度巨快，直接跑满带宽，中科大永远的神  yyds！！！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>可以看到出现了一个新东西</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl49yl2a5j60t30jtdme02.jpg" alt="123.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv hadoop-3.2.0 /usr/local/hadoop</span><br></pre></td></tr></table></figure>
 
 
 
-<p>试试看，如果不是和电影里面黑客操作系统那样刷数字字符飞快的话（就是下载速度很快，没有1M也有几百kb每秒）就是没配置成功，再配一次</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+<p>再输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop;ls -al</span><br></pre></td></tr></table></figure>
 
-<p>下载个gcc 试试水</p>
-<p>几秒下好</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+<p>可以看见如下图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4d3felej60k007mgrr02.jpg" alt="a.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2rmk7taj60js0cwk4a02.jpg" alt="QO@RL%7HFEP_$S%LSMA)I2F.png"></p>
-<p>有这样的图片就是成功了</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>下载java </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+<p>接下来会这样出现</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4isncs3j60t30r6dvy02.jpg" alt="asdf.png"></p>
+<p><strong>记得保存</strong></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p><strong>此处需要配置java_home 的原因</strong></p>
+<p>hadoop是守护线程 读取不到 /etc/profile 里面配置的JAVA_HOME路径<br>所以在</p>
+<p> hadoop-env.sh </p>
+<p>yarn-env.sh</p>
+<p> mapreduce-env.sh </p>
+<p>配置 JAVA_HOME, 这样才能读取到JAVA_HOME</p>
+<p>这里需要你找你的java路径  </p>
+<p>如果你是通过包管理apt安装的话 </p>
+<p>可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/jvm</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2tk44qgj60k20de17302.jpg" alt="$HKSAKW73)6Q2`@`%DK}EB.png"></p>
-<p>5秒下好</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
-<p>至此，操作系统基本环境算是配置完成了</p>
+<p>然后找到java的文件，把文件名黏贴上去就好了</p>
+<p>这就是javahome</p>
+<p>我的是这样，仅供参考</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hadoop-env.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>加入之前两段，就是</p>
+<p>这个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 <configuration>,</configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;dfs.default.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;hdfs://localhost:8888&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后是这样的</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5632bqdj612s0r6h0i02.jpg" alt="51sdafa.png"></p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/namenode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/datanode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;0.0.0.0:50070&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后的效果图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5c7ng06j60yr0r6wvc02.jpg" alt="333AASDDFASFSDFAD.png"></p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/yarn-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;mapreduce_shuffle&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;mapreduce.framework.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;yarn&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd  /usr/local/hadoop/bin</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs --daemon start namenode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br><span class="line"></span><br><span class="line">sudo ./hdfs --daemon start datanode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后打开火狐浏览器</p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:50070</span><br></pre></td></tr></table></figure>
+
+<p>成功</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl71jjv10j60sg0uw7i002.jpg" alt="hhhhh.png"></p>
+<p>Yarn在这里就不提了    &gt;.&lt; </p>
  
       <!-- reward -->
       
@@ -221,7 +272,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -232,17 +283,8 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/10/10/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/" class="article-nav-link">
+      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>
