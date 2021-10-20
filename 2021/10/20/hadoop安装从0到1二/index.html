@@ -71,7 +71,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">761</span>
+            <span class="post-count">806</span>
         </span>
     </span>
 
@@ -95,10 +95,12 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="hadoop安装从0到1【2-hadoop安装篇】"><a href="#hadoop安装从0到1【2-hadoop安装篇】" class="headerlink" title="hadoop安装从0到1【2.hadoop安装篇】"></a>hadoop安装从0到1【2.hadoop安装篇】</h1><h1 id="前言准备"><a href="#前言准备" class="headerlink" title="前言准备"></a>前言准备</h1><p>首先是hadoop 官网</p>
+  <h1 id="hadoop安装从0到1【2-hadoop安装篇】"><a href="#hadoop安装从0到1【2-hadoop安装篇】" class="headerlink" title="hadoop安装从0到1【2.hadoop安装篇】"></a>hadoop安装从0到1【2.hadoop安装篇】</h1><h1 id="前言准备"><a href="#前言准备" class="headerlink" title="前言准备"></a>前言准备</h1><p><strong>百度网盘</strong></p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A">https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A</a><br>提取码：jw5t</p>
 <p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">https://hadoop.apache.org/releases.html</a></p>
 <p>Hadoop 以带有相应二进制的源代码形式发布</p>
 <p>从这个网站可以下载最新版本的hadoop</p>
+<p>（官网下的是最新版本，要自己改命令）</p>
 <p><strong>此处示例我用的是老版本的hadoop    版本是 3.2.0 其实也不老hhh</strong>  </p>
 <p>我把它放在网盘里了，下面是链接</p>
 <p><strong>百度网盘</strong></p>
@@ -135,6 +137,14 @@
 <p>接下来会这样出现</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4isncs3j60t30r6dvy02.jpg" alt="asdf.png"></p>
 <p><strong>记得保存</strong></p>
+<p>保存之后</p>
+<p>然后输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc </span><br></pre></td></tr></table></figure>
+
+<p>或 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p> 使修改生效</p>
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p><strong>此处需要配置java_home 的原因</strong></p>
 <p>hadoop是守护线程 读取不到 /etc/profile 里面配置的JAVA_HOME路径<br>所以在</p>
 <p> hadoop-env.sh </p>
