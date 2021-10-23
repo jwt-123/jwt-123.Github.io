@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-ios传文件"
+  id="post-pip换源"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -63,15 +63,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2021/10/20/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2021-10-20T09:02:50.063Z" itemprop="datePublished">2021-10-20</time>
+      <a href="/2021/10/21/pip%E6%8D%A2%E6%BA%90/" class="article-date">
+  <time datetime="2021-10-21T07:55:50.041Z" itemprop="datePublished">2021-10-21</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">63</span>
+            <span class="post-count">46</span>
         </span>
     </span>
 
@@ -95,11 +95,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
-<p>需要有python环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
+  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
 
-<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
+<p>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       
@@ -170,7 +173,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/20/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/21/pip%E6%8D%A2%E6%BA%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -181,7 +184,7 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/10/21/pip%E6%8D%A2%E6%BA%90/" class="article-nav-link">
+      <a href="/2021/10/22/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
@@ -191,7 +194,7 @@
       </a>
     
     
-      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-nav-link">
+      <a href="/2021/10/20/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>
