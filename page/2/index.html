@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> Jw5t</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover2.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">Jw5t</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['富强、民主、文明、和谐', '自由、平等、公正、法治', '爱国、敬业、诚信、友善'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-加密算法总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/22/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-10-22T11:37:49.212Z" itemprop="datePublished">2021-10-22</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
+<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
+<p><strong>私钥用于 解密 和 签名</strong></p>
+<p>可以用于 报文认证</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
+<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
+<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
+<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
+<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pip换源"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/21/pip%E6%8D%A2%E6%BA%90/" class="article-date">
+  <time datetime="2021-10-21T07:55:50.041Z" itemprop="datePublished">2021-10-21</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
+
+<p>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-ios传文件"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/20/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
+  <time datetime="2021-10-20T09:02:50.063Z" itemprop="datePublished">2021-10-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
+<p>需要有python环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
+
+<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-hadoop安装从0到1二"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-date">
+  <time datetime="2021-10-19T18:44:05.478Z" itemprop="datePublished">2021-10-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="hadoop安装从0到1【2-hadoop安装篇】"><a href="#hadoop安装从0到1【2-hadoop安装篇】" class="headerlink" title="hadoop安装从0到1【2.hadoop安装篇】"></a>hadoop安装从0到1【2.hadoop安装篇】</h1><h1 id="前言准备"><a href="#前言准备" class="headerlink" title="前言准备"></a>前言准备</h1><p><strong>百度网盘</strong></p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A">https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A</a><br>提取码：jw5t</p>
+<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/releases.html">https://hadoop.apache.org/releases.html</a></p>
+<p>Hadoop 以带有相应二进制的源代码形式发布</p>
+<p>从这个网站可以下载最新版本的hadoop</p>
+<p>（官网下的是最新版本，要自己改命令）</p>
+<p><strong>此处示例我用的是老版本的hadoop    版本是 3.2.0 其实也不老hhh</strong>  </p>
+<p>我把它放在网盘里了，下面是链接</p>
+<p><strong>百度网盘</strong></p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A">https://pan.baidu.com/s/1509KY-6pM8DtrBhB4H1X3A</a><br>提取码：jw5t</p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>首先右键复制，再到虚拟机粘贴  不能直接cv，一定要手动</p>
+<p>然后关闭原来</p>
+<p>在桌面打开新终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xzf hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压压缩包</p>
+<p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>可以看到出现了一个新东西</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl49yl2a5j60t30jtdme02.jpg" alt="123.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv hadoop-3.2.0 /usr/local/hadoop</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hadoop;ls -al</span><br></pre></td></tr></table></figure>
+
+<p>可以看见如下图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4d3felej60k007mgrr02.jpg" alt="a.png"></p>
+<p>接下来输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure>
+
+
+
+<p>黏贴</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_HOME=/usr/local/hadoop </span><br><span class="line">export HADOOP_MAPRED_HOME=$HADOOP_HOME </span><br><span class="line">export HADOOP_COMMON_HOME=$HADOOP_HOME </span><br><span class="line">export HADOOP_HDFS_HOME=$HADOOP_HOME </span><br><span class="line">export YARN_HOME=$HADOOP_HOME</span><br><span class="line">export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native </span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin</span><br><span class="line"></span><br><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br></pre></td></tr></table></figure>
+
+<p>接下来会这样出现</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl4isncs3j60t30r6dvy02.jpg" alt="asdf.png"></p>
+<p><strong>记得保存</strong></p>
+<p>保存之后</p>
+<p>然后输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc </span><br></pre></td></tr></table></figure>
+
+<p>或 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p> 使修改生效</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p><strong>此处需要配置java_home 的原因</strong></p>
+<p>hadoop是守护线程 读取不到 /etc/profile 里面配置的JAVA_HOME路径<br>所以在</p>
+<p> hadoop-env.sh </p>
+<p>yarn-env.sh</p>
+<p> mapreduce-env.sh </p>
+<p>配置 JAVA_HOME, 这样才能读取到JAVA_HOME</p>
+<p>这里需要你找你的java路径  </p>
+<p>如果你是通过包管理apt安装的话 </p>
+<p>可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/jvm</span><br></pre></td></tr></table></figure>
+
+<p>然后找到java的文件，把文件名黏贴上去就好了</p>
+<p>这就是javahome</p>
+<p>我的是这样，仅供参考</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hadoop-env.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>加入之前两段，就是</p>
+<p>这个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</span><br><span class="line"></span><br><span class="line">export HADOOP_OPTS=&quot;-Djava.library.path=$&#123;HADOOP_HOME&#125;/lib/native&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>接下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 <configuration>,</configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;dfs.default.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;hdfs://localhost:8888&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后是这样的</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5632bqdj612s0r6h0i02.jpg" alt="51sdafa.png"></p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/namenode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;/home/hadoop/dfs/datanode&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">              &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">              &lt;value&gt;0.0.0.0:50070&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后的效果图</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl5c7ng06j60yr0r6wvc02.jpg" alt="333AASDDFASFSDFAD.png"></p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/yarn-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;mapreduce_shuffle&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  gedit  /usr/local/hadoop/etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure>
+
+<p>在 <configuration></configuration> 标签之间添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt; </span><br><span class="line">   &lt;name&gt;mapreduce.framework.name&lt;/name&gt; </span><br><span class="line">   &lt;value&gt;yarn&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd  /usr/local/hadoop/bin</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo ./hdfs --daemon start namenode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br><span class="line"></span><br><span class="line">sudo ./hdfs --daemon start datanode</span><br><span class="line"></span><br><span class="line">sudo jps</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后打开火狐浏览器</p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:50070</span><br></pre></td></tr></table></figure>
+
+<p>成功</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl71jjv10j60sg0uw7i002.jpg" alt="hhhhh.png"></p>
+<p>Yarn在这里就不提了    &gt;.&lt; </p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-hadoop安装从0到1一"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-date">
+  <time datetime="2021-10-19T16:40:52.840Z" itemprop="datePublished">2021-10-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Hadoop安装从0到1【1-操作系统篇】"><a href="#Hadoop安装从0到1【1-操作系统篇】" class="headerlink" title="Hadoop安装从0到1【1.操作系统篇】"></a>Hadoop安装从0到1【1.操作系统篇】</h1><h2 id="虚拟机配置环节"><a href="#虚拟机配置环节" class="headerlink" title="虚拟机配置环节"></a>虚拟机配置环节</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>首先下载ubuntu 的镜像iso文件，然后安装</p>
+<p>系统镜像下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">https://cn.ubuntu.com/download/desktop</a></p>
+<p>此处安装太简单略过</p>
+<p>虚拟机安装完成后进入,是这个界面</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl269vhoij60lo0s3k8j02.jpg" alt="a.png"></p>
+<p>很多同学会遇到下载速度很慢的情况</p>
+<p>这个原因是因为你们的ubuntu是在访问国外的服务器 ，所以速度很慢</p>
+<p>这里需要换源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>将下列数据复制，黏贴到第一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后保存！！！！</strong></p>
+<p>再退出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>看看上面的源是否黏贴进去了，没有就再试一次</p>
+<p><strong>接下来很重要</strong></p>
+<p>点左下角的菜单</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2d5kflbj60sg0uwtpy02.jpg" alt="GPH2987DC)RGVS_I$PJDT)Y.png"></p>
+<p>然后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">softwae</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2eh99yoj60sg0uwaqx02.jpg" alt="asdsaa.png"></p>
+<p>会出现这个，点击圈出来的这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2gdxsofj60sg0uwqmm02.jpg" alt="a.png"></p>
+<p>然后会有这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2hp0e25j60sg0uw1b502.jpg" alt="ddddddddd.png"></p>
+<p>然后将他改成中国的中科大源，或者其他源也可以，只要是国内就慢不到哪里去</p>
+<p>根据我多年经验</p>
+<p>清华源东西全，但是用的人太多，速度有时候会抽风</p>
+<p>豆瓣偶尔抽风</p>
+<p>阿里腾讯云还好 偶尔用</p>
+<p>中科大源东西全，用的人少，速度巨快，直接跑满带宽，中科大永远的神  yyds！！！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+
+
+<p>试试看，如果不是和电影里面黑客操作系统那样刷数字字符飞快的话（就是下载速度很快，没有1M也有几百kb每秒）就是没配置成功，再配一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+
+<p>下载个gcc 试试水</p>
+<p>几秒下好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2rmk7taj60js0cwk4a02.jpg" alt="QO@RL%7HFEP_$S%LSMA)I2F.png"></p>
+<p>有这样的图片就是成功了</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>下载java </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2tk44qgj60k20de17302.jpg" alt="$HKSAKW73)6Q2`@`%DK}EB.png"></p>
+<p>5秒下好</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
+<p>至此，操作系统基本环境算是配置完成了</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-基于powershell封装的docker工具"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/10/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/" class="article-date">
+  <time datetime="2021-10-10T14:24:57.211Z" itemprop="datePublished">2021-10-10</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="基于powershell封装的docker工具"><a href="#基于powershell封装的docker工具" class="headerlink" title="基于powershell封装的docker工具"></a>基于powershell封装的docker工具</h1><h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>之前从linux转到windows的时候就有很多地方不习惯，会有很多linux原生工具在windows会无法使用，或者出各种各样的问题，就比如rustscan （这个官方给出的解决措施是docker 加上powershell 别名来解决） 但是我在使用的过程中发现了有很多的问题 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rustscan/rustscan:2.0.0</span><br></pre></td></tr></table></figure>
+
+<p>这个是docker pull docker镜像的命令 这个没问题</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -it --rm --name rustscan rustscan/rustscan:1.10.0 &lt;这里的rustscan参数&gt;  &lt;要扫描的IP地址&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个是docker 运行 rustscan的命令</p>
+<p>很显然，在实际过程中 我们不可能跑这么长的命令</p>
+<p>官方给出的解决办法</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias rustscan=<span class="string">&#x27;docker run -it --rm --name rustscan rustscan/rustscan:1.10.0&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>我按照官方的办法来使用</p>
+<p>这部分出现了问题，报错是这样的</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014184449950.png" alt="image-20211014184449950"></p>
+<p><strong>很显然，这个alias 是在linux 命令下的别名操作</strong> </p>
+<p><strong>官方的docker下载方法文档是基于linux的环境的</strong></p>
+<p>在windows 的powershell 虽然移植了这个命令，但是还是不一样</p>
+<p>我们来看看alias的指令</p>
+<p>这是微软官方是alias的指令文档</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias</a></p>
+<p>windows 的别名只能将一个比较长的别名（必须是一个单词转成另外一个比较短的单词）</p>
+<p>途中我找了其他的绕过方法，有说{}将长命令内容包裹起来的</p>
+<p>有说用“”或者‘’包裹长命令</p>
+<p>我都试过了，没用</p>
+<p>我甚至还想办法绕过空格，比如&lt;&gt;绕过 () 绕过,+绕过啥的，也失败了</p>
+<p>所以 使用alias方法暂时没用</p>
+<h1 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h1><p>后来从别人博客看到，他们通常使用powershell来包装长的docker语句</p>
+<p>很多人还专门写了powershell脚本来管理docker集群</p>
+<p>（这些在github上可以找到）</p>
+<p>然后我就想，能否用powershell 的函数功能来实现这个功能</p>
+<p>在powershell 中 <code>$Profile </code>是个环境变量 ，</p>
+<p>在powershell中输入这个会出现一个像这样的文件路径（注意，每个人的可能不一样，这里不要复制，这是我的环境的） </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jw5t\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br></pre></td></tr></table></figure>
+
+<p>每次打开powershell 会加载这个文件</p>
+<p>然后将这个文件复制进文件管理器</p>
+<p>会用记事本打开一个文件</p>
+<p>我在其中添加了这个</p>
+<p><code>function rustscan &#123;docker run -it --rm rustscan/rustscan:2.0.0 $args $args $args $args $args $args $args $args&#125;</code></p>
+<p>其中$args 是预留位，给之后可能会出现的参数作准备的 如果没有添加这个，会出现后面输入参数无效的情况</p>
+<p>然后保存</p>
+<p>这是效果</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014192201189.png" alt="image-20211014192201189"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-换电脑重装事宜"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/10/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/" class="article-date">
+  <time datetime="2021-10-10T10:24:17.162Z" itemprop="datePublished">2021-10-10</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="MEADME"><a href="#MEADME" class="headerlink" title="MEADME"></a>MEADME</h1><p>换了电脑，之前博客莫得备份</p>
+<p>重新开始吧</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2021
+        <i class="ri-heart-fill heart_icon"></i> Jw5t
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" alt="Jw5t"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://github.com/jwt-123">github</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://twitter.com/home">twitter</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2021/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7hx6bmjj60xc1e077j02.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7hog9jrj60yi1auju602.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
