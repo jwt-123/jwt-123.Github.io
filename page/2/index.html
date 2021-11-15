@@ -108,6 +108,234 @@
     
     
     <article
+  id="post-3_python-trade"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/15/3_python-trade/" class="article-date">
+  <time datetime="2021-11-15T09:38:44.378Z" itemprop="datePublished">2021-11-15</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="3-python-trade"><a href="#3-python-trade" class="headerlink" title="3_python-trade"></a>3_python-trade</h1><p>pyc 逆向 </p>
+<p>使用pyc反编译 </p>
+<p>网站</p>
+<p><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.gjw123.com/tools-pyc">http://www.gjw123.com/tools-pyc</a></p>
+<p>反编译结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"></span><br><span class="line">visit https://tool.lu/pyc/ for more information</span><br><span class="line"></span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def encode(message):</span><br><span class="line">    s = &#x27;&#x27;</span><br><span class="line">    for i in message:</span><br><span class="line">        x = ord(i) ^ 32</span><br><span class="line">        x = x + 16</span><br><span class="line">        s += chr(x)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    return base64.b64encode(s)</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line">print &#x27;Input flag:&#x27;</span><br><span class="line">flag = raw_input()</span><br><span class="line">if encode(flag) == correct:</span><br><span class="line">    print &#x27;correct&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;wrong&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>写脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">a = base64.b64decode(correct)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">s = &#x27;&#x27;</span><br><span class="line">for i in a:</span><br><span class="line">    s += chr((ord(chr(i)) - 16) ^ 32)</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure>
+
+<p>nctf{d3c0mpil1n9_PyC}</p>
+<p>其中s += chr((ord(chr(i)) - 16) ^ 32) 如果没有chr强转会报ord 的错</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-2_insanity"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/15/2_insanity/" class="article-date">
+  <time datetime="2021-11-15T09:38:44.375Z" itemprop="datePublished">2021-11-15</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="2-insanity"><a href="#2-insanity" class="headerlink" title="2_insanity"></a>2_insanity</h1><p>丢ida 找到main函数 F5大法</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6c4azsvj30jz06ntam.jpg" alt="image.png"></p>
+<p>很明显 追踪&amp;strs</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171836918.png" alt="image-20211110171836918"></p>
+<p>flag</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-1_Hello, CTF"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/15/1_Hello,%20CTF/" class="article-date">
+  <time datetime="2021-11-15T09:38:44.373Z" itemprop="datePublished">2021-11-15</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="1-Hello-CTF"><a href="#1-Hello-CTF" class="headerlink" title="1_Hello, CTF"></a>1_Hello, CTF</h1><p>把文件放入ida</p>
+<p>搜索main函数 按下万能的F5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5v7golmj30is0kz10l.jpg" alt="image1.png"></p>
+<h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><p> <strong>void *memset(void *str, int c, size_t n)</strong> 复制字符 <strong>c</strong>（一个无符号字符）到参数 <strong>str</strong> 所指向的字符串的前 <strong>n</strong> 个字符。</p>
+<h2 id="strcat"><a href="#strcat" class="headerlink" title="strcat"></a>strcat</h2><p>C 库函数 <strong>char *strcat(char *dest, const char *src)</strong> 把 <strong>src</strong> 所指向的字符串追加到 <strong>dest</strong> 所指向的字符串的结尾。</p>
+<h2 id="sub-40134B"><a href="#sub-40134B" class="headerlink" title="sub_40134B"></a>sub_40134B</h2><p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5z8pppmj30cb075dh1.jpg" alt="image.png"></p>
+<p>我对于这个函数的理解是将定好的内容输出</p>
+<p>比如第一个就是输出 please input your serial</p>
+<h1 id="整体看一遍"><a href="#整体看一遍" class="headerlink" title="整体看一遍"></a>整体看一遍</h1><p>关键点在这里 </p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa62ybzrrj307m02dt97.jpg" alt="image.png"></p>
+<p>需要让v10 和v13 相等</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171239426.png" alt="image-20211110171239426"></p>
+<p>说明是转了16进制</p>
+<p>在线转  <a target="_blank" rel="noopener" href="https://www.bejson.com/convert/ox2str/">https://www.bejson.com/convert/ox2str/</a></p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa67ecfj9j30st0e2gow.jpg" alt="image.png"></p>
+<p> flag ： CrackMeJustForFun</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-get_shell"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/11/15/get_shell/" class="article-date">
+  <time datetime="2021-11-15T09:38:44.371Z" itemprop="datePublished">2021-11-15</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在kali里面输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nv 111.200.241.244 49361</span><br></pre></td></tr></table></figure>
+
+<p>直接连接</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gw9t7ixuccj30dp0a0dgw.jpg" alt="a.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-无线知识总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/10/22/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-10-22T12:29:07.051Z" itemprop="datePublished">2021-10-22</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
+<p>美国3G标准  CDMA2000</p>
+<p>IEEE   802.11a 是5 Ghz </p>
+<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
+<p>信道利用率高</p>
+<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
+<p>信道利用率高</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-加密算法总结"
   class="article article-type-post"
   itemscope
@@ -490,130 +718,13 @@
 </article>
 
     
-    <article
-  id="post-基于powershell封装的docker工具"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/10/10/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/" class="article-date">
-  <time datetime="2021-10-10T14:24:57.211Z" itemprop="datePublished">2021-10-10</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="基于powershell封装的docker工具"><a href="#基于powershell封装的docker工具" class="headerlink" title="基于powershell封装的docker工具"></a>基于powershell封装的docker工具</h1><h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>之前从linux转到windows的时候就有很多地方不习惯，会有很多linux原生工具在windows会无法使用，或者出各种各样的问题，就比如rustscan （这个官方给出的解决措施是docker 加上powershell 别名来解决） 但是我在使用的过程中发现了有很多的问题 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rustscan/rustscan:2.0.0</span><br></pre></td></tr></table></figure>
-
-<p>这个是docker pull docker镜像的命令 这个没问题</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -it --rm --name rustscan rustscan/rustscan:1.10.0 &lt;这里的rustscan参数&gt;  &lt;要扫描的IP地址&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这个是docker 运行 rustscan的命令</p>
-<p>很显然，在实际过程中 我们不可能跑这么长的命令</p>
-<p>官方给出的解决办法</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias rustscan=<span class="string">&#x27;docker run -it --rm --name rustscan rustscan/rustscan:1.10.0&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>我按照官方的办法来使用</p>
-<p>这部分出现了问题，报错是这样的</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014184449950.png" alt="image-20211014184449950"></p>
-<p><strong>很显然，这个alias 是在linux 命令下的别名操作</strong> </p>
-<p><strong>官方的docker下载方法文档是基于linux的环境的</strong></p>
-<p>在windows 的powershell 虽然移植了这个命令，但是还是不一样</p>
-<p>我们来看看alias的指令</p>
-<p>这是微软官方是alias的指令文档</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias</a></p>
-<p>windows 的别名只能将一个比较长的别名（必须是一个单词转成另外一个比较短的单词）</p>
-<p>途中我找了其他的绕过方法，有说{}将长命令内容包裹起来的</p>
-<p>有说用“”或者‘’包裹长命令</p>
-<p>我都试过了，没用</p>
-<p>我甚至还想办法绕过空格，比如&lt;&gt;绕过 () 绕过,+绕过啥的，也失败了</p>
-<p>所以 使用alias方法暂时没用</p>
-<h1 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h1><p>后来从别人博客看到，他们通常使用powershell来包装长的docker语句</p>
-<p>很多人还专门写了powershell脚本来管理docker集群</p>
-<p>（这些在github上可以找到）</p>
-<p>然后我就想，能否用powershell 的函数功能来实现这个功能</p>
-<p>在powershell 中 <code>$Profile </code>是个环境变量 ，</p>
-<p>在powershell中输入这个会出现一个像这样的文件路径（注意，每个人的可能不一样，这里不要复制，这是我的环境的） </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jw5t\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br></pre></td></tr></table></figure>
-
-<p>每次打开powershell 会加载这个文件</p>
-<p>然后将这个文件复制进文件管理器</p>
-<p>会用记事本打开一个文件</p>
-<p>我在其中添加了这个</p>
-<p><code>function rustscan &#123;docker run -it --rm rustscan/rustscan:2.0.0 $args $args $args $args $args $args $args $args&#125;</code></p>
-<p>其中$args 是预留位，给之后可能会出现的参数作准备的 如果没有添加这个，会出现后面输入参数无效的情况</p>
-<p>然后保存</p>
-<p>这是效果</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014192201189.png" alt="image-20211014192201189"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-换电脑重装事宜"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/10/10/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/" class="article-date">
-  <time datetime="2021-10-10T10:24:17.162Z" itemprop="datePublished">2021-10-10</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="MEADME"><a href="#MEADME" class="headerlink" title="MEADME"></a>MEADME</h1><p>换了电脑，之前博客莫得备份</p>
-<p>重新开始吧</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
   </article>
   
 
   
   <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
   </nav>
   
 </section>
