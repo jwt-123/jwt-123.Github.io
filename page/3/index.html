@@ -108,6 +108,98 @@
     
     
     <article
+  id="post-windows_Terminal的ssh方法"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/windows_Terminal%E7%9A%84ssh%E6%96%B9%E6%B3%95/"
+    >windows——Terminal的ssh方法</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/windows_Terminal%E7%9A%84ssh%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>打开windows terminal的配置json文件</p>
+<p>搜索 profiles </p>
+<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0nacbq90xj30xh0brn1h.jpg" alt="image.png"></p>
+<p>找到这样的段落</p>
+<p>在下面接入字段</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;font&quot;</span>: </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;face&quot;</span>: <span class="string">&quot;\u96b6\u4e66&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;ed74828b-a78d-4dbd-8f4c-6f0e3e31b48c&#125;&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;你的服务器名字&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;ssh ubuntu@你的服务器IP  -p 22&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>guid 可以改</p>
+<p><a target="_blank" rel="noopener" href="https://www.guidgenerator.com/online-guid-generator.aspx">https://www.guidgenerator.com/online-guid-generator.aspx</a> 可以随机生成</p>
+<p>name</p>
+<p>你的服务器名字</p>
+<p>commandline</p>
+<p>ssh的命令</p>
+<h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>如果本机没有ssh私钥，用ssh-keygen生成一个</p>
+<p>如果本机有私钥</p>
+<p>打开windows terminal，进入powershell </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0nai0bbk6j30jc040dhd.jpg" alt="image.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .\id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>连接上你的服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start sshd</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vim tmp.pub</span><br></pre></td></tr></table></figure>
+
+
+
+<p>把id_rsa.pub的内容黏贴进去</p>
+<p>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">vi tmp.pub</span><br><span class="line">mkdir .ssh &amp;&amp; chmod 700 .ssh</span><br><span class="line">touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys</span><br><span class="line">cat tmp.pub &gt;&gt; .ssh/authorized_keys</span><br><span class="line">rm tmp.pub</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="重启windows-terminal"><a href="#重启windows-terminal" class="headerlink" title="重启windows terminal"></a>重启windows terminal</h3><p>如果出现字符乱码功能</p>
+<p>使用该种字体有效</p>
+<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0ncrj3et3j307p01cdfo.jpg" alt="image.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-加密算法总结"
   class="article article-type-post"
   itemscope
@@ -376,98 +468,6 @@ if not b3.match(&#39;.*404 Not Found&#39;, b3.text):
 <h3 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h3><p>冲突后进行处理</p>
 <p>信道利用率高</p>
 <p>s</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-windows_Terminal的ssh方法"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/windows_Terminal%E7%9A%84ssh%E6%96%B9%E6%B3%95/"
-    >windows——Terminal的ssh方法</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/windows_Terminal%E7%9A%84ssh%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>打开windows terminal的配置json文件</p>
-<p>搜索 profiles </p>
-<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0nacbq90xj30xh0brn1h.jpg" alt="image.png"></p>
-<p>找到这样的段落</p>
-<p>在下面接入字段</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;font&quot;</span>: </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;face&quot;</span>: <span class="string">&quot;\u96b6\u4e66&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;ed74828b-a78d-4dbd-8f4c-6f0e3e31b48c&#125;&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;你的服务器名字&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;ssh ubuntu@你的服务器IP  -p 22&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>guid 可以改</p>
-<p><a target="_blank" rel="noopener" href="https://www.guidgenerator.com/online-guid-generator.aspx">https://www.guidgenerator.com/online-guid-generator.aspx</a> 可以随机生成</p>
-<p>name</p>
-<p>你的服务器名字</p>
-<p>commandline</p>
-<p>ssh的命令</p>
-<h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>如果本机没有ssh私钥，用ssh-keygen生成一个</p>
-<p>如果本机有私钥</p>
-<p>打开windows terminal，进入powershell </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd .ssh</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0nai0bbk6j30jc040dhd.jpg" alt="image.png"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .\id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>连接上你的服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start sshd</span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vim tmp.pub</span><br></pre></td></tr></table></figure>
-
-
-
-<p>把id_rsa.pub的内容黏贴进去</p>
-<p>执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">vi tmp.pub</span><br><span class="line">mkdir .ssh &amp;&amp; chmod 700 .ssh</span><br><span class="line">touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys</span><br><span class="line">cat tmp.pub &gt;&gt; .ssh/authorized_keys</span><br><span class="line">rm tmp.pub</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="重启windows-terminal"><a href="#重启windows-terminal" class="headerlink" title="重启windows terminal"></a>重启windows terminal</h3><p>如果出现字符乱码功能</p>
-<p>使用该种字体有效</p>
-<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h0ncrj3et3j307p01cdfo.jpg" alt="image.png"></p>
  
       <!-- reward -->
       

@@ -634,6 +634,72 @@
 
     
     <article
+  id="post-3_python-trade"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/3_python-trade/"
+    >3_python-trade</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/3_python-trade/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="3-python-trade"><a href="#3-python-trade" class="headerlink" title="3_python-trade"></a>3_python-trade</h1><p>pyc 逆向 </p>
+<p>使用pyc反编译 </p>
+<p>网站</p>
+<p><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.gjw123.com/tools-pyc">http://www.gjw123.com/tools-pyc</a></p>
+<p>反编译结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"></span><br><span class="line">visit https://tool.lu/pyc/ for more information</span><br><span class="line"></span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def encode(message):</span><br><span class="line">    s = &#x27;&#x27;</span><br><span class="line">    for i in message:</span><br><span class="line">        x = ord(i) ^ 32</span><br><span class="line">        x = x + 16</span><br><span class="line">        s += chr(x)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    return base64.b64encode(s)</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line">print &#x27;Input flag:&#x27;</span><br><span class="line">flag = raw_input()</span><br><span class="line">if encode(flag) == correct:</span><br><span class="line">    print &#x27;correct&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;wrong&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>写脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">a = base64.b64decode(correct)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">s = &#x27;&#x27;</span><br><span class="line">for i in a:</span><br><span class="line">    s += chr((ord(chr(i)) - 16) ^ 32)</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure>
+
+<p>nctf{d3c0mpil1n9_PyC}</p>
+<p>其中s += chr((ord(chr(i)) - 16) ^ 32) 如果没有chr强转会报ord 的错</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-2_insanity"
   class="article article-type-post"
   itemscope
@@ -690,7 +756,7 @@
 
     
     <article
-  id="post-3_python-trade"
+  id="post-4_re1"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -701,8 +767,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/3_python-trade/"
-    >3_python-trade</a> 
+  <a class="article-title" href="/2019/05/26/4_re1/"
+    >4_re1</a> 
 </h2>
  
 
@@ -710,7 +776,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2019/05/26/3_python-trade/" class="article-date">
+      <a href="/2019/05/26/4_re1/" class="article-date">
   <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
 </a> 
   <div class="article-category">
@@ -721,21 +787,75 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="3-python-trade"><a href="#3-python-trade" class="headerlink" title="3_python-trade"></a>3_python-trade</h1><p>pyc 逆向 </p>
-<p>使用pyc反编译 </p>
-<p>网站</p>
-<p><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.gjw123.com/tools-pyc">http://www.gjw123.com/tools-pyc</a></p>
-<p>反编译结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"></span><br><span class="line">visit https://tool.lu/pyc/ for more information</span><br><span class="line"></span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def encode(message):</span><br><span class="line">    s = &#x27;&#x27;</span><br><span class="line">    for i in message:</span><br><span class="line">        x = ord(i) ^ 32</span><br><span class="line">        x = x + 16</span><br><span class="line">        s += chr(x)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    return base64.b64encode(s)</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line">print &#x27;Input flag:&#x27;</span><br><span class="line">flag = raw_input()</span><br><span class="line">if encode(flag) == correct:</span><br><span class="line">    print &#x27;correct&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;wrong&#x27;</span><br></pre></td></tr></table></figure>
+  <h1 id="4-re1"><a href="#4-re1" class="headerlink" title="4_re1"></a>4_re1</h1><p>丢 ida  F5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6znito3j30km0bcgpq.jpg" alt="image.png"></p>
+<p>根据逻辑分析</p>
+<p>​    比较v5 v7</p>
+<p>如果 v5 大于v7 输出 正数</p>
+<p>如果 v5 小于 v7 输出 负数</p>
+<p>v5 v7 相等 输出 0</p>
+<p>所以判断flag是在aFlagGet</p>
+<p>进入后</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9q4iaoyj30z30lak6i.jpg" alt="image.png"></p>
+<p>然后在  </p>
+<p>aFlagGet 上 jump hex window</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9r6fwe5j30ja08on64.jpg" alt="image.png"></p>
+<p>DUTCTF{We1c0met0DUTCTF}</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
 
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
 
+    
+ 
+    
+</article>
 
-<p>写脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">correct = &#x27;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#x27;</span><br><span class="line">a = base64.b64decode(correct)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">s = &#x27;&#x27;</span><br><span class="line">for i in a:</span><br><span class="line">    s += chr((ord(chr(i)) - 16) ^ 32)</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure>
+    
+    <article
+  id="post-6_open-source"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/6_open-source/"
+    >6_open-source</a> 
+</h2>
+ 
 
-<p>nctf{d3c0mpil1n9_PyC}</p>
-<p>其中s += chr((ord(chr(i)) - 16) ^ 32) 如果没有chr强转会报ord 的错</p>
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/6_open-source/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="6-open-source"><a href="#6-open-source" class="headerlink" title="6_open-source"></a>6_open-source</h1><p>修改后的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">//    if (argc != 4) &#123;</span><br><span class="line">//        printf(&quot;what?\n&quot;);</span><br><span class="line">//        exit(1);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">//    unsigned int first = atoi(argv[1]);</span><br><span class="line">//    if (first != 0xcafe) &#123;</span><br><span class="line">//        printf(&quot;you are wrong, sorry.\n&quot;);</span><br><span class="line">//        exit(2);</span><br><span class="line">//    &#125;</span><br><span class="line"></span><br><span class="line">    unsigned int second = atoi(argv[2]);</span><br><span class="line">    if (second % 5 == 3 || second % 17 != 8) &#123;</span><br><span class="line">        printf(&quot;ha, you won&#x27;t get it!\n&quot;);</span><br><span class="line">        exit(3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (strcmp(&quot;h4cky0u&quot;, argv[3])) &#123;</span><br><span class="line">        printf(&quot;so close, dude!\n&quot;);</span><br><span class="line">        exit(4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Brr wrrr grr\n&quot;);</span><br><span class="line"></span><br><span class="line">    unsigned int hash = 0xcafe * 31337 + (second % 17) * 11 + strlen(argv[3]) - 1615810207;</span><br><span class="line"></span><br><span class="line">    printf(&quot;Get your key: &quot;);</span><br><span class="line">    printf(&quot;%x\n&quot;, hash);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwabdas904j30j105at9k.jpg" alt="image.png"></p>
  
       <!-- reward -->
       
@@ -822,71 +942,6 @@
 
     
     <article
-  id="post-4_re1"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/4_re1/"
-    >4_re1</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/4_re1/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="4-re1"><a href="#4-re1" class="headerlink" title="4_re1"></a>4_re1</h1><p>丢 ida  F5</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa6znito3j30km0bcgpq.jpg" alt="image.png"></p>
-<p>根据逻辑分析</p>
-<p>​    比较v5 v7</p>
-<p>如果 v5 大于v7 输出 正数</p>
-<p>如果 v5 小于 v7 输出 负数</p>
-<p>v5 v7 相等 输出 0</p>
-<p>所以判断flag是在aFlagGet</p>
-<p>进入后</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9q4iaoyj30z30lak6i.jpg" alt="image.png"></p>
-<p>然后在  </p>
-<p>aFlagGet 上 jump hex window</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9r6fwe5j30ja08on64.jpg" alt="image.png"></p>
-<p>DUTCTF{We1c0met0DUTCTF}</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
   id="post-7_simple-unpack"
   class="article article-type-post"
   itemscope
@@ -928,74 +983,6 @@
 <p>放进ida</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwakn09vunj30ma0hwdlb.jpg" alt="image.png"></p>
 <p>flag{Upx_1s_n0t_a_d3liv3r_c0mp4ny}</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-8_logmein"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/8_logmein/"
-    >logmein</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/8_logmein/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>放进64ida 分析</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for ( i = 0; i &lt; strlen(s); ++i )</span><br><span class="line">&#123;</span><br><span class="line">  if ( i &gt;= strlen(v8) )</span><br><span class="line">    sub_4007C0();</span><br><span class="line">  if ( s[i] != (char)(*((_BYTE *)&amp;v7 + i % v6) ^ v8[i]) )</span><br><span class="line">    sub_4007C0();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s[i] != (char)(*((_BYTE *)&amp;v7 + i % v6) ^ v8[i]) </span><br></pre></td></tr></table></figure>
-
-<p>这句是关键</p>
-<p>v7 </p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwb0z3qswhj30dw0atabl.jpg" alt="image.png"></p>
-<p>小段储存 字符串反转 </p>
-<p>harambe</p>
-<p>构建c语言paylaod</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;Windows.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include&quot;iostream&quot;</span><br><span class="line">#include&quot;String&quot;</span><br><span class="line">int main() &#123;</span><br><span class="line">    char v8[] = &quot;:\&quot;AL_RT^L*.?+6/46&quot;;</span><br><span class="line">    char v7[] = &quot;harambe&quot;;</span><br><span class="line">    int v6 = 7;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; strlen(v8); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        char s = (char)(*((BYTE*)&amp;v7 + i % v6) ^ v8[i]);</span><br><span class="line">        putchar(s);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
  
       <!-- reward -->
       
