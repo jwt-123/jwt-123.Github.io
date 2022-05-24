@@ -1,121 +1,10 @@
-<!DOCTYPE html>
-
-
-<html lang="zh-CN">
-  
-
-    <head>
-      <meta charset="utf-8" />
-        
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1"
-      />
-      <title>ubuntu环境下的缺页中断次数统计实验课设 |  Jw5t</title>
-  <meta name="generator" content="hexo-theme-ayer">
-      
-      <link rel="shortcut icon" href="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" />
-       
-<link rel="stylesheet" href="/dist/main.css">
-
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
-      />
-      
-<link rel="stylesheet" href="/css/custom.css">
- 
-      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-       
- 
-
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
-      />
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
-
-      <!-- mermaid -->
-      
-      <style>
-        .swal2-styled.swal2-confirm {
-          font-size: 1.6rem;
-        }
-      </style>
-    </head>
-  </html>
-</html>
-
-
-<body>
-  <div id="app">
-    
-      
-    <main class="content on">
-      <section class="outer">
-  <article
-  id="post-缺页中断"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  ubuntu环境下的缺页中断次数统计实验课设
-</h1>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/02/26/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/" class="article-date">
-  <time datetime="2022-02-26T04:12:57.000Z" itemprop="datePublished">2022-02-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.4k</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">7 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="ubuntu环境下的缺页中断次数统计实验"><a href="#ubuntu环境下的缺页中断次数统计实验" class="headerlink" title="ubuntu环境下的缺页中断次数统计实验"></a>ubuntu环境下的缺页中断次数统计实验</h1><p>先给出我的虚拟机环境打包 ，文件在桌面，已经make好了 ，下面是大概过程记录</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>ubuntu环境下的缺页中断次数统计实验课设 | Jw5t</title><link rel="stylesheet" type="text/css" href="/jwt-123/jwt-123.Github.io/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/jwt-123/jwt-123.Github.io/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/jwt-123/jwt-123.Github.io/favicon.ico"><link rel="apple-touch-icon" href="/jwt-123/jwt-123.Github.io/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/jwt-123/jwt-123.Github.io/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">ubuntu环境下的缺页中断次数统计实验课设</h1><a id="logo" href="/jwt-123/jwt-123.Github.io/.">Jw5t</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/jwt-123/jwt-123.Github.io/."><i class="fa fa-home"> 首页</i></a><a href="/jwt-123/jwt-123.Github.io/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/jwt-123/jwt-123.Github.io/about/"><i class="fa fa-user"> 关于</i></a><a href="/jwt-123/jwt-123.Github.io/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">ubuntu环境下的缺页中断次数统计实验课设</h1><div class="post-meta">2022-02-26<span> | </span><span class="category"><a href="/jwt-123/jwt-123.Github.io/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD%E6%AC%A1%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text">ubuntu环境下的缺页中断次数统计实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="toc-number">1.0.1.</span> <span class="toc-text">安装模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%86%85%E6%A0%B8"><span class="toc-number">1.0.2.</span> <span class="toc-text">安装内核</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu%E7%9A%84gurb%E5%BC%95%E5%AF%BC"><span class="toc-number">1.1.</span> <span class="toc-text">ubuntu的gurb引导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%A8%A1%E7%BB%84%EF%BC%88%E6%AD%A4%E5%A4%84%E5%8F%82%E7%85%A7%E8%BF%9B%E5%87%BB%E3%81%AE%E8%BE%A3%E6%9D%A1%E5%B8%88%E5%82%85%E7%9A%84%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">编写模组（此处参照进击の辣条师傅的）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99c%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">编写c程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99Makefile"><span class="toc-number">1.2.2.</span> <span class="toc-text">编写Makefile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make%E7%BC%96%E8%AF%91readpfcount-c%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">make编译readpfcount.c文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">安装模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bpfcount%E4%B8%8Ejiffies%E5%80%BC"><span class="toc-number">1.3.2.</span> <span class="toc-text">查看pfcount与jiffies值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-number">1.4.</span> <span class="toc-text">问题汇总</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">1.5.</span> <span class="toc-text">参考文献</span></a></li></ol></li></ol></div></div><div class="post-content"><h1 id="ubuntu环境下的缺页中断次数统计实验"><a href="#ubuntu环境下的缺页中断次数统计实验" class="headerlink" title="ubuntu环境下的缺页中断次数统计实验"></a>ubuntu环境下的缺页中断次数统计实验</h1><p>先给出我的虚拟机环境打包 ，文件在桌面，已经make好了 ，下面是大概过程记录</p>
 <p>链接.txt（只能说虚拟机太大了，压缩后也很大，学校网又慢，还在上传，后面补上）</p>
 <p>到目标目录下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>   /usr/src</span><br></pre></td></tr></table></figure>
 
 <p>使用管理员权限</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo su</span></span><br></pre></td></tr></table></figure>
 
 <p>下载源码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/v4.x/linux-4.19.90.tar.xz</span><br></pre></td></tr></table></figure>
@@ -124,35 +13,35 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf linux-4.19.90.tar.xz</span><br></pre></td></tr></table></figure>
 
 <p>安装bc</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install bc</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install bc</span><br></pre></td></tr></table></figure>
 
 <p>安装包管理器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install aptitude</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install aptitude</span><br></pre></td></tr></table></figure>
 
 <p>进入解压后的文件   cd进去</p>
 <p>打开目标文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit arch/x86/mm/fault.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit <span class="built_in">arch</span>/x86/mm/fault.c</span><br></pre></td></tr></table></figure>
 
 <p>ctrl + F 查找 __do_page_fault</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gzs93b0aqjj30mv0drjy8.jpg" alt="RT8OD1_(K$}WK43NY0YW6%N.png"></p>
 <p>在__do_page_fault函数中找到good_area，令pfcount自增</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gzu3olkjndj30ku0astfy.jpg" alt="image.png"></p>
-<p>修改include/linux/mm.h文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit include/linux/mm.h</span><br></pre></td></tr></table></figure>
+<p>修改include&#x2F;linux&#x2F;mm.h文件</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit <span class="keyword">include</span><span class="regexp">/linux/mm</span>.h</span><br></pre></td></tr></table></figure>
 
 <p>在extern int page_cluster;语句之后插入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern unsigned long volatile pfcount;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="keyword">volatile</span> pfcount;</span><br></pre></td></tr></table></figure>
 
-<p>修改kernel/kallsyms.c文件</p>
+<p>修改kernel&#x2F;kallsyms.c文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;EXPORT_SYMBOL(pfcount);&#x27;</span>&gt;&gt;kernel/kallsyms.c</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aptitude update</span><br><span class="line">aptitude search libncurses</span><br><span class="line">sudo apt install bison flex</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aptitude update</span><br><span class="line">aptitude search libncurses</span><br><span class="line">sudo apt <span class="keyword">install </span><span class="keyword">bison </span>flex</span><br></pre></td></tr></table></figure>
 
 <p>安装开发者工具</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential </span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">install </span><span class="keyword">build-essential </span></span><br></pre></td></tr></table></figure>
 
 <p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
 
 <p>进入如下界面</p>
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gzs9exztlvj31cz0ky0yg.jpg" alt="image.png"></p>
@@ -160,7 +49,7 @@
 <p><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gzs9fbw4e0j30vh0h8tbp.jpg" alt="image.png"></p>
 <p>如果 Module signature verification为*号则按空格取消</p>
 <p>在这个目录输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j8</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> -j8</span><br></pre></td></tr></table></figure>
 
 <p>aptj8这个8是线程数，可以修改为想要的 我选的16</p>
 <h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make INSTALL_MOD_STRIP=1 modules_install</span><br></pre></td></tr></table></figure>
@@ -170,16 +59,16 @@
 
 
 <p><strong>如果安装完成</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls  /lib/modules</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span>  /lib/modules</span><br></pre></td></tr></table></figure>
 
 <p>可以查看是否多出来一个4.19.90 的内核</p>
 <p>如果有，那就成功了</p>
-<h2 id="ubuntu的gurb引导"><a href="#ubuntu的gurb引导" class="headerlink" title="ubuntu的gurb引导"></a>ubuntu的gurb引导</h2><p>1.在终端输入sudo vi /etc/default/grub 打开配置文件。</p>
-<p>2.把grub_timeout_style=hidden给删除或者注释掉，把grub_cmdline_linux_default修改为text。</p>
-<p><strong>3.设置GRUB_TIMEOUT=30</strong>   此处很重要，网上很多博客都没写全！</p>
+<h2 id="ubuntu的gurb引导"><a href="#ubuntu的gurb引导" class="headerlink" title="ubuntu的gurb引导"></a>ubuntu的gurb引导</h2><p>1.在终端输入sudo vi &#x2F;etc&#x2F;default&#x2F;grub 打开配置文件。</p>
+<p>2.把grub_timeout_style&#x3D;hidden给删除或者注释掉，把grub_cmdline_linux_default修改为text。</p>
+<p><strong>3.设置GRUB_TIMEOUT&#x3D;30</strong>   此处很重要，网上很多博客都没写全！</p>
 <p>4.修改完成后sudo update-grub重新更新grub配置。</p>
 <p>5.再重启Ubuntu系统就可以进入grub引导界面了。</p>
-<h2 id="编写模组（此处参照进击の辣条师傅的）"><a href="#编写模组（此处参照进击の辣条师傅的）" class="headerlink" title="编写模组（此处参照进击の辣条师傅的）"></a>编写模组（此处参照进击の辣条师傅的）</h2><h3 id="编写c程序"><a href="#编写c程序" class="headerlink" title="编写c程序"></a>编写c程序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/sched.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/uaccess.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/proc_fs.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/fs.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/mm.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/seq_file.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/slab.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">volatile</span> pfcount;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">my_proc_show</span><span class="params">(struct seq_file* m, <span class="keyword">void</span>* v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    seq_printf(m, <span class="string">&quot;The pfcount is %ld and jiffies is %ld!\n&quot;</span>, pfcount,jiffies);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">my_proc_open</span><span class="params">(struct inode* inode, struct file* file)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> single_open(file, my_proc_show, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">file_operations</span> <span class="title">my_fops</span> =</span> &#123;</span><br><span class="line">    </span><br><span class="line">    .owner = THIS_MODULE,</span><br><span class="line">    .open = my_proc_open,</span><br><span class="line">    .release = single_release,</span><br><span class="line">    .read = seq_read,</span><br><span class="line">    .llseek = seq_lseek,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> __init <span class="title">my_init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">proc_dir_entry</span>* <span class="title">file</span> =</span> proc_create(<span class="string">&quot;readpfcount&quot;</span>,<span class="number">0x0644</span>, <span class="literal">NULL</span>, &amp;my_fops);</span><br><span class="line">    <span class="keyword">if</span> (!file) &#123;</span><br><span class="line">    </span><br><span class="line">        printk(<span class="string">&quot;proc_create failed.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -ENOMEM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> __exit <span class="title">my_exit</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    remove_proc_entry(<span class="string">&quot;readpfcount&quot;</span>, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(my_init);</span><br><span class="line">module_exit(my_exit);</span><br><span class="line">MODULE_LICENSE(<span class="string">&quot;GPL&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="编写模组（此处参照进击の辣条师傅的）"><a href="#编写模组（此处参照进击の辣条师傅的）" class="headerlink" title="编写模组（此处参照进击の辣条师傅的）"></a>编写模组（此处参照进击の辣条师傅的）</h2><h3 id="编写c程序"><a href="#编写c程序" class="headerlink" title="编写c程序"></a>编写c程序</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/sched.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/uaccess.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/proc_fs.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/fs.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/mm.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/seq_file.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/slab.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="keyword">volatile</span> pfcount;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">my_proc_show</span><span class="params">(<span class="keyword">struct</span> seq_file* m, <span class="type">void</span>* v)</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    seq_printf(m, <span class="string">&quot;The pfcount is %ld and jiffies is %ld!\n&quot;</span>, pfcount,jiffies);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">my_proc_open</span><span class="params">(<span class="keyword">struct</span> inode* inode, <span class="keyword">struct</span> file* file)</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> single_open(file, my_proc_show, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">file_operations</span> <span class="title">my_fops</span> =</span> &#123;</span><br><span class="line">    </span><br><span class="line">    .owner = THIS_MODULE,</span><br><span class="line">    .open = my_proc_open,</span><br><span class="line">    .release = single_release,</span><br><span class="line">    .read = seq_read,</span><br><span class="line">    .llseek = seq_lseek,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">my_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">proc_dir_entry</span>* <span class="title">file</span> =</span> proc_create(<span class="string">&quot;readpfcount&quot;</span>,<span class="number">0x0644</span>, <span class="literal">NULL</span>, &amp;my_fops);</span><br><span class="line">    <span class="keyword">if</span> (!file) &#123;</span><br><span class="line">    </span><br><span class="line">        printk(<span class="string">&quot;proc_create failed.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> -ENOMEM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">my_exit</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    remove_proc_entry(<span class="string">&quot;readpfcount&quot;</span>, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(my_init);</span><br><span class="line">module_exit(my_exit);</span><br><span class="line">MODULE_LICENSE(<span class="string">&quot;GPL&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="编写Makefile"><a href="#编写Makefile" class="headerlink" title="编写Makefile"></a>编写Makefile</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ifneq ($(KERNELRELEASE),)</span><br><span class="line">	obj-m:=readpfcount.o</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	KDIR:= /lib/modules/$(shell uname -r)/build</span><br><span class="line">	KVER?=$(shell uname -r)</span><br><span class="line">	PWD:= $(shell pwd)</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	$(MAKE) -C $(KDIR) M=$(PWD) modules</span><br><span class="line">clean:</span><br><span class="line">	$(MAKE) -C $(KDIR) M=$(PWD) clean</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
 
@@ -193,7 +82,7 @@
 
 <p>利用命令lsmod可以看见模块已被安装</p>
 <p>一般是在第一行，要移上去</p>
-<h3 id="查看pfcount与jiffies值"><a href="#查看pfcount与jiffies值" class="headerlink" title="查看pfcount与jiffies值"></a>查看pfcount与jiffies值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/readpfcount</span><br></pre></td></tr></table></figure>
+<h3 id="查看pfcount与jiffies值"><a href="#查看pfcount与jiffies值" class="headerlink" title="查看pfcount与jiffies值"></a>查看pfcount与jiffies值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/readpfcount</span><br></pre></td></tr></table></figure>
 
 
 
@@ -202,54 +91,54 @@
 
 
 <h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a><strong>问题汇总</strong></h2><p>apt包管理器 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install aptitude</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install aptitude</span><br></pre></td></tr></table></figure>
 
 <p>换个包管理器 这个比较智能，可以降级为适合版本的</p>
 <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> *** Unable to find the ncurses libraries or the</span><br><span class="line"> *** required header files.</span><br><span class="line"> *** &#x27;make menuconfig&#x27; requires the ncurses libraries.</span><br><span class="line"> *** </span><br><span class="line"> *** Install ncurses (ncurses-devel) and try again.</span><br><span class="line"> *** </span><br><span class="line">make[1]: *** [scripts/kconfig/dochecklxdialog] Error 1</span><br><span class="line">make: *** [menuconfig] Error 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="strong">**<span class="emphasis">* Unable to find the ncurses libraries or the</span></span></span><br><span class="line"><span class="emphasis"><span class="strong"> *</span>**</span> required header files.</span><br><span class="line"> <span class="strong">**<span class="emphasis">* &#x27;make menuconfig&#x27; requires the ncurses libraries.</span></span></span><br><span class="line"><span class="emphasis"><span class="strong"> *</span>**</span> </span><br><span class="line"> <span class="strong">**<span class="emphasis">* Install ncurses (ncurses-devel) and try again.</span></span></span><br><span class="line"><span class="emphasis"><span class="strong"> *</span>**</span> </span><br><span class="line">make[1]: <span class="strong">**<span class="emphasis">* [scripts/kconfig/dochecklxdialog] Error 1</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">make: *</span>**</span> [menuconfig] Error 2</span><br></pre></td></tr></table></figure>
 
 <p><strong>解决办法</strong>（以 root 身份）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aptitude update</span><br><span class="line">aptitude search libncurses</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aptitude <span class="keyword">update</span></span><br><span class="line">aptitude <span class="keyword">search</span> libncurses</span><br></pre></td></tr></table></figure>
 
 <p>这会建议你正确的包名称。</p>
 <p>然后尝试</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aptitude search libncurses</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">aptitude search libncurses</span></span><br></pre></td></tr></table></figure>
 
 <p>和</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aptitude install kernel-package</span><br><span class="line">aptitude build-dep linux-image linux-image-amd64 </span><br></pre></td></tr></table></figure>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aptitude install kernel-<span class="keyword">package</span></span><br><span class="line">aptitude build-dep linux-<span class="built_in">image</span> linux-<span class="built_in">image</span>-amd64 </span><br></pre></td></tr></table></figure>
 
 <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scripts/sign-file.c:25:10: fatal error: openssl/opensslv.h: 没有那个文件或目录</span><br><span class="line">   25 | #include &lt;openssl/opensslv.h&gt;</span><br><span class="line">      |          ^~~~~~~~~~~~~~~~~~~~</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scripts/sign-<span class="built_in">file</span>.c:<span class="number">25</span>:<span class="number">10</span>: fatal <span class="keyword">error</span>: openssl/opensslv.h: 没有那个文件或目录</span><br><span class="line">   <span class="number">25</span> | <span class="comment">#include &lt;openssl/opensslv.h&gt;</span></span><br><span class="line">      |          ^~~~~~~~~~~~~~~~~~~~</span><br></pre></td></tr></table></figure>
 
 <p><strong>解决办法</strong></p>
 <p>ubuntu下缺少了部分如下的组件，安装一下即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
 
 <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Unable to find the ncurses libraries or the</span><br><span class="line">*** required header files.</span><br><span class="line">*** &#x27;make menuconfig&#x27; requires the ncurses libraries.</span><br><span class="line">*** Install ncurses (ncurses-devel) and try again.</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** Unable <span class="built_in">to</span> find <span class="keyword">the</span> ncurses libraries <span class="keyword">or</span> <span class="keyword">the</span></span><br><span class="line">*** required header <span class="built_in">files</span>.</span><br><span class="line">*** <span class="string">&#x27;make menuconfig&#x27;</span> requires <span class="keyword">the</span> ncurses libraries.</span><br><span class="line">*** Install ncurses (ncurses-devel) <span class="keyword">and</span> <span class="keyword">try</span> again.</span><br></pre></td></tr></table></figure>
 
 <p>sudo apt-get install ncurses-dev</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/bin/sh: 1: flex: not found</span><br><span class="line">scripts/Makefile.lib:194: recipe for target &#x27;scripts/kconfig/lexer.lex.c&#x27; failed</span><br><span class="line">make[1]: *** [scripts/kconfig/lexer.lex.c] Error 127</span><br><span class="line">Makefile:552: recipe for target &#x27;menuconfig&#x27; failed</span><br><span class="line">make: *** [menuconfig] Error 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/bin/sh: <span class="number">1</span>: flex: <span class="built_in">not</span> found</span><br><span class="line">scripts/Makefile.<span class="keyword">lib</span>:<span class="number">194</span>: recipe <span class="keyword">for</span> target <span class="comment">&#x27;scripts/kconfig/lexer.lex.c&#x27; failed</span></span><br><span class="line">make[<span class="number">1</span>]: *** [scripts/kconfig/lexer.lex.c] <span class="keyword">Error</span> <span class="number">127</span></span><br><span class="line"><span class="symbol">Makefile:</span><span class="number">552</span>: recipe <span class="keyword">for</span> target <span class="comment">&#x27;menuconfig&#x27; failed</span></span><br><span class="line"><span class="symbol">make:</span> *** [menuconfig] <span class="keyword">Error</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <p>sudo apt-get install flex</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  LEX     scripts/kconfig/lexer.lex.c</span><br><span class="line">  YACC    scripts/kconfig/parser.tab.h</span><br><span class="line">/bin/sh: 1: bison: not found</span><br><span class="line">scripts/Makefile.lib:208: recipe for target &#x27;scripts/kconfig/parser.tab.h&#x27; failed</span><br><span class="line">make[1]: *** [scripts/kconfig/parser.tab.h] Error 127</span><br><span class="line">Makefile:552: recipe for target &#x27;menuconfig&#x27; failed</span><br><span class="line">make: *** [menuconfig] Error 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  LEX     scripts/kconfig/lexer.<span class="keyword">lex</span>.<span class="keyword">c</span></span><br><span class="line">  YACC    scripts/kconfig/parser.<span class="keyword">tab</span>.h</span><br><span class="line">/bin/<span class="keyword">sh</span>: <span class="number">1</span>: bison: not found</span><br><span class="line">scripts/Makefile.li<span class="variable">b:208</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;scripts/kconfig/parser.tab.h&#x27;</span> failed</span><br><span class="line"><span class="keyword">make</span>[<span class="number">1</span>]: *** [scripts/kconfig/parser.<span class="keyword">tab</span>.h] Error <span class="number">127</span></span><br><span class="line">Makefile:<span class="number">552</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;menuconfig&#x27;</span> failed</span><br><span class="line"><span class="keyword">make</span>: *** [menuconfig] Error <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <p>sudo apt-get install bison</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scripts/sign-file.c:25:10: fatal error: openssl/opensslv.h: 没有那个文件或目录</span><br><span class="line"> #include &lt;openssl/opensslv.h&gt;</span><br><span class="line">          ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">compilation terminated.</span><br><span class="line">scripts/Makefile.host:92: recipe for target &#x27;scripts/sign-file&#x27; failed</span><br><span class="line">make[1]: *** [scripts/sign-file] Error 1</span><br><span class="line">Makefile:1065: recipe for target &#x27;scripts&#x27; failed</span><br><span class="line">make: *** [scripts] Error 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scripts/<span class="keyword">sign</span>-<span class="keyword">file</span>.<span class="keyword">c</span>:<span class="number">25</span>:<span class="number">10</span>: fatal error: openssl/opensslv.h: 没有那个文件或目录</span><br><span class="line"> #include &lt;openssl/opensslv.h&gt;</span><br><span class="line">          ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">compilation terminated.</span><br><span class="line">scripts/Makefile.hos<span class="variable">t:92</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;scripts/sign-file&#x27;</span> failed</span><br><span class="line"><span class="keyword">make</span>[<span class="number">1</span>]: *** [scripts/<span class="keyword">sign</span>-<span class="keyword">file</span>] Error <span class="number">1</span></span><br><span class="line">Makefile:<span class="number">1065</span>: recipe <span class="keyword">for</span> target <span class="string">&#x27;scripts&#x27;</span> failed</span><br><span class="line"><span class="keyword">make</span>: *** [scripts] Error <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <p>sudo apt-get install libssl-dev</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Can&#x27;t use &#x27;defined(@array)&#x27; (Maybe you should just omit the defined()?) at kernel/timeconst.pl line 373.</span><br><span class="line">/home/howe/iTop4412_Kernel_3.0/kernel/Makefile:140: recipe for target &#x27;kernel/timeconst.h&#x27; failed</span><br><span class="line">make[1]: *** [kernel/timeconst.h] Error 255</span><br><span class="line">Makefile:954: recipe for target &#x27;kernel&#x27; failed</span><br><span class="line">make: *** [kernel] Error 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Can<span class="symbol">&#x27;t</span> <span class="keyword">use</span> <span class="symbol">&#x27;defined</span>(@<span class="keyword">array</span>)&#x27; (Maybe you should just omit the defined()?) at kernel/timeconst.pl <span class="literal">line</span> <span class="number">373</span>.</span><br><span class="line">/home/howe/iTop4412_Kernel_3.<span class="number">0</span>/kernel/Makefile:<span class="number">140</span>: recipe <span class="keyword">for</span> target <span class="symbol">&#x27;kernel</span>/timeconst.h&#x27; failed</span><br><span class="line">make[<span class="number">1</span>]: *** [kernel/timeconst.h] <span class="literal">Error</span> <span class="number">255</span></span><br><span class="line">Makefile:<span class="number">954</span>: recipe <span class="keyword">for</span> target <span class="symbol">&#x27;kernel</span>&#x27; failed</span><br><span class="line">make: *** [kernel] <span class="literal">Error</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <p>解决方法:<a target="_blank" rel="noopener" href="https://blog.csdn.net/abc87891842/article/details/55051042">https://blog.csdn.net/abc87891842/article/details/55051042</a><br>参考：编译kernel perl版本bug</p>
 <hr>
-<p>*** 没有规则可制作目标“debian/canonical-certs.pem”，由“certs/x509_certificate_list” </p>
+<p>*** 没有规则可制作目标“debian&#x2F;canonical-certs.pem”，由“certs&#x2F;x509_certificate_list” </p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44761561/article/details/107016271">https://blog.csdn.net/qq_44761561/article/details/107016271</a></p>
 <hr>
 <p>Ubuntu怎么进入grub引导界面</p>
 <p>下面以Ubuntu 20.04为例操作，Ubuntu 20.04安装完成后是直接进入桌面的，并没有grub引导菜单，我们要调出grub相应的文件，然后重新更新引导菜单就可以了。</p>
-<p>1.在终端输入sudo vi /etc/default/grub 打开配置文件。</p>
-<p>2.把grub_timeout_style=hidden给删除或者注释掉，把grub_cmdline_linux_default修改为text。</p>
-<p>3.GRUB_TIMEOUT=30</p>
+<p>1.在终端输入sudo vi &#x2F;etc&#x2F;default&#x2F;grub 打开配置文件。</p>
+<p>2.把grub_timeout_style&#x3D;hidden给删除或者注释掉，把grub_cmdline_linux_default修改为text。</p>
+<p>3.GRUB_TIMEOUT&#x3D;30</p>
 <p>4.修改完成后sudo update-grub重新更新grub配置。</p>
 <p>5.再重启Ubuntu系统就可以进入grub引导界面了。</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.noobyard.com/article/p-cywambzr-ub.html">http://www.noobyard.com/article/p-cywambzr-ub.html</a></p>
@@ -257,519 +146,4 @@
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/5029040">https://baike.baidu.com/item/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/5029040</a></p>
 <p><a target="_blank" rel="noopener" href="https://its301.com/article/weixin_42956689/115912752">https://its301.com/article/weixin_42956689/115912752</a></p>
 <p><a target="_blank" rel="noopener" href="https://autubrew.me/2018/05/linux%E4%B8%8B%E7%BC%BA%E9%A1%B5%E6%AC%A1%E6%95%B0%E7%BB%9F%E8%AE%A1/">https://autubrew.me/2018/05/linux%E4%B8%8B%E7%BC%BA%E9%A1%B5%E6%AC%A1%E6%95%B0%E7%BB%9F%E8%AE%A1/</a></p>
- 
-      <!-- reward -->
-      
-      <div id="reword-out">
-        <div id="reward-btn">
-          打赏
-        </div>
-      </div>
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
-          
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/02/26/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-    </footer>
-  </div>
-
-   
-  <nav class="article-nav">
-    
-      <a href="/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            向日葵rce复现和原理分析
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2019/05/26/1_Hello,%20CTF/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">1_Hello, CTF</div>
-      </a>
-    
-  </nav>
-
-   
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "",
-    app_key: "",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "给我的文章加点评论吧~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
-
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
-
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
- 
-   
-     
-</article>
-
-</section>
-      <footer class="footer">
-  <div class="outer">
-    <ul>
-      <li>
-        Copyrights &copy;
-        2015-2022
-        <i class="ri-heart-fill heart_icon"></i> Jw5t
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-        
-        <span>
-  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
-  <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
-</span>
-        
-      </li>
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      <li>
-        <!-- cnzz统计 -->
-        
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
-        
-      </li>
-    </ul>
-  </div>
-</footer>    
-    </main>
-    <div class="float_btns">
-      <div class="totop" id="totop">
-  <i class="ri-arrow-up-line"></i>
-</div>
-
-<div class="todark" id="todark">
-  <i class="ri-moon-line"></i>
-</div>
-
-    </div>
-    <aside class="sidebar on">
-      <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="/"><img src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7m2su1sj60hs0hswg402.jpg" alt="Jw5t"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="https://github.com/jwt-123">github</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="https://twitter.com/home">twitter</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2021/about">关于我</a>
-    </li>
-    
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-      <a class="nav-item-link nav-item-search"  title="搜索">
-        <i class="ri-search-line"></i>
-      </a>
-      
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-    </aside>
-    <div id="mask"></div>
-
-<!-- #reward -->
-<div id="reward">
-  <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
-  <div class="reward-box">
-    
-    <div class="reward-item">
-      <img class="reward-img" src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7hx6bmjj60xc1e077j02.jpg">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="http://tva1.sinaimg.cn/large/007axxUTgy1gvl7hog9jrj60yi1auju602.jpg">
-      <span class="reward-type">微信</span>
-    </div>
-    
-  </div>
-</div>
-    
-<script src="/js/jquery-3.6.0.min.js"></script>
- 
-<script src="/js/lazyload.min.js"></script>
-
-<!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-
-<script src="/dist/main.js"></script>
-
-<!-- ImageViewer -->
- <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
-
-<script>
-    function viewer_init() {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
-
-        $imgArr.forEach(($em, i) => {
-            $em.onclick = () => {
-                // slider展开状态
-                // todo: 这样不好，后面改成状态
-                if (document.querySelector('.left-col.show')) return
-                let items = []
-                $imgArr.forEach(($em2, i2) => {
-                    let img = $em2.getAttribute('data-idx', i2)
-                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-                    let title = $em2.getAttribute('alt')
-                    // 获得原图尺寸
-                    const image = new Image()
-                    image.src = src
-                    items.push({
-                        src: src,
-                        w: image.width || $em2.width,
-                        h: image.height || $em2.height,
-                        title: title
-                    })
-                })
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                    index: parseInt(i)
-                });
-                gallery.init()
-            }
-        })
-    }
-    viewer_init()
-</script> 
-<!-- MathJax -->
-
-<!-- Katex -->
-
-<!-- busuanzi  -->
- 
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
- 
-<!-- ClickLove -->
-
-<!-- ClickBoom1 -->
-
-<!-- ClickBoom2 -->
-
-<!-- CodeCopy -->
- 
-<link rel="stylesheet" href="/css/clipboard.css">
- <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-checkbox-circle-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-checkbox-circle-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-time-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-time-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
- 
-<!-- CanvasBackground -->
-
-<script>
-  if (window.mermaid) {
-    mermaid.initialize({ theme: "forest" });
-  }
-</script>
-
-
-    
-    
-
-  </div>
-</body>
-
-</html>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/jwt-123/jwt-123.Github.io/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/">向日葵rce复现和原理分析</a><a class="next" href="/jwt-123/jwt-123.Github.io/2019/05/26/1_Hello,%20CTF/">1_Hello, CTF</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://github.com/jwt-123/jwt-123.Github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">java代码审计</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/pwn/">pwn</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/web/">web</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/web/ctf/">ctf</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/web/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E5%A4%87%E5%BF%98/">备忘</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/">学校作业</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/">生活小技巧</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/">网络工程师</a></li><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E9%80%86%E5%90%91/">逆向</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/jwt-123/jwt-123.Github.io/categories/%E9%80%86%E5%90%91/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/jwt-123/jwt-123.Github.io/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 15px;">软件</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/06/29/%E8%BD%AF%E4%BB%B6%E4%BB%A3%E7%90%86/">各大软件代理</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/05/26/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Bwindows/">红蓝对抗应急响应之windows提权总结</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/03/26/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1sql%E6%B3%A8%E5%85%A5/">java代码审计-sql注入</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/03/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E4%B9%8Blinux/">红蓝对抗应急响应之linux提权总结</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/03/19/%E7%8F%AD%E7%BA%A7%E9%AD%94%E6%96%B9%E7%AD%BE%E5%88%B0%E8%84%9A%E6%9C%AC/">班级魔方自动GPS签到脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/02/27/%E5%90%91%E6%97%A5%E8%91%B5rce/">向日葵rce复现和原理分析</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2022/02/26/%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD/">ubuntu环境下的缺页中断次数统计实验课设</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2019/05/26/1_Hello,%20CTF/">1_Hello, CTF</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2019/05/26/3_python-trade/">3_python-trade</a></li><li class="post-list-item"><a class="post-list-link" href="/jwt-123/jwt-123.Github.io/2019/05/26/2_insanity/">2_insanity</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2022 <a href="/jwt-123/jwt-123.Github.io/." rel="nofollow">Jw5t.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/jwt-123/jwt-123.Github.io/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/jwt-123/jwt-123.Github.io/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css"><script type="text/javascript" src="/jwt-123/jwt-123.Github.io/js/copycode.js?v=1.0.0" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/jwt-123/jwt-123.Github.io/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/jwt-123/jwt-123.Github.io/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/jwt-123/jwt-123.Github.io/js/smartresize.js?v=1.0.0"></script></div></body></html>
